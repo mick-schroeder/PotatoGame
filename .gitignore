@@ -5,6 +5,9 @@
 # Finder
 .DS_Store
 
+# Swift module cache
+swift-module-cache/
+
 # Xcode - User files
 xcuserdata/
 
