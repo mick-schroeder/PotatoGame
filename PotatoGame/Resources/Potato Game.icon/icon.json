@@ -1,0 +1,53 @@
+{
+  "fill" : {
+    "automatic-gradient" : "srgb:0.41569,0.27451,0.18431,1.00000"
+  },
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "hidden" : false,
+          "image-name" : "emojiu1f576.svg",
+          "name" : "emojiu1f576",
+          "position" : {
+            "scale" : 1,
+            "translation-in-points" : [
+              48.78125,
+              -137.0078125
+            ]
+          }
+        },
+        {
+          "glass" : false,
+          "image-name" : "smilingfacewithsunglassescolor.svg",
+          "name" : "smilingfacewithsunglassescolor",
+          "position" : {
+            "scale" : 1,
+            "translation-in-points" : [
+              49.921875,
+              45.34375
+            ]
+          }
+        },
+        {
+          "image-name" : "potatocolor.svg",
+          "name" : "potatocolor"
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}

@@ -1,0 +1,1636 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00125F232EAEAF8800C7051D /* SchmojiSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00125F222EAEAF8800C7051D /* SchmojiSelection.swift */; };
+		00125F6F2EAEF78C00C7051D /* SchmojiLevelProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00125F6E2EAEF78C00C7051D /* SchmojiLevelProgress.swift */; };
+		00125F712EAEF79200C7051D /* SchmojiLevelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00125F702EAEF79200C7051D /* SchmojiLevelInfo.swift */; };
+		00166D362EB3D420003999E7 /* SchmojiLevelLayoutGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00166D352EB3D41F003999E7 /* SchmojiLevelLayoutGenerator.swift */; };
+		00166D3D2EB50F79003999E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00166D382EB50F79003999E7 /* Assets.xcassets */; };
+		00166D3E2EB50F79003999E7 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 00166D392EB50F79003999E7 /* Localizable.xcstrings */; };
+		00166D3F2EB50F79003999E7 /* Potato Game.icon in Resources */ = {isa = PBXBuildFile; fileRef = 00166D3A2EB50F79003999E7 /* Potato Game.icon */; };
+		00166D402EB50F79003999E7 /* Schmoji Emoji.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00166D3B2EB50F79003999E7 /* Schmoji Emoji.xcassets */; };
+		00166E0B2EB69D13003999E7 /* mixkit-click-error-1110.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00166E052EB69D13003999E7 /* mixkit-click-error-1110.wav */; };
+		00166E0C2EB69D13003999E7 /* mixkit-dry-pop-up-notification-alert-2356.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00166E062EB69D13003999E7 /* mixkit-dry-pop-up-notification-alert-2356.wav */; };
+		00166E0D2EB69D13003999E7 /* mixkit-explainer-video-game-alert-sweep-236.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00166E072EB69D13003999E7 /* mixkit-explainer-video-game-alert-sweep-236.wav */; };
+		00166E0E2EB69D13003999E7 /* mixkit-explainer-video-pops-whoosh-light-pop-3005.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00166E082EB69D13003999E7 /* mixkit-explainer-video-pops-whoosh-light-pop-3005.wav */; };
+		00166E0F2EB69D13003999E7 /* mixkit-winning-notification-2018.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00166E092EB69D13003999E7 /* mixkit-winning-notification-2018.wav */; };
+		00166E162EB6A1E3003999E7 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00166E152EB6A1E3003999E7 /* WidgetKit.framework */; };
+		00166E182EB6A1E3003999E7 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00166E172EB6A1E3003999E7 /* SwiftUI.framework */; };
+		00166E252EB6A1E4003999E7 /* PotatoGameWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 00166E142EB6A1E3003999E7 /* PotatoGameWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0019873A2B69A54A00BE621B /* PotatoCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001987392B69A54A00BE621B /* PotatoCountView.swift */; };
+		00277B922B72BB6E0013F780 /* LevelsGridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00277B912B72BB6E0013F780 /* LevelsGridItem.swift */; };
+		002C54F92EBBB12400737B61 /* SchmojiGameEndWinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002C54F82EBBB12400737B61 /* SchmojiGameEndWinView.swift */; };
+		002E3D0F2B7660DD00D938E1 /* SchmojiColorsLegendGenericView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E3D0E2B7660DD00D938E1 /* SchmojiColorsLegendGenericView.swift */; };
+		002FB2602EC9FAA000258787 /* SchmojiLevelPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FB25F2EC9FAA000258787 /* SchmojiLevelPresentation.swift */; };
+		002FB2632ECBF65A00258787 /* SchmojiBoardObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FB2622ECBF65A00258787 /* SchmojiBoardObject.swift */; };
+		002FB2662ECC081500258787 /* SchmojiLevelTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FB2652ECC081500258787 /* SchmojiLevelTile.swift */; };
+		002FB2682ECC0D0500258787 /* SchmojiUnlockedHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FB2672ECC0D0500258787 /* SchmojiUnlockedHex.swift */; };
+		002FB26A2ECC140A00258787 /* AccountPurchasedPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FB2692ECC140A00258787 /* AccountPurchasedPack.swift */; };
+		0039B9842EC26FD60094663E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00166D382EB50F79003999E7 /* Assets.xcassets */; };
+		0039B9852EC270450094663E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 00166D392EB50F79003999E7 /* Localizable.xcstrings */; };
+		0039B9862EC2704B0094663E /* Potato Game.icon in Resources */ = {isa = PBXBuildFile; fileRef = 00166D3A2EB50F79003999E7 /* Potato Game.icon */; };
+		00420B772EC5441E00AAEB58 /* GameKeyboardCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00420B752EC5441E00AAEB58 /* GameKeyboardCommands.swift */; };
+		00420B782EC5441E00AAEB58 /* GameKeyboardBindings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00420B742EC5441E00AAEB58 /* GameKeyboardBindings.swift */; };
+		00420B7A2EC5442E00AAEB58 /* KeyboardBindingCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00420B792EC5442E00AAEB58 /* KeyboardBindingCaptureView.swift */; };
+		004249402EC0001F00920B42 /* LevelPackRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042493F2EC0001F00920B42 /* LevelPackRegistry.swift */; };
+		004249422EC0009600920B42 /* LevelPackStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004249412EC0009600920B42 /* LevelPackStore.swift */; };
+		004342002B7A4192004BB7BA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004341FD2B7A4192004BB7BA /* SettingsView.swift */; };
+		0043420A2B7A4F86004BB7BA /* LevelGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004342092B7A4F86004BB7BA /* LevelGrid.swift */; };
+		0043420E2B7A503D004BB7BA /* LevelsSearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043420D2B7A503D004BB7BA /* LevelsSearchResults.swift */; };
+		0043F9B32EC8F69B00ABE7D7 /* GameSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043F9B22EC8F69B00ABE7D7 /* GameSessionViewModel.swift */; };
+		004A19BB2B463A350027762C /* SchmojiGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A19BA2B463A350027762C /* SchmojiGameView.swift */; };
+		004CE67C2B3E0028009855C2 /* SchmojiCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE67B2B3E0028009855C2 /* SchmojiCircleView.swift */; };
+		004CE6882B3F1B49009855C2 /* SchmojiCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE6872B3F1B49009855C2 /* SchmojiCollectionView.swift */; };
+		005483802EAA41150051ADB0 /* SchmojiArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0054837F2EAA41150051ADB0 /* SchmojiArt.swift */; };
+		005558FA2EC395DA00508762 /* LevelsSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005558F92EC395D000508762 /* LevelsSummaryView.swift */; };
+		005CF8592EE2065500462B5A /* HapticsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005CF8572EE2065500462B5A /* HapticsCoordinator.swift */; };
+		0063BCEA2ECD0D1600300CF2 /* View+AppDestinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063BCE82ECD0D1600300CF2 /* View+AppDestinations.swift */; };
+		0063BCEB2ECD0D1600300CF2 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063BCE72ECD0D1600300CF2 /* AppRouter.swift */; };
+		0063BCED2ECD18DC00300CF2 /* View+PlatformEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063BCEC2ECD18DC00300CF2 /* View+PlatformEffects.swift */; };
+		0063BCEE2ECD190100300CF2 /* View+PlatformEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063BCEC2ECD18DC00300CF2 /* View+PlatformEffects.swift */; };
+		0063BCF72ECD1DDC00300CF2 /* SchmojiPhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063BCF42ECD1DDC00300CF2 /* SchmojiPhysicsCategory.swift */; };
+		0063BCF82ECD1DDC00300CF2 /* UnownedContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063BCF52ECD1DDC00300CF2 /* UnownedContactDelegate.swift */; };
+		0063BCFA2ECDFB0A00300CF2 /* SchmojiGameScene+Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063BCF92ECDFB0A00300CF2 /* SchmojiGameScene+Haptics.swift */; };
+		0066EFE32B44ADAE000FAEE1 /* SchmojiGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0066EFE22B44ADAE000FAEE1 /* SchmojiGameScene.swift */; };
+		008CB1682B4D62C600461A0C /* SchmojiSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008CB1672B4D62C600461A0C /* SchmojiSpriteNode.swift */; };
+		009AADFD2EA5BC8B00ED7F84 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AADFC2EA5BC8B00ED7F84 /* GameCenterManager.swift */; };
+		00A391DC2B3C4C8F005A0231 /* PotatoGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A391DB2B3C4C8F005A0231 /* PotatoGameApp.swift */; };
+		00A391DE2B3C4C8F005A0231 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A391DD2B3C4C8F005A0231 /* ContentView.swift */; };
+		00A391F52B3C7A56005A0231 /* SchmojiColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A391F42B3C7A56005A0231 /* SchmojiColor.swift */; };
+		00B443B72DD9512A00E9A15C /* PotatoTankScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B443B62DD9512400E9A15C /* PotatoTankScene.swift */; };
+		00D415912EC8C7F7009F4D68 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4158F2EC8C7F7009F4D68 /* StoreView.swift */; };
+		00D416292EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch19.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415A52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch19.swift */; };
+		00D4162A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch122.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4160C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch122.swift */; };
+		00D4162B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch06.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415982EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch06.swift */; };
+		00D4162C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch106.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415FC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch106.swift */; };
+		00D4162D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch56.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415CA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch56.swift */; };
+		00D4162E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch147.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416252EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch147.swift */; };
+		00D4162F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch88.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415EA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch88.swift */; };
+		00D416302EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch46.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415C02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch46.swift */; };
+		00D416312EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch76.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415DE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch76.swift */; };
+		00D416322EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch150.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416282EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch150.swift */; };
+		00D416332EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch126.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416102EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch126.swift */; };
+		00D416342EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch07.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415992EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch07.swift */; };
+		00D416352EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch55.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415C92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch55.swift */; };
+		00D416362EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch63.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415D12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch63.swift */; };
+		00D416372EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch14.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415A02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch14.swift */; };
+		00D416382EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch105.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415FB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch105.swift */; };
+		00D416392EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch129.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416132EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch129.swift */; };
+		00D4163A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch142.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416202EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch142.swift */; };
+		00D4163B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch90.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415EC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch90.swift */; };
+		00D4163C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415F62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch100.swift */; };
+		00D4163D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch92.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415EE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch92.swift */; };
+		00D4163E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch54.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415C82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch54.swift */; };
+		00D4163F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch59.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415CD2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch59.swift */; };
+		00D416402EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch143.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416212EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch143.swift */; };
+		00D416412EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch61.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415CF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch61.swift */; };
+		00D416422EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch107.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415FD2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch107.swift */; };
+		00D416432EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch135.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416192EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch135.swift */; };
+		00D416442EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch93.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415EF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch93.swift */; };
+		00D416452EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch34.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415B42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch34.swift */; };
+		00D416462EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch84.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415E62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch84.swift */; };
+		00D416472EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch148.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416262EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch148.swift */; };
+		00D416482EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch119.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416092EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch119.swift */; };
+		00D416492EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch145.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416232EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch145.swift */; };
+		00D4164A2EC8CC30009F4D68 /* SchmojiLevelTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415922EC8CC30009F4D68 /* SchmojiLevelTemplates.swift */; };
+		00D4164B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch22.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415A82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch22.swift */; };
+		00D4164C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch81.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415E32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch81.swift */; };
+		00D4164D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch08.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4159A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch08.swift */; };
+		00D4164E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch74.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415DC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch74.swift */; };
+		00D4164F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch18.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415A42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch18.swift */; };
+		00D416502EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch117.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416072EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch117.swift */; };
+		00D416512EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch73.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415DB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch73.swift */; };
+		00D416522EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch82.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415E42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch82.swift */; };
+		00D416532EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch24.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415AA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch24.swift */; };
+		00D416542EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch108.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415FE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch108.swift */; };
+		00D416552EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch68.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415D62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch68.swift */; };
+		00D416562EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch77.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415DF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch77.swift */; };
+		00D416572EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch37.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415B72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch37.swift */; };
+		00D416582EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch40.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415BA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch40.swift */; };
+		00D416592EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch41.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415BB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch41.swift */; };
+		00D4165A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch70.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415D82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch70.swift */; };
+		00D4165B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch87.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415E92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch87.swift */; };
+		00D4165C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch101.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415F72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch101.swift */; };
+		00D4165D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch124.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4160E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch124.swift */; };
+		00D4165E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch149.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416272EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch149.swift */; };
+		00D4165F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch97.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415F32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch97.swift */; };
+		00D416602EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch98.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415F42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch98.swift */; };
+		00D416612EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch95.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415F12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch95.swift */; };
+		00D416622EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch39.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415B92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch39.swift */; };
+		00D416632EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch99.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415F52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch99.swift */; };
+		00D416642EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch113.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416032EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch113.swift */; };
+		00D416652EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch127.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416112EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch127.swift */; };
+		00D416662EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch72.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415DA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch72.swift */; };
+		00D416672EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415B22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch32.swift */; };
+		00D416682EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch102.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415F82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch102.swift */; };
+		00D416692EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch79.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415E12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch79.swift */; };
+		00D4166A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch133.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416172EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch133.swift */; };
+		00D4166B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch138.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4161C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch138.swift */; };
+		00D4166C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch47.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415C12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch47.swift */; };
+		00D4166D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch96.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415F22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch96.swift */; };
+		00D4166E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch75.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415DD2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch75.swift */; };
+		00D4166F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415942EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch02.swift */; };
+		00D416702EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch65.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415D32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch65.swift */; };
+		00D416712EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch80.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415E22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch80.swift */; };
+		00D416722EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch114.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416042EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch114.swift */; };
+		00D416732EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch53.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415C72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch53.swift */; };
+		00D416742EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch86.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415E82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch86.swift */; };
+		00D416752EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch62.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415D02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch62.swift */; };
+		00D416762EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch134.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416182EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch134.swift */; };
+		00D416772EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch50.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415C42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch50.swift */; };
+		00D416782EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch132.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416162EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch132.swift */; };
+		00D416792EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch91.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415ED2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch91.swift */; };
+		00D4167A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch136.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4161A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch136.swift */; };
+		00D4167B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch85.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415E72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch85.swift */; };
+		00D4167C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch104.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415FA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch104.swift */; };
+		00D4167D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415932EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch01.swift */; };
+		00D4167E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch30.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415B02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch30.swift */; };
+		00D4167F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch58.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415CC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch58.swift */; };
+		00D416802EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch67.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415D52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch67.swift */; };
+		00D416812EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch141.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4161F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch141.swift */; };
+		00D416822EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch110.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416002EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch110.swift */; };
+		00D416832EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch36.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415B62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch36.swift */; };
+		00D416842EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch25.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415AB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch25.swift */; };
+		00D416852EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch44.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415BE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch44.swift */; };
+		00D416862EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch137.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4161B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch137.swift */; };
+		00D416872EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch69.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415D72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch69.swift */; };
+		00D416882EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch20.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415A62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch20.swift */; };
+		00D416892EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch78.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415E02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch78.swift */; };
+		00D4168A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch17.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415A32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch17.swift */; };
+		00D4168B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch29.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415AF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch29.swift */; };
+		00D4168C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415D22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch64.swift */; };
+		00D4168D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch146.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416242EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch146.swift */; };
+		00D4168E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415A12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch15.swift */; };
+		00D4168F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch23.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415A92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch23.swift */; };
+		00D416902EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch60.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415CE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch60.swift */; };
+		00D416912EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4159F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch13.swift */; };
+		00D416922EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch05.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415972EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch05.swift */; };
+		00D416932EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch31.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415B12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch31.swift */; };
+		00D416942EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch49.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415C32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch49.swift */; };
+		00D416952EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch27.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415AD2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch27.swift */; };
+		00D416962EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch123.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4160D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch123.swift */; };
+		00D416972EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch21.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415A72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch21.swift */; };
+		00D416982EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch131.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416152EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch131.swift */; };
+		00D416992EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch09.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4159B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch09.swift */; };
+		00D4169A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4159E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch12.swift */; };
+		00D4169B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch89.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415EB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch89.swift */; };
+		00D4169C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch128.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416122EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch128.swift */; };
+		00D4169D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch57.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415CB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch57.swift */; };
+		00D4169E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch130.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416142EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch130.swift */; };
+		00D4169F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch26.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415AC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch26.swift */; };
+		00D416A02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch38.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415B82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch38.swift */; };
+		00D416A12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415A22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch16.swift */; };
+		00D416A22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch52.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415C62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch52.swift */; };
+		00D416A32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch121.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4160B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch121.swift */; };
+		00D416A42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch33.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415B32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch33.swift */; };
+		00D416A52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch140.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4161E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch140.swift */; };
+		00D416A62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch94.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415F02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch94.swift */; };
+		00D416A72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch139.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4161D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch139.swift */; };
+		00D416A82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch66.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415D42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch66.swift */; };
+		00D416A92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch71.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415D92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch71.swift */; };
+		00D416AA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch35.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415B52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch35.swift */; };
+		00D416AB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch04.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415962EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch04.swift */; };
+		00D416AC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch144.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416222EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch144.swift */; };
+		00D416AD2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4159D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch11.swift */; };
+		00D416AE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch42.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415BC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch42.swift */; };
+		00D416AF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch115.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416052EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch115.swift */; };
+		00D416B02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch51.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415C52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch51.swift */; };
+		00D416B12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch116.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416062EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch116.swift */; };
+		00D416B22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch45.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415BF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch45.swift */; };
+		00D416B32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch125.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4160F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch125.swift */; };
+		00D416B42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch28.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415AE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch28.swift */; };
+		00D416B52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch48.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415C22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch48.swift */; };
+		00D416B62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch109.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415FF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch109.swift */; };
+		00D416B72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4159C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch10.swift */; };
+		00D416B82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch43.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415BD2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch43.swift */; };
+		00D416B92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch103.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415F92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch103.swift */; };
+		00D416BA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch111.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416012EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch111.swift */; };
+		00D416BB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch112.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416022EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch112.swift */; };
+		00D416BC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch120.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4160A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch120.swift */; };
+		00D416BD2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch83.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415E52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch83.swift */; };
+		00D416BE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415952EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch03.swift */; };
+		00D416BF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch118.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D416082EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch118.swift */; };
+		00E3C2192EC78152005220F8 /* PotatoTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3C2172EC78152005220F8 /* PotatoTheme.swift */; };
+		00E3C21A2EC78152005220F8 /* PotatoTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3C2172EC78152005220F8 /* PotatoTheme.swift */; };
+		00E3C2202EC7DE15005220F8 /* OrientationLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3C21F2EC7DE15005220F8 /* OrientationLock.swift */; };
+		00E5D0012F10A5B100F5D4D1 /* SchmojiCollectionSummaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5D0002F10A5B100F5D4D1 /* SchmojiCollectionSummaryCard.swift */; };
+		00E5D0032F10A5B100F5D4D1 /* SchmojiCollectionColorCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5D0022F10A5B100F5D4D1 /* SchmojiCollectionColorCard.swift */; };
+		00EADDB12DDF67CF0075E15D /* SchmojiGameSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EADDB02DDF67C50075E15D /* SchmojiGameSessionManager.swift */; };
+		00ED7BDA2D26CB5500E29F0E /* PotatoTankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ED7BD92D26CB5500E29F0E /* PotatoTankView.swift */; };
+		00F059422D25EE7400713AF7 /* LinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F059412D25EE7400713AF7 /* LinksView.swift */; };
+		00F059482D260A1500713AF7 /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F059472D260A0C00713AF7 /* HowToPlayView.swift */; };
+		00F9F1B82EEFC5BF008D0DDA /* PreviewSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F9F1B72EEFC5BF008D0DDA /* PreviewSampleData.swift */; };
+		00FCAFEF2B6ED76700E7527C /* SchmojiDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCAFEE2B6ED76700E7527C /* SchmojiDataContainer.swift */; };
+		00FCAFF12B6ED81200E7527C /* DataGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCAFF02B6ED81200E7527C /* DataGeneration.swift */; };
+		00FCAFF32B6ED82100E7527C /* SchmojiOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCAFF22B6ED82100E7527C /* SchmojiOptions.swift */; };
+		00FCAFFC2B6FC32600E7527C /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCAFFA2B6FC32600E7527C /* Account.swift */; };
+		00FCAFFD2B6FC32600E7527C /* Account+DataGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCAFFB2B6FC32600E7527C /* Account+DataGeneration.swift */; };
+		00FDB1BD2EE0A7BF00BE2527 /* mixkit-completion-of-a-level-2063.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00FDB1BB2EE0A7BF00BE2527 /* mixkit-completion-of-a-level-2063.wav */; };
+		00FDB1BE2EE0A7BF00BE2527 /* mixkit-bonus-extra-in-a-video-game-2064.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00FDB1BA2EE0A7BF00BE2527 /* mixkit-bonus-extra-in-a-video-game-2064.wav */; };
+		00FDB1BF2EE0A7BF00BE2527 /* mixkit-player-losing-or-failing-2042.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00FDB1BC2EE0A7BF00BE2527 /* mixkit-player-losing-or-failing-2042.wav */; };
+		06A1BF75EC8D6024A664197A /* SchmojiGameSessionManager+Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF38BEAE60744D8744F4D4 /* SchmojiGameSessionManager+Persistence.swift */; };
+		32B325B27D491B41F977EBE4 /* SchmojiGameScene+Matching.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34352C2D2339FEFC394DE3E /* SchmojiGameScene+Matching.swift */; };
+		599C3257F8C3FCC4311D31A0 /* SchmojiGameScene+Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439B38B87F9FA328D30161DD /* SchmojiGameScene+Input.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00166E232EB6A1E4003999E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00A391D02B3C4C8F005A0231 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00166E132EB6A1E3003999E7;
+			remoteInfo = PotatoGameWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		00166E2A2EB6A1E4003999E7 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				00166E252EB6A1E4003999E7 /* PotatoGameWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		00125F222EAEAF8800C7051D /* SchmojiSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiSelection.swift; sourceTree = "<group>"; };
+		00125F6E2EAEF78C00C7051D /* SchmojiLevelProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiLevelProgress.swift; sourceTree = "<group>"; };
+		00125F702EAEF79200C7051D /* SchmojiLevelInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiLevelInfo.swift; sourceTree = "<group>"; };
+		00166D352EB3D41F003999E7 /* SchmojiLevelLayoutGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiLevelLayoutGenerator.swift; sourceTree = "<group>"; };
+		00166D382EB50F79003999E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		00166D392EB50F79003999E7 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		00166D3A2EB50F79003999E7 /* Potato Game.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Potato Game.icon"; sourceTree = "<group>"; };
+		00166D3B2EB50F79003999E7 /* Schmoji Emoji.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Schmoji Emoji.xcassets"; sourceTree = "<group>"; };
+		00166DF62EB62DC7003999E7 /* PotatoGame.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PotatoGame.entitlements; sourceTree = "<group>"; };
+		00166E052EB69D13003999E7 /* mixkit-click-error-1110.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-click-error-1110.wav"; sourceTree = "<group>"; };
+		00166E062EB69D13003999E7 /* mixkit-dry-pop-up-notification-alert-2356.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-dry-pop-up-notification-alert-2356.wav"; sourceTree = "<group>"; };
+		00166E072EB69D13003999E7 /* mixkit-explainer-video-game-alert-sweep-236.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-explainer-video-game-alert-sweep-236.wav"; sourceTree = "<group>"; };
+		00166E082EB69D13003999E7 /* mixkit-explainer-video-pops-whoosh-light-pop-3005.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-explainer-video-pops-whoosh-light-pop-3005.wav"; sourceTree = "<group>"; };
+		00166E092EB69D13003999E7 /* mixkit-winning-notification-2018.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-winning-notification-2018.wav"; sourceTree = "<group>"; };
+		00166E142EB6A1E3003999E7 /* PotatoGameWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PotatoGameWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		00166E152EB6A1E3003999E7 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = /System/Library/Frameworks/WidgetKit.framework; sourceTree = "<absolute>"; };
+		00166E172EB6A1E3003999E7 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = /System/Library/Frameworks/SwiftUI.framework; sourceTree = "<absolute>"; };
+		00166E492EB6B69A003999E7 /* PotatoGameWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PotatoGameWidgetExtension.entitlements; sourceTree = "<group>"; };
+		001987392B69A54A00BE621B /* PotatoCountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotatoCountView.swift; sourceTree = "<group>"; };
+		00277B912B72BB6E0013F780 /* LevelsGridItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsGridItem.swift; sourceTree = "<group>"; };
+		002C54F82EBBB12400737B61 /* SchmojiGameEndWinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiGameEndWinView.swift; sourceTree = "<group>"; };
+		002E3D0E2B7660DD00D938E1 /* SchmojiColorsLegendGenericView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchmojiColorsLegendGenericView.swift; sourceTree = "<group>"; };
+		002FB25F2EC9FAA000258787 /* SchmojiLevelPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiLevelPresentation.swift; sourceTree = "<group>"; };
+		002FB2622ECBF65A00258787 /* SchmojiBoardObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiBoardObject.swift; sourceTree = "<group>"; };
+		002FB2652ECC081500258787 /* SchmojiLevelTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiLevelTile.swift; sourceTree = "<group>"; };
+		002FB2672ECC0D0500258787 /* SchmojiUnlockedHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiUnlockedHex.swift; sourceTree = "<group>"; };
+		002FB2692ECC140A00258787 /* AccountPurchasedPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPurchasedPack.swift; sourceTree = "<group>"; };
+		00420B742EC5441E00AAEB58 /* GameKeyboardBindings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameKeyboardBindings.swift; sourceTree = "<group>"; };
+		00420B752EC5441E00AAEB58 /* GameKeyboardCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameKeyboardCommands.swift; sourceTree = "<group>"; };
+		00420B792EC5442E00AAEB58 /* KeyboardBindingCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardBindingCaptureView.swift; sourceTree = "<group>"; };
+		0042493F2EC0001F00920B42 /* LevelPackRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPackRegistry.swift; sourceTree = "<group>"; };
+		004249412EC0009600920B42 /* LevelPackStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPackStore.swift; sourceTree = "<group>"; };
+		004341FD2B7A4192004BB7BA /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		004342092B7A4F86004BB7BA /* LevelGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelGrid.swift; sourceTree = "<group>"; };
+		0043420D2B7A503D004BB7BA /* LevelsSearchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsSearchResults.swift; sourceTree = "<group>"; };
+		0043F9B22EC8F69B00ABE7D7 /* GameSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionViewModel.swift; sourceTree = "<group>"; };
+		004A19BA2B463A350027762C /* SchmojiGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiGameView.swift; sourceTree = "<group>"; };
+		004CE67B2B3E0028009855C2 /* SchmojiCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiCircleView.swift; sourceTree = "<group>"; };
+		004CE6872B3F1B49009855C2 /* SchmojiCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchmojiCollectionView.swift; sourceTree = "<group>"; };
+		0054837F2EAA41150051ADB0 /* SchmojiArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiArt.swift; sourceTree = "<group>"; };
+		005558F92EC395D000508762 /* LevelsSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsSummaryView.swift; sourceTree = "<group>"; };
+		005CF8572EE2065500462B5A /* HapticsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsCoordinator.swift; sourceTree = "<group>"; };
+		0063BCE72ECD0D1600300CF2 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		0063BCE82ECD0D1600300CF2 /* View+AppDestinations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+AppDestinations.swift"; sourceTree = "<group>"; };
+		0063BCEC2ECD18DC00300CF2 /* View+PlatformEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+PlatformEffects.swift"; sourceTree = "<group>"; };
+		0063BCF42ECD1DDC00300CF2 /* SchmojiPhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiPhysicsCategory.swift; sourceTree = "<group>"; };
+		0063BCF52ECD1DDC00300CF2 /* UnownedContactDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnownedContactDelegate.swift; sourceTree = "<group>"; };
+		0063BCF92ECDFB0A00300CF2 /* SchmojiGameScene+Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiGameScene+Haptics.swift"; sourceTree = "<group>"; };
+		0066EFE22B44ADAE000FAEE1 /* SchmojiGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiGameScene.swift; sourceTree = "<group>"; };
+		008CB1672B4D62C600461A0C /* SchmojiSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiSpriteNode.swift; sourceTree = "<group>"; };
+		009AADFC2EA5BC8B00ED7F84 /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
+		00A391D82B3C4C8F005A0231 /* PotatoGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PotatoGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00A391DB2B3C4C8F005A0231 /* PotatoGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoGameApp.swift; sourceTree = "<group>"; };
+		00A391DD2B3C4C8F005A0231 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		00A391E72B3C4C90005A0231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00A391F42B3C7A56005A0231 /* SchmojiColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchmojiColor.swift; sourceTree = "<group>"; };
+		00B443B62DD9512400E9A15C /* PotatoTankScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoTankScene.swift; sourceTree = "<group>"; };
+		00B443B92DD9705C00E9A15C /* GameplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameplayKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.4.sdk/System/Library/Frameworks/GameplayKit.framework; sourceTree = DEVELOPER_DIR; };
+		00D4158F2EC8C7F7009F4D68 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		00D415922EC8CC30009F4D68 /* SchmojiLevelTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiLevelTemplates.swift; sourceTree = "<group>"; };
+		00D415932EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch01.swift"; sourceTree = "<group>"; };
+		00D415942EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch02.swift"; sourceTree = "<group>"; };
+		00D415952EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch03.swift"; sourceTree = "<group>"; };
+		00D415962EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch04.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch04.swift"; sourceTree = "<group>"; };
+		00D415972EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch05.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch05.swift"; sourceTree = "<group>"; };
+		00D415982EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch06.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch06.swift"; sourceTree = "<group>"; };
+		00D415992EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch07.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch07.swift"; sourceTree = "<group>"; };
+		00D4159A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch08.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch08.swift"; sourceTree = "<group>"; };
+		00D4159B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch09.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch09.swift"; sourceTree = "<group>"; };
+		00D4159C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch10.swift"; sourceTree = "<group>"; };
+		00D4159D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch11.swift"; sourceTree = "<group>"; };
+		00D4159E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch12.swift"; sourceTree = "<group>"; };
+		00D4159F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch13.swift"; sourceTree = "<group>"; };
+		00D415A02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch14.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch14.swift"; sourceTree = "<group>"; };
+		00D415A12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch15.swift"; sourceTree = "<group>"; };
+		00D415A22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch16.swift"; sourceTree = "<group>"; };
+		00D415A32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch17.swift"; sourceTree = "<group>"; };
+		00D415A42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch18.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch18.swift"; sourceTree = "<group>"; };
+		00D415A52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch19.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch19.swift"; sourceTree = "<group>"; };
+		00D415A62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch20.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch20.swift"; sourceTree = "<group>"; };
+		00D415A72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch21.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch21.swift"; sourceTree = "<group>"; };
+		00D415A82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch22.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch22.swift"; sourceTree = "<group>"; };
+		00D415A92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch23.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch23.swift"; sourceTree = "<group>"; };
+		00D415AA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch24.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch24.swift"; sourceTree = "<group>"; };
+		00D415AB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch25.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch25.swift"; sourceTree = "<group>"; };
+		00D415AC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch26.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch26.swift"; sourceTree = "<group>"; };
+		00D415AD2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch27.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch27.swift"; sourceTree = "<group>"; };
+		00D415AE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch28.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch28.swift"; sourceTree = "<group>"; };
+		00D415AF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch29.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch29.swift"; sourceTree = "<group>"; };
+		00D415B02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch30.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch30.swift"; sourceTree = "<group>"; };
+		00D415B12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch31.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch31.swift"; sourceTree = "<group>"; };
+		00D415B22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch32.swift"; sourceTree = "<group>"; };
+		00D415B32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch33.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch33.swift"; sourceTree = "<group>"; };
+		00D415B42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch34.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch34.swift"; sourceTree = "<group>"; };
+		00D415B52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch35.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch35.swift"; sourceTree = "<group>"; };
+		00D415B62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch36.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch36.swift"; sourceTree = "<group>"; };
+		00D415B72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch37.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch37.swift"; sourceTree = "<group>"; };
+		00D415B82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch38.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch38.swift"; sourceTree = "<group>"; };
+		00D415B92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch39.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch39.swift"; sourceTree = "<group>"; };
+		00D415BA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch40.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch40.swift"; sourceTree = "<group>"; };
+		00D415BB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch41.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch41.swift"; sourceTree = "<group>"; };
+		00D415BC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch42.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch42.swift"; sourceTree = "<group>"; };
+		00D415BD2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch43.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch43.swift"; sourceTree = "<group>"; };
+		00D415BE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch44.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch44.swift"; sourceTree = "<group>"; };
+		00D415BF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch45.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch45.swift"; sourceTree = "<group>"; };
+		00D415C02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch46.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch46.swift"; sourceTree = "<group>"; };
+		00D415C12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch47.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch47.swift"; sourceTree = "<group>"; };
+		00D415C22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch48.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch48.swift"; sourceTree = "<group>"; };
+		00D415C32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch49.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch49.swift"; sourceTree = "<group>"; };
+		00D415C42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch50.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch50.swift"; sourceTree = "<group>"; };
+		00D415C52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch51.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch51.swift"; sourceTree = "<group>"; };
+		00D415C62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch52.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch52.swift"; sourceTree = "<group>"; };
+		00D415C72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch53.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch53.swift"; sourceTree = "<group>"; };
+		00D415C82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch54.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch54.swift"; sourceTree = "<group>"; };
+		00D415C92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch55.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch55.swift"; sourceTree = "<group>"; };
+		00D415CA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch56.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch56.swift"; sourceTree = "<group>"; };
+		00D415CB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch57.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch57.swift"; sourceTree = "<group>"; };
+		00D415CC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch58.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch58.swift"; sourceTree = "<group>"; };
+		00D415CD2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch59.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch59.swift"; sourceTree = "<group>"; };
+		00D415CE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch60.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch60.swift"; sourceTree = "<group>"; };
+		00D415CF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch61.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch61.swift"; sourceTree = "<group>"; };
+		00D415D02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch62.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch62.swift"; sourceTree = "<group>"; };
+		00D415D12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch63.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch63.swift"; sourceTree = "<group>"; };
+		00D415D22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch64.swift"; sourceTree = "<group>"; };
+		00D415D32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch65.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch65.swift"; sourceTree = "<group>"; };
+		00D415D42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch66.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch66.swift"; sourceTree = "<group>"; };
+		00D415D52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch67.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch67.swift"; sourceTree = "<group>"; };
+		00D415D62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch68.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch68.swift"; sourceTree = "<group>"; };
+		00D415D72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch69.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch69.swift"; sourceTree = "<group>"; };
+		00D415D82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch70.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch70.swift"; sourceTree = "<group>"; };
+		00D415D92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch71.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch71.swift"; sourceTree = "<group>"; };
+		00D415DA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch72.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch72.swift"; sourceTree = "<group>"; };
+		00D415DB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch73.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch73.swift"; sourceTree = "<group>"; };
+		00D415DC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch74.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch74.swift"; sourceTree = "<group>"; };
+		00D415DD2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch75.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch75.swift"; sourceTree = "<group>"; };
+		00D415DE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch76.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch76.swift"; sourceTree = "<group>"; };
+		00D415DF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch77.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch77.swift"; sourceTree = "<group>"; };
+		00D415E02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch78.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch78.swift"; sourceTree = "<group>"; };
+		00D415E12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch79.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch79.swift"; sourceTree = "<group>"; };
+		00D415E22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch80.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch80.swift"; sourceTree = "<group>"; };
+		00D415E32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch81.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch81.swift"; sourceTree = "<group>"; };
+		00D415E42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch82.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch82.swift"; sourceTree = "<group>"; };
+		00D415E52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch83.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch83.swift"; sourceTree = "<group>"; };
+		00D415E62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch84.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch84.swift"; sourceTree = "<group>"; };
+		00D415E72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch85.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch85.swift"; sourceTree = "<group>"; };
+		00D415E82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch86.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch86.swift"; sourceTree = "<group>"; };
+		00D415E92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch87.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch87.swift"; sourceTree = "<group>"; };
+		00D415EA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch88.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch88.swift"; sourceTree = "<group>"; };
+		00D415EB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch89.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch89.swift"; sourceTree = "<group>"; };
+		00D415EC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch90.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch90.swift"; sourceTree = "<group>"; };
+		00D415ED2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch91.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch91.swift"; sourceTree = "<group>"; };
+		00D415EE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch92.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch92.swift"; sourceTree = "<group>"; };
+		00D415EF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch93.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch93.swift"; sourceTree = "<group>"; };
+		00D415F02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch94.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch94.swift"; sourceTree = "<group>"; };
+		00D415F12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch95.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch95.swift"; sourceTree = "<group>"; };
+		00D415F22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch96.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch96.swift"; sourceTree = "<group>"; };
+		00D415F32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch97.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch97.swift"; sourceTree = "<group>"; };
+		00D415F42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch98.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch98.swift"; sourceTree = "<group>"; };
+		00D415F52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch99.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch99.swift"; sourceTree = "<group>"; };
+		00D415F62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch100.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch100.swift"; sourceTree = "<group>"; };
+		00D415F72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch101.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch101.swift"; sourceTree = "<group>"; };
+		00D415F82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch102.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch102.swift"; sourceTree = "<group>"; };
+		00D415F92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch103.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch103.swift"; sourceTree = "<group>"; };
+		00D415FA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch104.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch104.swift"; sourceTree = "<group>"; };
+		00D415FB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch105.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch105.swift"; sourceTree = "<group>"; };
+		00D415FC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch106.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch106.swift"; sourceTree = "<group>"; };
+		00D415FD2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch107.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch107.swift"; sourceTree = "<group>"; };
+		00D415FE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch108.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch108.swift"; sourceTree = "<group>"; };
+		00D415FF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch109.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch109.swift"; sourceTree = "<group>"; };
+		00D416002EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch110.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch110.swift"; sourceTree = "<group>"; };
+		00D416012EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch111.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch111.swift"; sourceTree = "<group>"; };
+		00D416022EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch112.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch112.swift"; sourceTree = "<group>"; };
+		00D416032EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch113.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch113.swift"; sourceTree = "<group>"; };
+		00D416042EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch114.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch114.swift"; sourceTree = "<group>"; };
+		00D416052EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch115.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch115.swift"; sourceTree = "<group>"; };
+		00D416062EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch116.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch116.swift"; sourceTree = "<group>"; };
+		00D416072EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch117.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch117.swift"; sourceTree = "<group>"; };
+		00D416082EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch118.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch118.swift"; sourceTree = "<group>"; };
+		00D416092EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch119.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch119.swift"; sourceTree = "<group>"; };
+		00D4160A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch120.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch120.swift"; sourceTree = "<group>"; };
+		00D4160B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch121.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch121.swift"; sourceTree = "<group>"; };
+		00D4160C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch122.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch122.swift"; sourceTree = "<group>"; };
+		00D4160D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch123.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch123.swift"; sourceTree = "<group>"; };
+		00D4160E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch124.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch124.swift"; sourceTree = "<group>"; };
+		00D4160F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch125.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch125.swift"; sourceTree = "<group>"; };
+		00D416102EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch126.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch126.swift"; sourceTree = "<group>"; };
+		00D416112EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch127.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch127.swift"; sourceTree = "<group>"; };
+		00D416122EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch128.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch128.swift"; sourceTree = "<group>"; };
+		00D416132EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch129.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch129.swift"; sourceTree = "<group>"; };
+		00D416142EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch130.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch130.swift"; sourceTree = "<group>"; };
+		00D416152EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch131.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch131.swift"; sourceTree = "<group>"; };
+		00D416162EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch132.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch132.swift"; sourceTree = "<group>"; };
+		00D416172EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch133.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch133.swift"; sourceTree = "<group>"; };
+		00D416182EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch134.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch134.swift"; sourceTree = "<group>"; };
+		00D416192EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch135.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch135.swift"; sourceTree = "<group>"; };
+		00D4161A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch136.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch136.swift"; sourceTree = "<group>"; };
+		00D4161B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch137.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch137.swift"; sourceTree = "<group>"; };
+		00D4161C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch138.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch138.swift"; sourceTree = "<group>"; };
+		00D4161D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch139.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch139.swift"; sourceTree = "<group>"; };
+		00D4161E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch140.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch140.swift"; sourceTree = "<group>"; };
+		00D4161F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch141.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch141.swift"; sourceTree = "<group>"; };
+		00D416202EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch142.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch142.swift"; sourceTree = "<group>"; };
+		00D416212EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch143.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch143.swift"; sourceTree = "<group>"; };
+		00D416222EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch144.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch144.swift"; sourceTree = "<group>"; };
+		00D416232EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch145.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch145.swift"; sourceTree = "<group>"; };
+		00D416242EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch146.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch146.swift"; sourceTree = "<group>"; };
+		00D416252EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch147.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch147.swift"; sourceTree = "<group>"; };
+		00D416262EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch148.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch148.swift"; sourceTree = "<group>"; };
+		00D416272EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch149.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch149.swift"; sourceTree = "<group>"; };
+		00D416282EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch150.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch150.swift"; sourceTree = "<group>"; };
+		00E3C2172EC78152005220F8 /* PotatoTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoTheme.swift; sourceTree = "<group>"; };
+		00E3C21D2EC7DD75005220F8 /* GameKeyboardBindings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameKeyboardBindings.swift; sourceTree = "<group>"; };
+		00E3C21F2EC7DE15005220F8 /* OrientationLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationLock.swift; sourceTree = "<group>"; };
+		00E5D0002F10A5B100F5D4D1 /* SchmojiCollectionSummaryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiCollectionSummaryCard.swift; sourceTree = "<group>"; };
+		00E5D0022F10A5B100F5D4D1 /* SchmojiCollectionColorCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiCollectionColorCard.swift; sourceTree = "<group>"; };
+		00EADDB02DDF67C50075E15D /* SchmojiGameSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiGameSessionManager.swift; sourceTree = "<group>"; };
+		00ED7BD92D26CB5500E29F0E /* PotatoTankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoTankView.swift; sourceTree = "<group>"; };
+		00F059412D25EE7400713AF7 /* LinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksView.swift; sourceTree = "<group>"; };
+		00F059472D260A0C00713AF7 /* HowToPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayView.swift; sourceTree = "<group>"; };
+		00F9F1B72EEFC5BF008D0DDA /* PreviewSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSampleData.swift; sourceTree = "<group>"; };
+		00FCAFEE2B6ED76700E7527C /* SchmojiDataContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchmojiDataContainer.swift; sourceTree = "<group>"; };
+		00FCAFF02B6ED81200E7527C /* DataGeneration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGeneration.swift; sourceTree = "<group>"; };
+		00FCAFF22B6ED82100E7527C /* SchmojiOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchmojiOptions.swift; sourceTree = "<group>"; };
+		00FCAFFA2B6FC32600E7527C /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		00FCAFFB2B6FC32600E7527C /* Account+DataGeneration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account+DataGeneration.swift"; sourceTree = "<group>"; };
+		00FDB1BA2EE0A7BF00BE2527 /* mixkit-bonus-extra-in-a-video-game-2064.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-bonus-extra-in-a-video-game-2064.wav"; sourceTree = "<group>"; };
+		00FDB1BB2EE0A7BF00BE2527 /* mixkit-completion-of-a-level-2063.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-completion-of-a-level-2063.wav"; sourceTree = "<group>"; };
+		00FDB1BC2EE0A7BF00BE2527 /* mixkit-player-losing-or-failing-2042.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-player-losing-or-failing-2042.wav"; sourceTree = "<group>"; };
+		439B38B87F9FA328D30161DD /* SchmojiGameScene+Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiGameScene+Input.swift"; sourceTree = "<group>"; };
+		8CEF38BEAE60744D8744F4D4 /* SchmojiGameSessionManager+Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiGameSessionManager+Persistence.swift"; sourceTree = "<group>"; };
+		D34352C2D2339FEFC394DE3E /* SchmojiGameScene+Matching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiGameScene+Matching.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		00166E262EB6A1E4003999E7 /* Exceptions for "PotatoGameWidget" folder in "PotatoGameWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 00166E132EB6A1E3003999E7 /* PotatoGameWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		00166E192EB6A1E3003999E7 /* PotatoGameWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				00166E262EB6A1E4003999E7 /* Exceptions for "PotatoGameWidget" folder in "PotatoGameWidgetExtension" target */,
+			);
+			path = PotatoGameWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00166E112EB6A1E3003999E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00166E182EB6A1E3003999E7 /* SwiftUI.framework in Frameworks */,
+				00166E162EB6A1E3003999E7 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00A391D52B3C4C8F005A0231 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00166D3C2EB50F79003999E7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				00166E0A2EB69D13003999E7 /* Sounds */,
+				00166D382EB50F79003999E7 /* Assets.xcassets */,
+				00166D392EB50F79003999E7 /* Localizable.xcstrings */,
+				00166D3A2EB50F79003999E7 /* Potato Game.icon */,
+				00166D3B2EB50F79003999E7 /* Schmoji Emoji.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		00166D412EB50F7D003999E7 /* Level Data */ = {
+			isa = PBXGroup;
+			children = (
+				00D415922EC8CC30009F4D68 /* SchmojiLevelTemplates.swift */,
+				00D415932EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch01.swift */,
+				00D415942EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch02.swift */,
+				00D415952EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch03.swift */,
+				00D415962EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch04.swift */,
+				00D415972EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch05.swift */,
+				00D415982EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch06.swift */,
+				00D415992EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch07.swift */,
+				00D4159A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch08.swift */,
+				00D4159B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch09.swift */,
+				00D4159C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch10.swift */,
+				00D4159D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch11.swift */,
+				00D4159E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch12.swift */,
+				00D4159F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch13.swift */,
+				00D415A02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch14.swift */,
+				00D415A12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch15.swift */,
+				00D415A22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch16.swift */,
+				00D415A32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch17.swift */,
+				00D415A42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch18.swift */,
+				00D415A52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch19.swift */,
+				00D415A62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch20.swift */,
+				00D415A72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch21.swift */,
+				00D415A82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch22.swift */,
+				00D415A92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch23.swift */,
+				00D415AA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch24.swift */,
+				00D415AB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch25.swift */,
+				00D415AC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch26.swift */,
+				00D415AD2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch27.swift */,
+				00D415AE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch28.swift */,
+				00D415AF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch29.swift */,
+				00D415B02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch30.swift */,
+				00D415B12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch31.swift */,
+				00D415B22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch32.swift */,
+				00D415B32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch33.swift */,
+				00D415B42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch34.swift */,
+				00D415B52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch35.swift */,
+				00D415B62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch36.swift */,
+				00D415B72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch37.swift */,
+				00D415B82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch38.swift */,
+				00D415B92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch39.swift */,
+				00D415BA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch40.swift */,
+				00D415BB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch41.swift */,
+				00D415BC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch42.swift */,
+				00D415BD2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch43.swift */,
+				00D415BE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch44.swift */,
+				00D415BF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch45.swift */,
+				00D415C02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch46.swift */,
+				00D415C12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch47.swift */,
+				00D415C22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch48.swift */,
+				00D415C32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch49.swift */,
+				00D415C42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch50.swift */,
+				00D415C52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch51.swift */,
+				00D415C62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch52.swift */,
+				00D415C72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch53.swift */,
+				00D415C82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch54.swift */,
+				00D415C92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch55.swift */,
+				00D415CA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch56.swift */,
+				00D415CB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch57.swift */,
+				00D415CC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch58.swift */,
+				00D415CD2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch59.swift */,
+				00D415CE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch60.swift */,
+				00D415CF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch61.swift */,
+				00D415D02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch62.swift */,
+				00D415D12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch63.swift */,
+				00D415D22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch64.swift */,
+				00D415D32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch65.swift */,
+				00D415D42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch66.swift */,
+				00D415D52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch67.swift */,
+				00D415D62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch68.swift */,
+				00D415D72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch69.swift */,
+				00D415D82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch70.swift */,
+				00D415D92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch71.swift */,
+				00D415DA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch72.swift */,
+				00D415DB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch73.swift */,
+				00D415DC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch74.swift */,
+				00D415DD2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch75.swift */,
+				00D415DE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch76.swift */,
+				00D415DF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch77.swift */,
+				00D415E02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch78.swift */,
+				00D415E12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch79.swift */,
+				00D415E22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch80.swift */,
+				00D415E32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch81.swift */,
+				00D415E42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch82.swift */,
+				00D415E52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch83.swift */,
+				00D415E62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch84.swift */,
+				00D415E72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch85.swift */,
+				00D415E82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch86.swift */,
+				00D415E92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch87.swift */,
+				00D415EA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch88.swift */,
+				00D415EB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch89.swift */,
+				00D415EC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch90.swift */,
+				00D415ED2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch91.swift */,
+				00D415EE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch92.swift */,
+				00D415EF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch93.swift */,
+				00D415F02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch94.swift */,
+				00D415F12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch95.swift */,
+				00D415F22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch96.swift */,
+				00D415F32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch97.swift */,
+				00D415F42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch98.swift */,
+				00D415F52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch99.swift */,
+				00D415F62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch100.swift */,
+				00D415F72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch101.swift */,
+				00D415F82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch102.swift */,
+				00D415F92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch103.swift */,
+				00D415FA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch104.swift */,
+				00D415FB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch105.swift */,
+				00D415FC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch106.swift */,
+				00D415FD2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch107.swift */,
+				00D415FE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch108.swift */,
+				00D415FF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch109.swift */,
+				00D416002EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch110.swift */,
+				00D416012EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch111.swift */,
+				00D416022EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch112.swift */,
+				00D416032EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch113.swift */,
+				00D416042EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch114.swift */,
+				00D416052EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch115.swift */,
+				00D416062EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch116.swift */,
+				00D416072EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch117.swift */,
+				00D416082EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch118.swift */,
+				00D416092EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch119.swift */,
+				00D4160A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch120.swift */,
+				00D4160B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch121.swift */,
+				00D4160C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch122.swift */,
+				00D4160D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch123.swift */,
+				00D4160E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch124.swift */,
+				00D4160F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch125.swift */,
+				00D416102EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch126.swift */,
+				00D416112EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch127.swift */,
+				00D416122EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch128.swift */,
+				00D416132EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch129.swift */,
+				00D416142EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch130.swift */,
+				00D416152EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch131.swift */,
+				00D416162EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch132.swift */,
+				00D416172EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch133.swift */,
+				00D416182EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch134.swift */,
+				00D416192EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch135.swift */,
+				00D4161A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch136.swift */,
+				00D4161B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch137.swift */,
+				00D4161C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch138.swift */,
+				00D4161D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch139.swift */,
+				00D4161E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch140.swift */,
+				00D4161F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch141.swift */,
+				00D416202EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch142.swift */,
+				00D416212EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch143.swift */,
+				00D416222EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch144.swift */,
+				00D416232EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch145.swift */,
+				00D416242EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch146.swift */,
+				00D416252EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch147.swift */,
+				00D416262EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch148.swift */,
+				00D416272EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch149.swift */,
+				00D416282EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch150.swift */,
+			);
+			path = "Level Data";
+			sourceTree = "<group>";
+		};
+		00166E0A2EB69D13003999E7 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				00166E052EB69D13003999E7 /* mixkit-click-error-1110.wav */,
+				00166E062EB69D13003999E7 /* mixkit-dry-pop-up-notification-alert-2356.wav */,
+				00166E072EB69D13003999E7 /* mixkit-explainer-video-game-alert-sweep-236.wav */,
+				00166E082EB69D13003999E7 /* mixkit-explainer-video-pops-whoosh-light-pop-3005.wav */,
+				00166E092EB69D13003999E7 /* mixkit-winning-notification-2018.wav */,
+				00FDB1BA2EE0A7BF00BE2527 /* mixkit-bonus-extra-in-a-video-game-2064.wav */,
+				00FDB1BB2EE0A7BF00BE2527 /* mixkit-completion-of-a-level-2063.wav */,
+				00FDB1BC2EE0A7BF00BE2527 /* mixkit-player-losing-or-failing-2042.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		00277B932B72BD850013F780 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				004342092B7A4F86004BB7BA /* LevelGrid.swift */,
+				005558F92EC395D000508762 /* LevelsSummaryView.swift */,
+				0043420D2B7A503D004BB7BA /* LevelsSearchResults.swift */,
+				00277B912B72BB6E0013F780 /* LevelsGridItem.swift */,
+			);
+			path = Levels;
+			sourceTree = "<group>";
+		};
+		00277B942B72BEAA0013F780 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				004CE6872B3F1B49009855C2 /* SchmojiCollectionView.swift */,
+				00E5D0022F10A5B100F5D4D1 /* SchmojiCollectionColorCard.swift */,
+				00E5D0002F10A5B100F5D4D1 /* SchmojiCollectionSummaryCard.swift */,
+				004CE67B2B3E0028009855C2 /* SchmojiCircleView.swift */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		00277B992B73A10E0013F780 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				005CF8582EE2065500462B5A /* Haptics */,
+				0063BCF62ECD1DDC00300CF2 /* Physics */,
+				004A19BA2B463A350027762C /* SchmojiGameView.swift */,
+				0043F9B22EC8F69B00ABE7D7 /* GameSessionViewModel.swift */,
+				002E3D0E2B7660DD00D938E1 /* SchmojiColorsLegendGenericView.swift */,
+				002C54F82EBBB12400737B61 /* SchmojiGameEndWinView.swift */,
+				0066EFE22B44ADAE000FAEE1 /* SchmojiGameScene.swift */,
+				0063BCF92ECDFB0A00300CF2 /* SchmojiGameScene+Haptics.swift */,
+				D34352C2D2339FEFC394DE3E /* SchmojiGameScene+Matching.swift */,
+				439B38B87F9FA328D30161DD /* SchmojiGameScene+Input.swift */,
+				00EADDB02DDF67C50075E15D /* SchmojiGameSessionManager.swift */,
+				8CEF38BEAE60744D8744F4D4 /* SchmojiGameSessionManager+Persistence.swift */,
+				008CB1672B4D62C600461A0C /* SchmojiSpriteNode.swift */,
+				002FB25F2EC9FAA000258787 /* SchmojiLevelPresentation.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		00420B762EC5441E00AAEB58 /* GameInput */ = {
+			isa = PBXGroup;
+			children = (
+				00420B742EC5441E00AAEB58 /* GameKeyboardBindings.swift */,
+				00420B752EC5441E00AAEB58 /* GameKeyboardCommands.swift */,
+				00E3C21D2EC7DD75005220F8 /* GameKeyboardBindings.swift */,
+				00E3C21F2EC7DE15005220F8 /* OrientationLock.swift */,
+			);
+			path = GameInput;
+			sourceTree = "<group>";
+		};
+		004341FA2B7A4192004BB7BA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				004341FD2B7A4192004BB7BA /* SettingsView.swift */,
+				00420B792EC5442E00AAEB58 /* KeyboardBindingCaptureView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		004342102B7A7F8D004BB7BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				00A391DD2B3C4C8F005A0231 /* ContentView.swift */,
+				00F059412D25EE7400713AF7 /* LinksView.swift */,
+				00F059472D260A0C00713AF7 /* HowToPlayView.swift */,
+				001987392B69A54A00BE621B /* PotatoCountView.swift */,
+				00ED7BD92D26CB5500E29F0E /* PotatoTankView.swift */,
+				00B443B62DD9512400E9A15C /* PotatoTankScene.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		005CF8582EE2065500462B5A /* Haptics */ = {
+			isa = PBXGroup;
+			children = (
+				005CF8572EE2065500462B5A /* HapticsCoordinator.swift */,
+			);
+			path = Haptics;
+			sourceTree = "<group>";
+		};
+		0063BCE92ECD0D1600300CF2 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				0063BCE72ECD0D1600300CF2 /* AppRouter.swift */,
+				0063BCE82ECD0D1600300CF2 /* View+AppDestinations.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		0063BCF62ECD1DDC00300CF2 /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				0063BCF42ECD1DDC00300CF2 /* SchmojiPhysicsCategory.swift */,
+				0063BCF52ECD1DDC00300CF2 /* UnownedContactDelegate.swift */,
+			);
+			path = Physics;
+			sourceTree = "<group>";
+		};
+		00A391CF2B3C4C8F005A0231 = {
+			isa = PBXGroup;
+			children = (
+				00166E492EB6B69A003999E7 /* PotatoGameWidgetExtension.entitlements */,
+				00A391DA2B3C4C8F005A0231 /* PotatoGame */,
+				00166E192EB6A1E3003999E7 /* PotatoGameWidget */,
+				00B443B82DD9705C00E9A15C /* Frameworks */,
+				00A391D92B3C4C8F005A0231 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		00A391D92B3C4C8F005A0231 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00A391D82B3C4C8F005A0231 /* PotatoGame.app */,
+				00166E142EB6A1E3003999E7 /* PotatoGameWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		00A391DA2B3C4C8F005A0231 /* PotatoGame */ = {
+			isa = PBXGroup;
+			children = (
+				00D415902EC8C7F7009F4D68 /* Store */,
+				00166D3C2EB50F79003999E7 /* Resources */,
+				004342102B7A7F8D004BB7BA /* Views */,
+				004341FA2B7A4192004BB7BA /* Settings */,
+				00277B942B72BEAA0013F780 /* Collection */,
+				00277B932B72BD850013F780 /* Levels */,
+				00420B762EC5441E00AAEB58 /* GameInput */,
+				00277B992B73A10E0013F780 /* Game */,
+				00A391F32B3C76D2005A0231 /* Data */,
+				00F9F1B92EEFC5F3008D0DDA /* PreviewSupport */,
+				00166D412EB50F7D003999E7 /* Level Data */,
+				00A391E72B3C4C90005A0231 /* Info.plist */,
+				00A391DB2B3C4C8F005A0231 /* PotatoGameApp.swift */,
+				00166DF62EB62DC7003999E7 /* PotatoGame.entitlements */,
+				00E3C2182EC78152005220F8 /* Styling */,
+				0063BCE92ECD0D1600300CF2 /* Navigation */,
+			);
+			path = PotatoGame;
+			sourceTree = "<group>";
+		};
+		00A391F32B3C76D2005A0231 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				00A391F42B3C7A56005A0231 /* SchmojiColor.swift */,
+				00125F6E2EAEF78C00C7051D /* SchmojiLevelProgress.swift */,
+				00125F702EAEF79200C7051D /* SchmojiLevelInfo.swift */,
+				00166D352EB3D41F003999E7 /* SchmojiLevelLayoutGenerator.swift */,
+				002FB2652ECC081500258787 /* SchmojiLevelTile.swift */,
+				002FB2672ECC0D0500258787 /* SchmojiUnlockedHex.swift */,
+				002FB2622ECBF65A00258787 /* SchmojiBoardObject.swift */,
+				00FCAFEE2B6ED76700E7527C /* SchmojiDataContainer.swift */,
+				00FCAFF22B6ED82100E7527C /* SchmojiOptions.swift */,
+				009AADFC2EA5BC8B00ED7F84 /* GameCenterManager.swift */,
+				00FCAFF02B6ED81200E7527C /* DataGeneration.swift */,
+				00FCAFFA2B6FC32600E7527C /* Account.swift */,
+				002FB2692ECC140A00258787 /* AccountPurchasedPack.swift */,
+				00FCAFFB2B6FC32600E7527C /* Account+DataGeneration.swift */,
+				0054837F2EAA41150051ADB0 /* SchmojiArt.swift */,
+				00125F222EAEAF8800C7051D /* SchmojiSelection.swift */,
+				0042493F2EC0001F00920B42 /* LevelPackRegistry.swift */,
+				004249412EC0009600920B42 /* LevelPackStore.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		00B443B82DD9705C00E9A15C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00B443B92DD9705C00E9A15C /* GameplayKit.framework */,
+				00166E152EB6A1E3003999E7 /* WidgetKit.framework */,
+				00166E172EB6A1E3003999E7 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		00D415902EC8C7F7009F4D68 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				00D4158F2EC8C7F7009F4D68 /* StoreView.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		00E3C2182EC78152005220F8 /* Styling */ = {
+			isa = PBXGroup;
+			children = (
+				00E3C2172EC78152005220F8 /* PotatoTheme.swift */,
+				0063BCEC2ECD18DC00300CF2 /* View+PlatformEffects.swift */,
+			);
+			path = Styling;
+			sourceTree = "<group>";
+		};
+		00F9F1B92EEFC5F3008D0DDA /* PreviewSupport */ = {
+			isa = PBXGroup;
+			children = (
+				00F9F1B72EEFC5BF008D0DDA /* PreviewSampleData.swift */,
+			);
+			path = PreviewSupport;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00166E132EB6A1E3003999E7 /* PotatoGameWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00166E272EB6A1E4003999E7 /* Build configuration list for PBXNativeTarget "PotatoGameWidgetExtension" */;
+			buildPhases = (
+				00166E102EB6A1E3003999E7 /* Sources */,
+				00166E112EB6A1E3003999E7 /* Frameworks */,
+				00166E122EB6A1E3003999E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				00166E192EB6A1E3003999E7 /* PotatoGameWidget */,
+			);
+			name = PotatoGameWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = PotatoGameWidgetExtension;
+			productReference = 00166E142EB6A1E3003999E7 /* PotatoGameWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		00A391D72B3C4C8F005A0231 /* PotatoGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00A391EA2B3C4C90005A0231 /* Build configuration list for PBXNativeTarget "PotatoGame" */;
+			buildPhases = (
+				00A391D42B3C4C8F005A0231 /* Sources */,
+				00A391D52B3C4C8F005A0231 /* Frameworks */,
+				00A391D62B3C4C8F005A0231 /* Resources */,
+				00166E2A2EB6A1E4003999E7 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00166E242EB6A1E4003999E7 /* PBXTargetDependency */,
+			);
+			name = PotatoGame;
+			packageProductDependencies = (
+			);
+			productName = PotatoGame;
+			productReference = 00A391D82B3C4C8F005A0231 /* PotatoGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00A391D02B3C4C8F005A0231 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2610;
+				ORGANIZATIONNAME = "Mick Schroeder, LLC.";
+				TargetAttributes = {
+					00166E132EB6A1E3003999E7 = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+					00A391D72B3C4C8F005A0231 = {
+						CreatedOnToolsVersion = 15.1;
+					};
+				};
+			};
+			buildConfigurationList = 00A391D32B3C4C8F005A0231 /* Build configuration list for PBXProject "PotatoGame" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				ga,
+				Base,
+			);
+			mainGroup = 00A391CF2B3C4C8F005A0231;
+			packageReferences = (
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 00A391D92B3C4C8F005A0231 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00A391D72B3C4C8F005A0231 /* PotatoGame */,
+				00166E132EB6A1E3003999E7 /* PotatoGameWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00166E122EB6A1E3003999E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0039B9862EC2704B0094663E /* Potato Game.icon in Resources */,
+				0039B9852EC270450094663E /* Localizable.xcstrings in Resources */,
+				0039B9842EC26FD60094663E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00A391D62B3C4C8F005A0231 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00166D3D2EB50F79003999E7 /* Assets.xcassets in Resources */,
+				00166D3E2EB50F79003999E7 /* Localizable.xcstrings in Resources */,
+				00166D3F2EB50F79003999E7 /* Potato Game.icon in Resources */,
+				00166E0B2EB69D13003999E7 /* mixkit-click-error-1110.wav in Resources */,
+				00166E0C2EB69D13003999E7 /* mixkit-dry-pop-up-notification-alert-2356.wav in Resources */,
+				00166E0D2EB69D13003999E7 /* mixkit-explainer-video-game-alert-sweep-236.wav in Resources */,
+				00166E0E2EB69D13003999E7 /* mixkit-explainer-video-pops-whoosh-light-pop-3005.wav in Resources */,
+				00166E0F2EB69D13003999E7 /* mixkit-winning-notification-2018.wav in Resources */,
+				00FDB1BD2EE0A7BF00BE2527 /* mixkit-completion-of-a-level-2063.wav in Resources */,
+				00FDB1BE2EE0A7BF00BE2527 /* mixkit-bonus-extra-in-a-video-game-2064.wav in Resources */,
+				00FDB1BF2EE0A7BF00BE2527 /* mixkit-player-losing-or-failing-2042.wav in Resources */,
+				00166D402EB50F79003999E7 /* Schmoji Emoji.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00166E102EB6A1E3003999E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0063BCEE2ECD190100300CF2 /* View+PlatformEffects.swift in Sources */,
+				00E3C21A2EC78152005220F8 /* PotatoTheme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00A391D42B3C4C8F005A0231 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00420B7A2EC5442E00AAEB58 /* KeyboardBindingCaptureView.swift in Sources */,
+				005483802EAA41150051ADB0 /* SchmojiArt.swift in Sources */,
+				00B443B72DD9512A00E9A15C /* PotatoTankScene.swift in Sources */,
+				005558FA2EC395DA00508762 /* LevelsSummaryView.swift in Sources */,
+				004249422EC0009600920B42 /* LevelPackStore.swift in Sources */,
+				00A391DE2B3C4C8F005A0231 /* ContentView.swift in Sources */,
+				0066EFE32B44ADAE000FAEE1 /* SchmojiGameScene.swift in Sources */,
+				32B325B27D491B41F977EBE4 /* SchmojiGameScene+Matching.swift in Sources */,
+				599C3257F8C3FCC4311D31A0 /* SchmojiGameScene+Input.swift in Sources */,
+				0043420A2B7A4F86004BB7BA /* LevelGrid.swift in Sources */,
+				0019873A2B69A54A00BE621B /* PotatoCountView.swift in Sources */,
+				00FCAFFD2B6FC32600E7527C /* Account+DataGeneration.swift in Sources */,
+				00A391DC2B3C4C8F005A0231 /* PotatoGameApp.swift in Sources */,
+				009AADFD2EA5BC8B00ED7F84 /* GameCenterManager.swift in Sources */,
+				00F059482D260A1500713AF7 /* HowToPlayView.swift in Sources */,
+				00E5D0012F10A5B100F5D4D1 /* SchmojiCollectionSummaryCard.swift in Sources */,
+				00E5D0032F10A5B100F5D4D1 /* SchmojiCollectionColorCard.swift in Sources */,
+				004CE6882B3F1B49009855C2 /* SchmojiCollectionView.swift in Sources */,
+				00FCAFFC2B6FC32600E7527C /* Account.swift in Sources */,
+				00420B772EC5441E00AAEB58 /* GameKeyboardCommands.swift in Sources */,
+				00420B782EC5441E00AAEB58 /* GameKeyboardBindings.swift in Sources */,
+				00125F712EAEF79200C7051D /* SchmojiLevelInfo.swift in Sources */,
+				0063BCED2ECD18DC00300CF2 /* View+PlatformEffects.swift in Sources */,
+				002C54F92EBBB12400737B61 /* SchmojiGameEndWinView.swift in Sources */,
+				00277B922B72BB6E0013F780 /* LevelsGridItem.swift in Sources */,
+				00E3C2202EC7DE15005220F8 /* OrientationLock.swift in Sources */,
+				00EADDB12DDF67CF0075E15D /* SchmojiGameSessionManager.swift in Sources */,
+				00E3C2192EC78152005220F8 /* PotatoTheme.swift in Sources */,
+				06A1BF75EC8D6024A664197A /* SchmojiGameSessionManager+Persistence.swift in Sources */,
+				004249402EC0001F00920B42 /* LevelPackRegistry.swift in Sources */,
+				00FCAFF12B6ED81200E7527C /* DataGeneration.swift in Sources */,
+				00F9F1B82EEFC5BF008D0DDA /* PreviewSampleData.swift in Sources */,
+				004A19BB2B463A350027762C /* SchmojiGameView.swift in Sources */,
+				0043F9B32EC8F69B00ABE7D7 /* GameSessionViewModel.swift in Sources */,
+				00ED7BDA2D26CB5500E29F0E /* PotatoTankView.swift in Sources */,
+				00D416292EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch19.swift in Sources */,
+				00D4162A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch122.swift in Sources */,
+				00D4162B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch06.swift in Sources */,
+				00D4162C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch106.swift in Sources */,
+				00D4162D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch56.swift in Sources */,
+				00D4162E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch147.swift in Sources */,
+				00D4162F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch88.swift in Sources */,
+				00D416302EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch46.swift in Sources */,
+				00D416312EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch76.swift in Sources */,
+				00D416322EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch150.swift in Sources */,
+				005CF8592EE2065500462B5A /* HapticsCoordinator.swift in Sources */,
+				00D416332EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch126.swift in Sources */,
+				00D416342EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch07.swift in Sources */,
+				00D416352EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch55.swift in Sources */,
+				00D416362EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch63.swift in Sources */,
+				00D416372EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch14.swift in Sources */,
+				00D416382EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch105.swift in Sources */,
+				00D416392EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch129.swift in Sources */,
+				00D4163A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch142.swift in Sources */,
+				00D4163B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch90.swift in Sources */,
+				00D4163C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch100.swift in Sources */,
+				00D4163D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch92.swift in Sources */,
+				00D4163E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch54.swift in Sources */,
+				00D4163F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch59.swift in Sources */,
+				00D416402EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch143.swift in Sources */,
+				00D416412EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch61.swift in Sources */,
+				00D416422EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch107.swift in Sources */,
+				00D416432EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch135.swift in Sources */,
+				00D416442EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch93.swift in Sources */,
+				00D416452EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch34.swift in Sources */,
+				00D416462EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch84.swift in Sources */,
+				00D416472EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch148.swift in Sources */,
+				00D416482EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch119.swift in Sources */,
+				00D416492EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch145.swift in Sources */,
+				00D4164A2EC8CC30009F4D68 /* SchmojiLevelTemplates.swift in Sources */,
+				00D4164B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch22.swift in Sources */,
+				0063BCEA2ECD0D1600300CF2 /* View+AppDestinations.swift in Sources */,
+				0063BCEB2ECD0D1600300CF2 /* AppRouter.swift in Sources */,
+				00D4164C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch81.swift in Sources */,
+				00D4164D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch08.swift in Sources */,
+				0063BCF72ECD1DDC00300CF2 /* SchmojiPhysicsCategory.swift in Sources */,
+				0063BCF82ECD1DDC00300CF2 /* UnownedContactDelegate.swift in Sources */,
+				00D4164E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch74.swift in Sources */,
+				00D4164F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch18.swift in Sources */,
+				00D416502EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch117.swift in Sources */,
+				00D416512EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch73.swift in Sources */,
+				00D416522EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch82.swift in Sources */,
+				00D416532EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch24.swift in Sources */,
+				00D416542EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch108.swift in Sources */,
+				00D416552EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch68.swift in Sources */,
+				00D416562EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch77.swift in Sources */,
+				00D416572EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch37.swift in Sources */,
+				00D416582EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch40.swift in Sources */,
+				00D416592EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch41.swift in Sources */,
+				00D4165A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch70.swift in Sources */,
+				00D4165B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch87.swift in Sources */,
+				00D4165C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch101.swift in Sources */,
+				00D4165D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch124.swift in Sources */,
+				00D4165E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch149.swift in Sources */,
+				00D4165F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch97.swift in Sources */,
+				00D416602EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch98.swift in Sources */,
+				00D416612EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch95.swift in Sources */,
+				00D416622EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch39.swift in Sources */,
+				00D416632EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch99.swift in Sources */,
+				00D416642EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch113.swift in Sources */,
+				00D416652EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch127.swift in Sources */,
+				00D416662EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch72.swift in Sources */,
+				00D416672EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch32.swift in Sources */,
+				00D416682EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch102.swift in Sources */,
+				00D416692EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch79.swift in Sources */,
+				00D4166A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch133.swift in Sources */,
+				00D4166B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch138.swift in Sources */,
+				00D4166C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch47.swift in Sources */,
+				00D4166D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch96.swift in Sources */,
+				00D4166E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch75.swift in Sources */,
+				00D4166F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch02.swift in Sources */,
+				00D416702EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch65.swift in Sources */,
+				00D416712EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch80.swift in Sources */,
+				002FB2602EC9FAA000258787 /* SchmojiLevelPresentation.swift in Sources */,
+				002FB2632ECBF65A00258787 /* SchmojiBoardObject.swift in Sources */,
+				002FB2662ECC081500258787 /* SchmojiLevelTile.swift in Sources */,
+				002FB2682ECC0D0500258787 /* SchmojiUnlockedHex.swift in Sources */,
+				002FB26A2ECC140A00258787 /* AccountPurchasedPack.swift in Sources */,
+				00D416722EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch114.swift in Sources */,
+				00D416732EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch53.swift in Sources */,
+				00D416742EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch86.swift in Sources */,
+				0063BCFA2ECDFB0A00300CF2 /* SchmojiGameScene+Haptics.swift in Sources */,
+				00D416752EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch62.swift in Sources */,
+				00D416762EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch134.swift in Sources */,
+				00D416772EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch50.swift in Sources */,
+				00D416782EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch132.swift in Sources */,
+				00D416792EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch91.swift in Sources */,
+				00D4167A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch136.swift in Sources */,
+				00D4167B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch85.swift in Sources */,
+				00D4167C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch104.swift in Sources */,
+				00D4167D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch01.swift in Sources */,
+				00D4167E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch30.swift in Sources */,
+				00D4167F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch58.swift in Sources */,
+				00D416802EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch67.swift in Sources */,
+				00D416812EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch141.swift in Sources */,
+				00D416822EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch110.swift in Sources */,
+				00D416832EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch36.swift in Sources */,
+				00D416842EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch25.swift in Sources */,
+				00D416852EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch44.swift in Sources */,
+				00D416862EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch137.swift in Sources */,
+				00D416872EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch69.swift in Sources */,
+				00D416882EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch20.swift in Sources */,
+				00D416892EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch78.swift in Sources */,
+				00D4168A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch17.swift in Sources */,
+				00D4168B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch29.swift in Sources */,
+				00D4168C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch64.swift in Sources */,
+				00D4168D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch146.swift in Sources */,
+				00D4168E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch15.swift in Sources */,
+				00D4168F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch23.swift in Sources */,
+				00D416902EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch60.swift in Sources */,
+				00D416912EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch13.swift in Sources */,
+				00D416922EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch05.swift in Sources */,
+				00D416932EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch31.swift in Sources */,
+				00D416942EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch49.swift in Sources */,
+				00D416952EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch27.swift in Sources */,
+				00D416962EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch123.swift in Sources */,
+				00D416972EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch21.swift in Sources */,
+				00D416982EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch131.swift in Sources */,
+				00D416992EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch09.swift in Sources */,
+				00D4169A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch12.swift in Sources */,
+				00D4169B2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch89.swift in Sources */,
+				00D4169C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch128.swift in Sources */,
+				00D4169D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch57.swift in Sources */,
+				00D4169E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch130.swift in Sources */,
+				00D4169F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch26.swift in Sources */,
+				00D416A02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch38.swift in Sources */,
+				00D416A12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch16.swift in Sources */,
+				00D416A22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch52.swift in Sources */,
+				00D416A32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch121.swift in Sources */,
+				00D416A42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch33.swift in Sources */,
+				00D416A52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch140.swift in Sources */,
+				00D416A62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch94.swift in Sources */,
+				00D416A72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch139.swift in Sources */,
+				00D416A82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch66.swift in Sources */,
+				00D416A92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch71.swift in Sources */,
+				00D416AA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch35.swift in Sources */,
+				00D416AB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch04.swift in Sources */,
+				00D416AC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch144.swift in Sources */,
+				00D416AD2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch11.swift in Sources */,
+				00D416AE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch42.swift in Sources */,
+				00D416AF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch115.swift in Sources */,
+				00D416B02EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch51.swift in Sources */,
+				00D416B12EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch116.swift in Sources */,
+				00D416B22EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch45.swift in Sources */,
+				00D416B32EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch125.swift in Sources */,
+				00D416B42EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch28.swift in Sources */,
+				00D416B52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch48.swift in Sources */,
+				00D416B62EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch109.swift in Sources */,
+				00D416B72EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch10.swift in Sources */,
+				00D416B82EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch43.swift in Sources */,
+				00D416B92EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch103.swift in Sources */,
+				00D416BA2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch111.swift in Sources */,
+				00D416BB2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch112.swift in Sources */,
+				00D416BC2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch120.swift in Sources */,
+				00D416BD2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch83.swift in Sources */,
+				00D416BE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch03.swift in Sources */,
+				00D416BF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch118.swift in Sources */,
+				002E3D0F2B7660DD00D938E1 /* SchmojiColorsLegendGenericView.swift in Sources */,
+				004342002B7A4192004BB7BA /* SettingsView.swift in Sources */,
+				00D415912EC8C7F7009F4D68 /* StoreView.swift in Sources */,
+				00A391F52B3C7A56005A0231 /* SchmojiColor.swift in Sources */,
+				004CE67C2B3E0028009855C2 /* SchmojiCircleView.swift in Sources */,
+				008CB1682B4D62C600461A0C /* SchmojiSpriteNode.swift in Sources */,
+				00125F232EAEAF8800C7051D /* SchmojiSelection.swift in Sources */,
+				0043420E2B7A503D004BB7BA /* LevelsSearchResults.swift in Sources */,
+				00F059422D25EE7400713AF7 /* LinksView.swift in Sources */,
+				00FCAFF32B6ED82100E7527C /* SchmojiOptions.swift in Sources */,
+				00166D362EB3D420003999E7 /* SchmojiLevelLayoutGenerator.swift in Sources */,
+				00FCAFEF2B6ED76700E7527C /* SchmojiDataContainer.swift in Sources */,
+				00125F6F2EAEF78C00C7051D /* SchmojiLevelProgress.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00166E242EB6A1E4003999E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00166E132EB6A1E3003999E7 /* PotatoGameWidgetExtension */;
+			targetProxy = 00166E232EB6A1E4003999E7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00166E282EB6A1E4003999E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = PotatoGameWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = F863H8633R;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PotatoGameWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PotatoGameWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Mick Schroeder, LLC. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mickschroeder.potatogame.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		00166E292EB6A1E4003999E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = PotatoGameWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = F863H8633R;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PotatoGameWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PotatoGameWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Mick Schroeder, LLC. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mickschroeder.potatogame.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		00A391E82B3C4C90005A0231 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = F863H8633R;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		00A391E92B3C4C90005A0231 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = F863H8633R;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		00A391EB2B3C4C90005A0231 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Potato Game";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PotatoGame/PotatoGame.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = F863H8633R;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PotatoGame/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Potato Game";
+				INFOPLIST_KEY_GCSupportsControllerUserInteraction = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0;
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-Xfrontend -debug-time-function-bodies -Xfrontend -debug-time-expression-type-checking -Xfrontend -warn-long-expression-type-checking=100 -Xfrontend -warn-long-function-bodies=200";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mickschroeder.potatogame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		00A391EC2B3C4C90005A0231 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Potato Game";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PotatoGame/PotatoGame.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = F863H8633R;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PotatoGame/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Potato Game";
+				INFOPLIST_KEY_GCSupportsControllerUserInteraction = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mickschroeder.potatogame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00166E272EB6A1E4003999E7 /* Build configuration list for PBXNativeTarget "PotatoGameWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00166E282EB6A1E4003999E7 /* Debug */,
+				00166E292EB6A1E4003999E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00A391D32B3C4C8F005A0231 /* Build configuration list for PBXProject "PotatoGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00A391E82B3C4C90005A0231 /* Debug */,
+				00A391E92B3C4C90005A0231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00A391EA2B3C4C90005A0231 /* Build configuration list for PBXNativeTarget "PotatoGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00A391EB2B3C4C90005A0231 /* Debug */,
+				00A391EC2B3C4C90005A0231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00A391D02B3C4C8F005A0231 /* Project object */;
+}
