@@ -18,7 +18,7 @@ Potato Game is a gravity based emoji merging puzzle for iOS and macOS. Tilt the 
 
 ## Website
 
-[Potal Game](https://potatogame.mickschroeder.com)
+[Potato Game Landing Page](https://potatogame.mickschroeder.com)
 
 ## Author
 
