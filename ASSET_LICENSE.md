@@ -7,9 +7,10 @@ license and attribution requirements, listed below.
 
 ## Default Asset License (CC BY-NC 4.0)
 
-- Original copy, localisations, art and audio assets, level templates, and branding elements in this repository are © 2025 Mick Schroeder, LLC. and licensed under [Creative Commons Attribution-NonCommercial 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+- All files in the `Resources/` directory (original copy, localisations, art/audio assets, level templates, and branding elements) are © 2025 Mick Schroeder, LLC. and licensed under [Creative Commons Attribution-NonCommercial 4.0](https://creativecommons.org/licenses/by-nc/4.0/). See `PotatoGame/Resources/LICENSE` for the full text.
 - Non-commercial use, modification, and sharing are allowed with attribution. Commercial use requires express written permission.
 - Branded content and production assets shipped in the App Store build are not included here.
+- Third-party assets included in `Resources/` (listed below) retain their original licenses.
 
 ---
 
@@ -52,7 +53,7 @@ There are some important limits to these rights, described in Mixkit’s User Te
 ## Game Code
 All Swift, SpriteKit, and SwiftData source code in this repository is © 2025 Mick Schroeder, LLC.
 and licensed under the MIT License (see [LICENSE](./LICENSE)), **except** the Swift
-level template files, which are licensed under CC BY-NC 4.0 as noted above.
+level template files located in `Resources/`, which are licensed under CC BY-NC 4.0 as noted above.
 
 ---
 

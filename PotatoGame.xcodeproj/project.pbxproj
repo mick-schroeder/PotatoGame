@@ -64,6 +64,8 @@
 		00A391DE2B3C4C8F005A0231 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A391DD2B3C4C8F005A0231 /* ContentView.swift */; };
 		00A391F52B3C7A56005A0231 /* SchmojiColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A391F42B3C7A56005A0231 /* SchmojiColor.swift */; };
 		00B443B72DD9512A00E9A15C /* PotatoTankScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B443B62DD9512400E9A15C /* PotatoTankScene.swift */; };
+		00CF15FD2EE46CA7008F4829 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 00CF15FC2EE46CA7008F4829 /* LICENSE */; };
+		00CF15FE2EE46CA7008F4829 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 00CF15FC2EE46CA7008F4829 /* LICENSE */; };
 		00D415912EC8C7F7009F4D68 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4158F2EC8C7F7009F4D68 /* StoreView.swift */; };
 		00D416292EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch19.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D415A52EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch19.swift */; };
 		00D4162A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch122.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D4160C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch122.swift */; };
@@ -322,6 +324,7 @@
 		00A391F42B3C7A56005A0231 /* SchmojiColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchmojiColor.swift; sourceTree = "<group>"; };
 		00B443B62DD9512400E9A15C /* PotatoTankScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoTankScene.swift; sourceTree = "<group>"; };
 		00B443B92DD9705C00E9A15C /* GameplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameplayKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.4.sdk/System/Library/Frameworks/GameplayKit.framework; sourceTree = DEVELOPER_DIR; };
+		00CF15FC2EE46CA7008F4829 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		00D4158F2EC8C7F7009F4D68 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		00D415922EC8CC30009F4D68 /* SchmojiLevelTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiLevelTemplates.swift; sourceTree = "<group>"; };
 		00D415932EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiLevelTemplates+Batch01.swift"; sourceTree = "<group>"; };
@@ -546,6 +549,8 @@
 				00166D392EB50F79003999E7 /* Localizable.xcstrings */,
 				00166D3A2EB50F79003999E7 /* Potato Game.icon */,
 				00166D3B2EB50F79003999E7 /* Schmoji Emoji.xcassets */,
+				00CF15FC2EE46CA7008F4829 /* LICENSE */,
+				00166D412EB50F7D003999E7 /* Level Data */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -858,7 +863,6 @@
 				00277B992B73A10E0013F780 /* Game */,
 				00A391F32B3C76D2005A0231 /* Data */,
 				00F9F1B92EEFC5F3008D0DDA /* PreviewSupport */,
-				00166D412EB50F7D003999E7 /* Level Data */,
 				00A391E72B3C4C90005A0231 /* Info.plist */,
 				00A391DB2B3C4C8F005A0231 /* PotatoGameApp.swift */,
 				00166DF62EB62DC7003999E7 /* PotatoGame.entitlements */,
@@ -1022,6 +1026,7 @@
 			files = (
 				0039B9862EC2704B0094663E /* Potato Game.icon in Resources */,
 				0039B9852EC270450094663E /* Localizable.xcstrings in Resources */,
+				00CF15FD2EE46CA7008F4829 /* LICENSE in Resources */,
 				0039B9842EC26FD60094663E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1032,6 +1037,7 @@
 			files = (
 				00166D3D2EB50F79003999E7 /* Assets.xcassets in Resources */,
 				00166D3E2EB50F79003999E7 /* Localizable.xcstrings in Resources */,
+				00CF15FE2EE46CA7008F4829 /* LICENSE in Resources */,
 				00166D3F2EB50F79003999E7 /* Potato Game.icon in Resources */,
 				00166E0B2EB69D13003999E7 /* mixkit-click-error-1110.wav in Resources */,
 				00166E0C2EB69D13003999E7 /* mixkit-dry-pop-up-notification-alert-2356.wav in Resources */,

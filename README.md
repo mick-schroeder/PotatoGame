@@ -1,6 +1,6 @@
 # Potato Game
 
-Potato Game is a gravity based emoji merging puzzle for iOS and macOS. Tilt the board to slide emojis, tap matching clusters to evolve them, and keep merging until you create a potato. Play 1,000 free puzzles, and chase perfect clears to earn progress toward unlocking more emojis.
+Potato Game is a free and open-source gravity based emoji merging puzzle for iOS and macOS. Tilt the board to slide emojis, tap matching clusters to evolve them, and keep merging up the chain until you create a potato. Play 1,000 free puzzles, and chase perfect clears to earn progress toward unlocking more emojis.
 
 ---
 
@@ -26,10 +26,10 @@ Potato Game is a gravity based emoji merging puzzle for iOS and macOS. Tilt the 
 
 ## Licensing & Credits
 
-This is the open source code underlying Potato Game. The branded content and assets are not included.
+This is the open source code underlying Potato Game.
 
 - Core game source code © 2025 Mick Schroeder, LLC. — [MIT License](./LICENSE)  
-- Original copy, localisations, art/audio assets, level templates, and branding elements (except where noted below) — [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)  
+- All files in `Resources/` (original copy, localisations, art/audio assets, level templates, and branding elements) — [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) (see `PotatoGame/Resources/LICENSE`)  
 - “Potato Game” name and logo are trademarks of Mick Schroeder, LLC.  
 - [Fluent Emoji](https://github.com/microsoft/fluentui-emoji) © Microsoft — MIT  
 - [Mixkit Sound Effects](https://mixkit.co) — Mixkit Free Sound Effects used in this project.
