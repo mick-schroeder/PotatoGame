@@ -1,0 +1,186 @@
+// SPDX-License-Identifier: CC-BY-NC-4.0
+
+import Foundation
+
+struct LevelTemplate {
+    let levelNumber: Int
+    let rows: [[Int?]]
+    let backgroundColor: SchmojiColor
+    let potentialPotatoCount: Int
+}
+
+enum LevelTemplateBatchRegistry {
+    static let allBatches: [[LevelTemplate]] = [
+        LevelTemplatesBatch01.levels,
+        LevelTemplatesBatch02.levels,
+        LevelTemplatesBatch03.levels,
+        LevelTemplatesBatch04.levels,
+        LevelTemplatesBatch05.levels,
+        LevelTemplatesBatch06.levels,
+        LevelTemplatesBatch07.levels,
+        LevelTemplatesBatch08.levels,
+        LevelTemplatesBatch09.levels,
+        LevelTemplatesBatch10.levels,
+        LevelTemplatesBatch11.levels,
+        LevelTemplatesBatch12.levels,
+        LevelTemplatesBatch13.levels,
+        LevelTemplatesBatch14.levels,
+        LevelTemplatesBatch15.levels,
+        LevelTemplatesBatch16.levels,
+        LevelTemplatesBatch17.levels,
+        LevelTemplatesBatch18.levels,
+        LevelTemplatesBatch19.levels,
+        LevelTemplatesBatch20.levels,
+        LevelTemplatesBatch21.levels,
+        LevelTemplatesBatch22.levels,
+        LevelTemplatesBatch23.levels,
+        LevelTemplatesBatch24.levels,
+        LevelTemplatesBatch25.levels,
+        LevelTemplatesBatch26.levels,
+        LevelTemplatesBatch27.levels,
+        LevelTemplatesBatch28.levels,
+        LevelTemplatesBatch29.levels,
+        LevelTemplatesBatch30.levels,
+        LevelTemplatesBatch31.levels,
+        LevelTemplatesBatch32.levels,
+        LevelTemplatesBatch33.levels,
+        LevelTemplatesBatch34.levels,
+        LevelTemplatesBatch35.levels,
+        LevelTemplatesBatch36.levels,
+        LevelTemplatesBatch37.levels,
+        LevelTemplatesBatch38.levels,
+        LevelTemplatesBatch39.levels,
+        LevelTemplatesBatch40.levels,
+        LevelTemplatesBatch41.levels,
+        LevelTemplatesBatch42.levels,
+        LevelTemplatesBatch43.levels,
+        LevelTemplatesBatch44.levels,
+        LevelTemplatesBatch45.levels,
+        LevelTemplatesBatch46.levels,
+        LevelTemplatesBatch47.levels,
+        LevelTemplatesBatch48.levels,
+        LevelTemplatesBatch49.levels,
+        LevelTemplatesBatch50.levels,
+        LevelTemplatesBatch51.levels,
+        LevelTemplatesBatch52.levels,
+        LevelTemplatesBatch53.levels,
+        LevelTemplatesBatch54.levels,
+        LevelTemplatesBatch55.levels,
+        LevelTemplatesBatch56.levels,
+        LevelTemplatesBatch57.levels,
+        LevelTemplatesBatch58.levels,
+        LevelTemplatesBatch59.levels,
+        LevelTemplatesBatch60.levels,
+        LevelTemplatesBatch61.levels,
+        LevelTemplatesBatch62.levels,
+        LevelTemplatesBatch63.levels,
+        LevelTemplatesBatch64.levels,
+        LevelTemplatesBatch65.levels,
+        LevelTemplatesBatch66.levels,
+        LevelTemplatesBatch67.levels,
+        LevelTemplatesBatch68.levels,
+        LevelTemplatesBatch69.levels,
+        LevelTemplatesBatch70.levels,
+        LevelTemplatesBatch71.levels,
+        LevelTemplatesBatch72.levels,
+        LevelTemplatesBatch73.levels,
+        LevelTemplatesBatch74.levels,
+        LevelTemplatesBatch75.levels,
+        LevelTemplatesBatch76.levels,
+        LevelTemplatesBatch77.levels,
+        LevelTemplatesBatch78.levels,
+        LevelTemplatesBatch79.levels,
+        LevelTemplatesBatch80.levels,
+        LevelTemplatesBatch81.levels,
+        LevelTemplatesBatch82.levels,
+        LevelTemplatesBatch83.levels,
+        LevelTemplatesBatch84.levels,
+        LevelTemplatesBatch85.levels,
+        LevelTemplatesBatch86.levels,
+        LevelTemplatesBatch87.levels,
+        LevelTemplatesBatch88.levels,
+        LevelTemplatesBatch89.levels,
+        LevelTemplatesBatch90.levels,
+        LevelTemplatesBatch91.levels,
+        LevelTemplatesBatch92.levels,
+        LevelTemplatesBatch93.levels,
+        LevelTemplatesBatch94.levels,
+        LevelTemplatesBatch95.levels,
+        LevelTemplatesBatch96.levels,
+        LevelTemplatesBatch97.levels,
+        LevelTemplatesBatch98.levels,
+        LevelTemplatesBatch99.levels,
+        LevelTemplatesBatch100.levels,
+        LevelTemplatesBatch101.levels,
+        LevelTemplatesBatch102.levels,
+        LevelTemplatesBatch103.levels,
+        LevelTemplatesBatch104.levels,
+        LevelTemplatesBatch105.levels,
+        LevelTemplatesBatch106.levels,
+        LevelTemplatesBatch107.levels,
+        LevelTemplatesBatch108.levels,
+        LevelTemplatesBatch109.levels,
+        LevelTemplatesBatch110.levels,
+        LevelTemplatesBatch111.levels,
+        LevelTemplatesBatch112.levels,
+        LevelTemplatesBatch113.levels,
+        LevelTemplatesBatch114.levels,
+        LevelTemplatesBatch115.levels,
+        LevelTemplatesBatch116.levels,
+        LevelTemplatesBatch117.levels,
+        LevelTemplatesBatch118.levels,
+        LevelTemplatesBatch119.levels,
+        LevelTemplatesBatch120.levels,
+        LevelTemplatesBatch121.levels,
+        LevelTemplatesBatch122.levels,
+        LevelTemplatesBatch123.levels,
+        LevelTemplatesBatch124.levels,
+        LevelTemplatesBatch125.levels,
+        LevelTemplatesBatch126.levels,
+        LevelTemplatesBatch127.levels,
+        LevelTemplatesBatch128.levels,
+        LevelTemplatesBatch129.levels,
+        LevelTemplatesBatch130.levels,
+        LevelTemplatesBatch131.levels,
+        LevelTemplatesBatch132.levels,
+        LevelTemplatesBatch133.levels,
+        LevelTemplatesBatch134.levels,
+        LevelTemplatesBatch135.levels,
+        LevelTemplatesBatch136.levels,
+        LevelTemplatesBatch137.levels,
+        LevelTemplatesBatch138.levels,
+        LevelTemplatesBatch139.levels,
+        LevelTemplatesBatch140.levels,
+        LevelTemplatesBatch141.levels,
+        LevelTemplatesBatch142.levels,
+        LevelTemplatesBatch143.levels,
+        LevelTemplatesBatch144.levels,
+        LevelTemplatesBatch145.levels,
+        LevelTemplatesBatch146.levels,
+        LevelTemplatesBatch147.levels,
+        LevelTemplatesBatch148.levels,
+        LevelTemplatesBatch149.levels,
+        LevelTemplatesBatch150.levels,
+    ]
+
+    static let allLevels: [LevelTemplate] = {
+        let totalCapacity = allBatches.reduce(0) { $0 + $1.count }
+        var combined: [LevelTemplate] = []
+        combined.reserveCapacity(totalCapacity)
+        for batch in allBatches {
+            combined.append(contentsOf: batch)
+        }
+        return combined
+    }()
+}
+
+let LevelTemplates: [LevelTemplate] = LevelTemplateBatchRegistry.allLevels
+
+let LevelTemplateByNumber: [Int: LevelTemplate] = {
+    var dict: [Int: LevelTemplate] = [:]
+    dict.reserveCapacity(LevelTemplates.count)
+    for template in LevelTemplates {
+        dict[template.levelNumber] = template
+    }
+    return dict
+}()
