@@ -1,5 +1,8 @@
 # Potato Game
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Assets: CC BY-NC 4.0](https://img.shields.io/badge/Content-CC%20BY--NC%204.0-blue.svg)](ASSET_LICENSE.md)
+
 Potato Game is a free and open-source gravity based emoji merging puzzle for iOS and macOS. Tilt the board to slide emojis, tap matching clusters to evolve them, and keep merging up the chain until you create a potato. Play 1,000 free puzzles, and chase perfect clears to earn progress toward unlocking more emojis.
 
 ---
