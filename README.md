@@ -45,5 +45,3 @@ See `ASSET_LICENSE.md` for full attribution and permitted uses.
 You may not use these names, logos, or identifying marks to distribute modified  
 versions of this software or to publish derivative apps on the Apple App Store,  
 Google Play, or other marketplaces without express written permission.
-
-This repository’s source code is licensed under the MIT License (see LICENSE).
