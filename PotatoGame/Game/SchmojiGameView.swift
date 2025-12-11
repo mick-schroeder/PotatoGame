@@ -25,6 +25,7 @@ struct SchmojiGameView: View {
 
     @State private var viewModel: GameSessionViewModel
     @State private var isSeedingAccount = false
+    @State private var howToPlayVisible = false
     #if os(iOS)
         @State private var didApplyOrientationLock = false
     #endif
@@ -113,6 +114,28 @@ struct SchmojiGameView: View {
         #endif
             .sheet(item: $viewModel.presentedGameSheet, onDismiss: viewModel.handleGameSheetDismissal) { sheet in
                 gameEndSheet(for: sheet)
+            }
+            .sheet(isPresented: $howToPlayVisible) {
+                NavigationStack {
+                    HowToPlayView()
+                        .toolbar {
+                            ToolbarItem(placement: .cancellationAction) {
+                                Button {
+                                    howToPlayVisible = false
+                                } label: {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .symbolRenderingMode(.hierarchical)
+                                        .font(.system(size: 22, weight: .semibold, design: .rounded))
+                                        .foregroundStyle(.secondary)
+                                        .padding(6)
+                                        .contentShape(.circle)
+                                }
+                                .accessibilityLabel(Text(.buttonClose))
+                            }
+                        }
+                }
+                .presentationDetents([.medium, .large])
+                .presentationDragIndicator(.visible)
             }
     }
 
@@ -236,6 +259,15 @@ struct SchmojiGameView: View {
                     Image(systemName: legendVisible ? "rectangle" : "rectangle.slash")
                 }
             }
+            Button {
+                howToPlayVisible = true
+            } label: {
+                Label {
+                    Text("navigation.how_to_play")
+                } icon: {
+                    Image(systemName: "questionmark.circle")
+                }
+            }
             #if DEBUG
                 Toggle(isOn: $debugMatchOverlayEnabled) {
                     Label {
@@ -248,7 +280,11 @@ struct SchmojiGameView: View {
         } label: {
             Image(systemName: "ellipsis.circle")
         }
-        .labelStyle(.iconOnly)
+        #if os(macOS)
+        .labelStyle(.titleAndIcon)
+        #else
+        .labelStyle(.titleAndIcon)
+        #endif
         .accessibilityLabel(Text(.gameMenuLabel))
     }
 }

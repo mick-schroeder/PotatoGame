@@ -14,12 +14,6 @@
 		00166D3D2EB50F79003999E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00166D382EB50F79003999E7 /* Assets.xcassets */; };
 		00166D3E2EB50F79003999E7 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 00166D392EB50F79003999E7 /* Localizable.xcstrings */; };
 		00166D3F2EB50F79003999E7 /* Potato Game.icon in Resources */ = {isa = PBXBuildFile; fileRef = 00166D3A2EB50F79003999E7 /* Potato Game.icon */; };
-		00166D402EB50F79003999E7 /* Schmoji Emoji.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00166D3B2EB50F79003999E7 /* Schmoji Emoji.xcassets */; };
-		00166E0B2EB69D13003999E7 /* mixkit-click-error-1110.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00166E052EB69D13003999E7 /* mixkit-click-error-1110.wav */; };
-		00166E0C2EB69D13003999E7 /* mixkit-dry-pop-up-notification-alert-2356.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00166E062EB69D13003999E7 /* mixkit-dry-pop-up-notification-alert-2356.wav */; };
-		00166E0D2EB69D13003999E7 /* mixkit-explainer-video-game-alert-sweep-236.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00166E072EB69D13003999E7 /* mixkit-explainer-video-game-alert-sweep-236.wav */; };
-		00166E0E2EB69D13003999E7 /* mixkit-explainer-video-pops-whoosh-light-pop-3005.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00166E082EB69D13003999E7 /* mixkit-explainer-video-pops-whoosh-light-pop-3005.wav */; };
-		00166E0F2EB69D13003999E7 /* mixkit-winning-notification-2018.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00166E092EB69D13003999E7 /* mixkit-winning-notification-2018.wav */; };
 		00166E162EB6A1E3003999E7 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00166E152EB6A1E3003999E7 /* WidgetKit.framework */; };
 		00166E182EB6A1E3003999E7 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00166E172EB6A1E3003999E7 /* SwiftUI.framework */; };
 		00166E252EB6A1E4003999E7 /* PotatoGameWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 00166E142EB6A1E3003999E7 /* PotatoGameWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -35,6 +29,15 @@
 		0039B9842EC26FD60094663E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00166D382EB50F79003999E7 /* Assets.xcassets */; };
 		0039B9852EC270450094663E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 00166D392EB50F79003999E7 /* Localizable.xcstrings */; };
 		0039B9862EC2704B0094663E /* Potato Game.icon in Resources */ = {isa = PBXBuildFile; fileRef = 00166D3A2EB50F79003999E7 /* Potato Game.icon */; };
+		004196612EEAE01800FD7128 /* mixkit-bonus-extra-in-a-video-game-2064.wav in Resources */ = {isa = PBXBuildFile; fileRef = 004196562EEAE01800FD7128 /* mixkit-bonus-extra-in-a-video-game-2064.wav */; };
+		004196622EEAE01800FD7128 /* mixkit-click-error-1110.wav in Resources */ = {isa = PBXBuildFile; fileRef = 004196572EEAE01800FD7128 /* mixkit-click-error-1110.wav */; };
+		004196632EEAE01800FD7128 /* mixkit-completion-of-a-level-2063.wav in Resources */ = {isa = PBXBuildFile; fileRef = 004196582EEAE01800FD7128 /* mixkit-completion-of-a-level-2063.wav */; };
+		004196642EEAE01800FD7128 /* mixkit-dry-pop-up-notification-alert-2356.wav in Resources */ = {isa = PBXBuildFile; fileRef = 004196592EEAE01800FD7128 /* mixkit-dry-pop-up-notification-alert-2356.wav */; };
+		004196652EEAE01800FD7128 /* mixkit-explainer-video-game-alert-sweep-236.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0041965A2EEAE01800FD7128 /* mixkit-explainer-video-game-alert-sweep-236.wav */; };
+		004196662EEAE01800FD7128 /* mixkit-explainer-video-pops-whoosh-light-pop-3005.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0041965B2EEAE01800FD7128 /* mixkit-explainer-video-pops-whoosh-light-pop-3005.wav */; };
+		004196672EEAE01800FD7128 /* mixkit-player-losing-or-failing-2042.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0041965C2EEAE01800FD7128 /* mixkit-player-losing-or-failing-2042.wav */; };
+		004196682EEAE01800FD7128 /* mixkit-winning-notification-2018.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0041965D2EEAE01800FD7128 /* mixkit-winning-notification-2018.wav */; };
+		004196692EEAE01800FD7128 /* Fluent Emoji.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0041965F2EEAE01800FD7128 /* Fluent Emoji.xcassets */; };
 		00420B772EC5441E00AAEB58 /* GameKeyboardCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00420B752EC5441E00AAEB58 /* GameKeyboardCommands.swift */; };
 		00420B782EC5441E00AAEB58 /* GameKeyboardBindings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00420B742EC5441E00AAEB58 /* GameKeyboardBindings.swift */; };
 		00420B7A2EC5442E00AAEB58 /* KeyboardBindingCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00420B792EC5442E00AAEB58 /* KeyboardBindingCaptureView.swift */; };
@@ -233,9 +236,6 @@
 		00FCAFF32B6ED82100E7527C /* SchmojiOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCAFF22B6ED82100E7527C /* SchmojiOptions.swift */; };
 		00FCAFFC2B6FC32600E7527C /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCAFFA2B6FC32600E7527C /* Account.swift */; };
 		00FCAFFD2B6FC32600E7527C /* Account+DataGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCAFFB2B6FC32600E7527C /* Account+DataGeneration.swift */; };
-		00FDB1BD2EE0A7BF00BE2527 /* mixkit-completion-of-a-level-2063.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00FDB1BB2EE0A7BF00BE2527 /* mixkit-completion-of-a-level-2063.wav */; };
-		00FDB1BE2EE0A7BF00BE2527 /* mixkit-bonus-extra-in-a-video-game-2064.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00FDB1BA2EE0A7BF00BE2527 /* mixkit-bonus-extra-in-a-video-game-2064.wav */; };
-		00FDB1BF2EE0A7BF00BE2527 /* mixkit-player-losing-or-failing-2042.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00FDB1BC2EE0A7BF00BE2527 /* mixkit-player-losing-or-failing-2042.wav */; };
 		06A1BF75EC8D6024A664197A /* SchmojiGameSessionManager+Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF38BEAE60744D8744F4D4 /* SchmojiGameSessionManager+Persistence.swift */; };
 		32B325B27D491B41F977EBE4 /* SchmojiGameScene+Matching.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34352C2D2339FEFC394DE3E /* SchmojiGameScene+Matching.swift */; };
 		599C3257F8C3FCC4311D31A0 /* SchmojiGameScene+Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439B38B87F9FA328D30161DD /* SchmojiGameScene+Input.swift */; };
@@ -273,13 +273,7 @@
 		00166D382EB50F79003999E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00166D392EB50F79003999E7 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		00166D3A2EB50F79003999E7 /* Potato Game.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Potato Game.icon"; sourceTree = "<group>"; };
-		00166D3B2EB50F79003999E7 /* Schmoji Emoji.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Schmoji Emoji.xcassets"; sourceTree = "<group>"; };
 		00166DF62EB62DC7003999E7 /* PotatoGame.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PotatoGame.entitlements; sourceTree = "<group>"; };
-		00166E052EB69D13003999E7 /* mixkit-click-error-1110.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-click-error-1110.wav"; sourceTree = "<group>"; };
-		00166E062EB69D13003999E7 /* mixkit-dry-pop-up-notification-alert-2356.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-dry-pop-up-notification-alert-2356.wav"; sourceTree = "<group>"; };
-		00166E072EB69D13003999E7 /* mixkit-explainer-video-game-alert-sweep-236.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-explainer-video-game-alert-sweep-236.wav"; sourceTree = "<group>"; };
-		00166E082EB69D13003999E7 /* mixkit-explainer-video-pops-whoosh-light-pop-3005.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-explainer-video-pops-whoosh-light-pop-3005.wav"; sourceTree = "<group>"; };
-		00166E092EB69D13003999E7 /* mixkit-winning-notification-2018.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-winning-notification-2018.wav"; sourceTree = "<group>"; };
 		00166E142EB6A1E3003999E7 /* PotatoGameWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PotatoGameWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		00166E152EB6A1E3003999E7 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = /System/Library/Frameworks/WidgetKit.framework; sourceTree = "<absolute>"; };
 		00166E172EB6A1E3003999E7 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = /System/Library/Frameworks/SwiftUI.framework; sourceTree = "<absolute>"; };
@@ -293,6 +287,15 @@
 		002FB2652ECC081500258787 /* SchmojiLevelTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiLevelTile.swift; sourceTree = "<group>"; };
 		002FB2672ECC0D0500258787 /* SchmojiUnlockedHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiUnlockedHex.swift; sourceTree = "<group>"; };
 		002FB2692ECC140A00258787 /* AccountPurchasedPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPurchasedPack.swift; sourceTree = "<group>"; };
+		004196562EEAE01800FD7128 /* mixkit-bonus-extra-in-a-video-game-2064.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-bonus-extra-in-a-video-game-2064.wav"; sourceTree = "<group>"; };
+		004196572EEAE01800FD7128 /* mixkit-click-error-1110.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-click-error-1110.wav"; sourceTree = "<group>"; };
+		004196582EEAE01800FD7128 /* mixkit-completion-of-a-level-2063.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-completion-of-a-level-2063.wav"; sourceTree = "<group>"; };
+		004196592EEAE01800FD7128 /* mixkit-dry-pop-up-notification-alert-2356.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-dry-pop-up-notification-alert-2356.wav"; sourceTree = "<group>"; };
+		0041965A2EEAE01800FD7128 /* mixkit-explainer-video-game-alert-sweep-236.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-explainer-video-game-alert-sweep-236.wav"; sourceTree = "<group>"; };
+		0041965B2EEAE01800FD7128 /* mixkit-explainer-video-pops-whoosh-light-pop-3005.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-explainer-video-pops-whoosh-light-pop-3005.wav"; sourceTree = "<group>"; };
+		0041965C2EEAE01800FD7128 /* mixkit-player-losing-or-failing-2042.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-player-losing-or-failing-2042.wav"; sourceTree = "<group>"; };
+		0041965D2EEAE01800FD7128 /* mixkit-winning-notification-2018.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-winning-notification-2018.wav"; sourceTree = "<group>"; };
+		0041965F2EEAE01800FD7128 /* Fluent Emoji.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Fluent Emoji.xcassets"; sourceTree = "<group>"; };
 		00420B742EC5441E00AAEB58 /* GameKeyboardBindings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameKeyboardBindings.swift; sourceTree = "<group>"; };
 		00420B752EC5441E00AAEB58 /* GameKeyboardCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameKeyboardCommands.swift; sourceTree = "<group>"; };
 		00420B792EC5442E00AAEB58 /* KeyboardBindingCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardBindingCaptureView.swift; sourceTree = "<group>"; };
@@ -492,9 +495,6 @@
 		00FCAFF22B6ED82100E7527C /* SchmojiOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchmojiOptions.swift; sourceTree = "<group>"; };
 		00FCAFFA2B6FC32600E7527C /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		00FCAFFB2B6FC32600E7527C /* Account+DataGeneration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account+DataGeneration.swift"; sourceTree = "<group>"; };
-		00FDB1BA2EE0A7BF00BE2527 /* mixkit-bonus-extra-in-a-video-game-2064.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-bonus-extra-in-a-video-game-2064.wav"; sourceTree = "<group>"; };
-		00FDB1BB2EE0A7BF00BE2527 /* mixkit-completion-of-a-level-2063.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-completion-of-a-level-2063.wav"; sourceTree = "<group>"; };
-		00FDB1BC2EE0A7BF00BE2527 /* mixkit-player-losing-or-failing-2042.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-player-losing-or-failing-2042.wav"; sourceTree = "<group>"; };
 		439B38B87F9FA328D30161DD /* SchmojiGameScene+Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiGameScene+Input.swift"; sourceTree = "<group>"; };
 		8CEF38BEAE60744D8744F4D4 /* SchmojiGameSessionManager+Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiGameSessionManager+Persistence.swift"; sourceTree = "<group>"; };
 		D34352C2D2339FEFC394DE3E /* SchmojiGameScene+Matching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiGameScene+Matching.swift"; sourceTree = "<group>"; };
@@ -544,11 +544,9 @@
 		00166D3C2EB50F79003999E7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				00166E0A2EB69D13003999E7 /* Sounds */,
 				00166D382EB50F79003999E7 /* Assets.xcassets */,
 				00166D392EB50F79003999E7 /* Localizable.xcstrings */,
 				00166D3A2EB50F79003999E7 /* Potato Game.icon */,
-				00166D3B2EB50F79003999E7 /* Schmoji Emoji.xcassets */,
 				00CF15FC2EE46CA7008F4829 /* LICENSE */,
 				00166D412EB50F7D003999E7 /* Level Data */,
 			);
@@ -713,21 +711,6 @@
 			path = "Level Data";
 			sourceTree = "<group>";
 		};
-		00166E0A2EB69D13003999E7 /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-				00166E052EB69D13003999E7 /* mixkit-click-error-1110.wav */,
-				00166E062EB69D13003999E7 /* mixkit-dry-pop-up-notification-alert-2356.wav */,
-				00166E072EB69D13003999E7 /* mixkit-explainer-video-game-alert-sweep-236.wav */,
-				00166E082EB69D13003999E7 /* mixkit-explainer-video-pops-whoosh-light-pop-3005.wav */,
-				00166E092EB69D13003999E7 /* mixkit-winning-notification-2018.wav */,
-				00FDB1BA2EE0A7BF00BE2527 /* mixkit-bonus-extra-in-a-video-game-2064.wav */,
-				00FDB1BB2EE0A7BF00BE2527 /* mixkit-completion-of-a-level-2063.wav */,
-				00FDB1BC2EE0A7BF00BE2527 /* mixkit-player-losing-or-failing-2042.wav */,
-			);
-			path = Sounds;
-			sourceTree = "<group>";
-		};
 		00277B932B72BD850013F780 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
@@ -769,6 +752,30 @@
 				002FB25F2EC9FAA000258787 /* SchmojiLevelPresentation.swift */,
 			);
 			path = Game;
+			sourceTree = "<group>";
+		};
+		0041965E2EEAE01800FD7128 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				004196562EEAE01800FD7128 /* mixkit-bonus-extra-in-a-video-game-2064.wav */,
+				004196572EEAE01800FD7128 /* mixkit-click-error-1110.wav */,
+				004196582EEAE01800FD7128 /* mixkit-completion-of-a-level-2063.wav */,
+				004196592EEAE01800FD7128 /* mixkit-dry-pop-up-notification-alert-2356.wav */,
+				0041965A2EEAE01800FD7128 /* mixkit-explainer-video-game-alert-sweep-236.wav */,
+				0041965B2EEAE01800FD7128 /* mixkit-explainer-video-pops-whoosh-light-pop-3005.wav */,
+				0041965C2EEAE01800FD7128 /* mixkit-player-losing-or-failing-2042.wav */,
+				0041965D2EEAE01800FD7128 /* mixkit-winning-notification-2018.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		004196602EEAE01800FD7128 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				0041965E2EEAE01800FD7128 /* Sounds */,
+				0041965F2EEAE01800FD7128 /* Fluent Emoji.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		00420B762EC5441E00AAEB58 /* GameInput */ = {
@@ -853,6 +860,7 @@
 		00A391DA2B3C4C8F005A0231 /* PotatoGame */ = {
 			isa = PBXGroup;
 			children = (
+				004196602EEAE01800FD7128 /* Assets */,
 				00D415902EC8C7F7009F4D68 /* Store */,
 				00166D3C2EB50F79003999E7 /* Resources */,
 				004342102B7A7F8D004BB7BA /* Views */,
@@ -1039,15 +1047,15 @@
 				00166D3E2EB50F79003999E7 /* Localizable.xcstrings in Resources */,
 				00CF15FE2EE46CA7008F4829 /* LICENSE in Resources */,
 				00166D3F2EB50F79003999E7 /* Potato Game.icon in Resources */,
-				00166E0B2EB69D13003999E7 /* mixkit-click-error-1110.wav in Resources */,
-				00166E0C2EB69D13003999E7 /* mixkit-dry-pop-up-notification-alert-2356.wav in Resources */,
-				00166E0D2EB69D13003999E7 /* mixkit-explainer-video-game-alert-sweep-236.wav in Resources */,
-				00166E0E2EB69D13003999E7 /* mixkit-explainer-video-pops-whoosh-light-pop-3005.wav in Resources */,
-				00166E0F2EB69D13003999E7 /* mixkit-winning-notification-2018.wav in Resources */,
-				00FDB1BD2EE0A7BF00BE2527 /* mixkit-completion-of-a-level-2063.wav in Resources */,
-				00FDB1BE2EE0A7BF00BE2527 /* mixkit-bonus-extra-in-a-video-game-2064.wav in Resources */,
-				00FDB1BF2EE0A7BF00BE2527 /* mixkit-player-losing-or-failing-2042.wav in Resources */,
-				00166D402EB50F79003999E7 /* Schmoji Emoji.xcassets in Resources */,
+				004196612EEAE01800FD7128 /* mixkit-bonus-extra-in-a-video-game-2064.wav in Resources */,
+				004196622EEAE01800FD7128 /* mixkit-click-error-1110.wav in Resources */,
+				004196632EEAE01800FD7128 /* mixkit-completion-of-a-level-2063.wav in Resources */,
+				004196642EEAE01800FD7128 /* mixkit-dry-pop-up-notification-alert-2356.wav in Resources */,
+				004196652EEAE01800FD7128 /* mixkit-explainer-video-game-alert-sweep-236.wav in Resources */,
+				004196662EEAE01800FD7128 /* mixkit-explainer-video-pops-whoosh-light-pop-3005.wav in Resources */,
+				004196672EEAE01800FD7128 /* mixkit-player-losing-or-failing-2042.wav in Resources */,
+				004196682EEAE01800FD7128 /* mixkit-winning-notification-2018.wav in Resources */,
+				004196692EEAE01800FD7128 /* Fluent Emoji.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1299,7 +1307,7 @@
 				CODE_SIGN_ENTITLEMENTS = PotatoGameWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = F863H8633R;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1319,7 +1327,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mickschroeder.potatogame.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -1344,7 +1352,7 @@
 				CODE_SIGN_ENTITLEMENTS = PotatoGameWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = F863H8633R;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1364,7 +1372,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mickschroeder.potatogame.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -1514,7 +1522,7 @@
 				CODE_SIGN_ENTITLEMENTS = PotatoGame/PotatoGame.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = F863H8633R;
@@ -1542,7 +1550,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-Xfrontend -debug-time-function-bodies -Xfrontend -debug-time-expression-type-checking -Xfrontend -warn-long-expression-type-checking=100 -Xfrontend -warn-long-function-bodies=200";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mickschroeder.potatogame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1565,7 +1573,7 @@
 				CODE_SIGN_ENTITLEMENTS = PotatoGame/PotatoGame.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = F863H8633R;
@@ -1593,7 +1601,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mickschroeder.potatogame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

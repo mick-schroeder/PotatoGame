@@ -9,6 +9,9 @@ struct PotatoGameApp: App {
     private let container = SchmojiModelContainerProvider.shared.container
     @State private var keyboardSettings = GameKeyboardSettings()
     @State private var router = AppRouter()
+    #if os(iOS)
+        @UIApplicationDelegateAdaptor(PotatoGameAppDelegate.self) private var appDelegate
+    #endif
 
     var body: some Scene {
         WindowGroup {
@@ -27,3 +30,14 @@ struct PotatoGameApp: App {
         }
     }
 }
+
+#if os(iOS)
+    final class PotatoGameAppDelegate: NSObject, UIApplicationDelegate {
+        func application(
+            _: UIApplication,
+            supportedInterfaceOrientationsFor _: UIWindow?
+        ) -> UIInterfaceOrientationMask {
+            OrientationLock.shared.currentMask
+        }
+    }
+#endif
