@@ -9,7 +9,7 @@ import SpriteKit
 
 /// Matching/selection helpers extracted from the main SpriteKit scene.
 @MainActor
-extension SchmojiGameScene {
+extension PotatoGameScene {
     private func isConnected(_ testNode: SchmojiSpriteNode, to baseNode: SchmojiSpriteNode) -> Bool {
         intersects(testNode, baseNode)
     }
@@ -90,31 +90,48 @@ extension SchmojiGameScene {
 
     /// Converts the current selection into evolved Schmojis + potato updates.
     func evolveChain(from node: SchmojiSpriteNode) {
-        let chainCount = selectedSchmojiNodes.count
+        let chain = selectedSchmojiNodes
+        let chainCount = chain.count
         guard chainCount > 0 else { return }
 
+        let color = node.schmojiColor
         let newSchmojiCount = (chainCount + 1) / 2
 
-        for _ in 0 ..< newSchmojiCount {
-            generateNewSchmojiFromPosition(schmoji: node)
-        }
+        let fxDuration = runEvolutionVisualization(for: chain, color: color)
 
-        sessionManager?.trackPotatoCreation(from: node.schmojiColor, createdCount: newSchmojiCount)
-        playSound(.matchSuccess)
+        let evolveWork = { [weak self] in
+            guard let self else { return }
 
-        for schmoji in selectedSchmojiNodes {
-            removeSchmojiNode(schmoji)
-        }
-
-        clearSchmojiSelection()
-        checkForGameEnd()
-        sessionManager?.scheduleEvolutionSave(from: self)
-        #if os(iOS)
-            if hapticsEnabled {
-                let generator = UINotificationFeedbackGenerator()
-                generator.notificationOccurred(.success)
+            for _ in 0 ..< newSchmojiCount {
+                generateNewSchmojiFromPosition(schmoji: node)
             }
-        #endif
+
+            sessionManager?.trackPotatoCreation(from: node.schmojiColor, createdCount: newSchmojiCount)
+            playSound(.matchSuccess)
+
+            for schmoji in chain {
+                removeSchmojiNode(schmoji)
+            }
+
+            clearSchmojiSelection()
+            checkForGameEnd()
+            sessionManager?.scheduleEvolutionSave(from: self)
+            #if os(iOS)
+                if hapticsEnabled {
+                    let generator = UINotificationFeedbackGenerator()
+                    generator.notificationOccurred(.success)
+                }
+            #endif
+        }
+
+        if fxDuration > 0 {
+            run(SKAction.sequence([
+                SKAction.wait(forDuration: fxDuration),
+                SKAction.run(evolveWork),
+            ]), withKey: "SchmojiEvolutionMerge")
+        } else {
+            evolveWork()
+        }
     }
 
     /// Finds a cluster around the tapped node and applies highlighting/haptics.
@@ -258,32 +275,47 @@ extension SchmojiGameScene {
 
     private func spawnAnimationDelay() -> TimeInterval {
         let now = Date().timeIntervalSinceReferenceDate
-        if now - lastSpawnAnimationTimestamp > 0.35 {
+        if now - lastSpawnAnimationTimestamp > 0.24 {
             spawnAnimationIndex = 0
         }
         lastSpawnAnimationTimestamp = now
         defer { spawnAnimationIndex += 1 }
-        return 0.055 * Double(spawnAnimationIndex)
+        return 0.03 * Double(spawnAnimationIndex)
     }
 
     private func runSpawnAnimation(for node: SchmojiSpriteNode, originalScaleX: CGFloat, originalScaleY: CGFloat) {
         node.alpha = 0
-        node.xScale = originalScaleX * 0.22
-        node.yScale = originalScaleY * 0.22
+        node.xScale = originalScaleX * 0.24
+        node.yScale = originalScaleY * 0.24
+        node.zRotation = CGFloat.random(in: -0.12 ... 0.12)
 
         let delay = spawnAnimationDelay()
-        let fadeIn = SKAction.fadeIn(withDuration: 0.18).easeOut()
-        let overshoot = SKAction.scaleX(to: originalScaleX * 1.18, y: originalScaleY * 1.18, duration: 0.24).easeOut()
-        let settle = SKAction.scaleX(to: originalScaleX, y: originalScaleY, duration: 0.16).easeInEaseOut()
+        let fadeAndLift = SKAction.group([
+            SKAction.fadeIn(withDuration: 0.18).easeOut(),
+            SKAction.scaleX(to: originalScaleX * 0.78, y: originalScaleY * 0.78, duration: 0.2).easeOut(),
+        ])
+        let dramaticPop = SKAction.group([
+            SKAction.scaleX(to: originalScaleX * 1.22, y: originalScaleY * 1.22, duration: 0.26).easeOut(),
+            SKAction.rotate(toAngle: 0, duration: 0.26, shortestUnitArc: true).easeOut(),
+            SKAction.colorize(with: node.color, colorBlendFactor: 0.4, duration: 0.24).easeInEaseOut(),
+        ])
+        let settle = SKAction.group([
+            SKAction.scaleX(to: originalScaleX * 0.98, y: originalScaleY * 0.98, duration: 0.18).easeInEaseOut(),
+            SKAction.colorize(withColorBlendFactor: 0, duration: 0.16),
+        ])
+        let finalSettle = SKAction.scaleX(to: originalScaleX, y: originalScaleY, duration: 0.14).easeInEaseOut()
 
         let sequence = SKAction.sequence([
             SKAction.wait(forDuration: delay),
-            SKAction.group([fadeIn, overshoot]),
+            fadeAndLift,
+            dramaticPop,
             SKAction.run { [weak self, weak node] in
                 guard let self, let node else { return }
+                runSpawnFlare(from: node)
                 runSpawnRipple(from: node)
             },
             settle,
+            finalSettle,
             SKAction.run { [weak node] in
                 node?.bounce()
             },
@@ -321,5 +353,97 @@ extension SchmojiGameScene {
             target.removeAction(forKey: rippleKey)
             target.run(ripple, withKey: rippleKey)
         }
+    }
+
+    /// A bright flare that underscores a dramatic spawn.
+    private func runSpawnFlare(from node: SchmojiSpriteNode) {
+        let baseRadius = matchRadius(for: node) * 1.08
+        guard baseRadius.isFinite, baseRadius > 0 else { return }
+
+        let color = node.color
+        let flareZ = node.zPosition - 0.2
+
+        func addRing(lineWidth: CGFloat, scale: CGFloat, alpha: CGFloat, duration: TimeInterval, delay: TimeInterval) {
+            let ring = SKShapeNode(circleOfRadius: baseRadius)
+            ring.strokeColor = color.withAlphaComponent(alpha)
+            ring.lineWidth = lineWidth
+            ring.fillColor = color.withAlphaComponent(alpha * 0.25)
+            ring.glowWidth = 10
+            ring.alpha = 0
+            ring.zPosition = flareZ
+            ring.position = node.position
+            ring.setScale(0.45)
+            addChild(ring)
+
+            let sequence = SKAction.sequence([
+                SKAction.wait(forDuration: delay),
+                SKAction.group([
+                    SKAction.fadeAlpha(to: 1, duration: 0.12),
+                    SKAction.scale(to: scale, duration: duration * 0.6).easeOut(),
+                ]),
+                SKAction.group([
+                    SKAction.fadeOut(withDuration: duration * 0.4),
+                    SKAction.scale(to: scale * 1.25, duration: duration * 0.4).easeInEaseOut(),
+                ]),
+                SKAction.removeFromParent(),
+            ])
+            ring.run(sequence, withKey: "SchmojiSpawnFlareRing")
+        }
+
+        addRing(lineWidth: 3.5, scale: 1.18, alpha: 0.82, duration: 0.36, delay: 0)
+        addRing(lineWidth: 2.2, scale: 1.4, alpha: 0.55, duration: 0.44, delay: 0.04)
+    }
+
+    /// Brief visual that shows the current color evolving into the next one.
+    @discardableResult
+    private func runEvolutionVisualization(for nodes: [SchmojiSpriteNode], color: SchmojiColor) -> TimeInterval {
+        guard nodes.isEmpty == false else { return 0 }
+        let pulseDuration: TimeInterval = 0.5
+        let animationColor = SchmojiSpriteNode.platformColor(for: colorScheme, color: color)
+        
+        let nextStroke = animationColor.withAlphaComponent(0.9)
+        let nextFill = animationColor.withAlphaComponent(0.16)
+
+        for (index, node) in nodes.enumerated() {
+            let ringRadius = matchRadius(for: node) * 1.08
+            let ring = SKShapeNode(circleOfRadius: ringRadius)
+            ring.strokeColor = nextStroke
+            ring.lineWidth = 5.0
+            ring.fillColor = nextFill
+            ring.glowWidth = 12
+            ring.alpha = 0
+            ring.position = node.position
+            ring.zPosition = node.zPosition - 0.5
+            addChild(ring)
+
+            let rippleDelay = 0.04 * Double(index)
+            let ringSequence = SKAction.sequence([
+                SKAction.wait(forDuration: rippleDelay),
+                SKAction.group([
+                    SKAction.fadeAlpha(to: 1, duration: 0.1),
+                    SKAction.scale(to: 1.24, duration: pulseDuration * 0.42).easeOut(),
+                ]),
+                SKAction.group([
+                    SKAction.fadeOut(withDuration: pulseDuration * 0.38),
+                    SKAction.scale(to: 1.4, duration: pulseDuration * 0.38).easeInEaseOut(),
+                ]),
+                SKAction.removeFromParent(),
+            ])
+            ring.run(ringSequence, withKey: "SchmojiEvolutionRing")
+
+            let popUp = SKAction.scale(to: node.xScale * 1.2, duration: 0.14).easeOut()
+            let tint = SKAction.colorize(with: animationColor, colorBlendFactor: 0.55, duration: 0.2).easeInEaseOut()
+            let fade = SKAction.fadeAlpha(to: 0.4, duration: pulseDuration * 0.5).easeInEaseOut()
+            let settle = SKAction.wait(forDuration: pulseDuration * 0.12)
+            let nodeSequence = SKAction.sequence([
+                SKAction.wait(forDuration: rippleDelay),
+                SKAction.group([popUp, tint]),
+                fade,
+                settle,
+            ])
+            node.run(nodeSequence, withKey: "SchmojiEvolutionPreview")
+        }
+
+        return pulseDuration + 0.04 * Double(nodes.count)
     }
 }

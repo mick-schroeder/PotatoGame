@@ -5,7 +5,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class SchmojiLevelProgress {
+final class PotatoGameLevelProgress {
     var levelNumber: Int = 0
 
     private var storedGameState: String = GameState.newUnlocked.rawValue
@@ -37,7 +37,7 @@ final class SchmojiLevelProgress {
     }
 }
 
-extension SchmojiLevelProgress {
+extension PotatoGameLevelProgress {
     var gameState: GameState {
         get { GameState(rawValue: storedGameState) ?? .newUnlocked }
         set {
@@ -49,19 +49,19 @@ extension SchmojiLevelProgress {
     }
 }
 
-extension SchmojiLevelProgress {
-    static func progress(levelNumber: Int, in context: ModelContext) -> SchmojiLevelProgress? {
-        var descriptor = FetchDescriptor<SchmojiLevelProgress>()
+extension PotatoGameLevelProgress {
+    static func progress(levelNumber: Int, in context: ModelContext) -> PotatoGameLevelProgress? {
+        var descriptor = FetchDescriptor<PotatoGameLevelProgress>()
         descriptor.predicate = #Predicate { $0.levelNumber == levelNumber }
         descriptor.fetchLimit = 1
         return try? context.fetch(descriptor).first
     }
 
-    static func ensure(levelNumber: Int, defaultState: GameState, in context: ModelContext) -> SchmojiLevelProgress {
+    static func ensure(levelNumber: Int, defaultState: GameState, in context: ModelContext) -> PotatoGameLevelProgress {
         if let existing = progress(levelNumber: levelNumber, in: context) {
             return existing
         }
-        let progress = SchmojiLevelProgress(levelNumber: levelNumber, gameState: defaultState)
+        let progress = PotatoGameLevelProgress(levelNumber: levelNumber, gameState: defaultState)
         // Materialize level objects from LevelTemplate for a brand-new progress record.
         progress.loadFromTemplateIfNeeded()
         context.insert(progress)

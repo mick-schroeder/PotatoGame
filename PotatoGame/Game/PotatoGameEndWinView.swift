@@ -4,7 +4,7 @@
 import SwiftUI
 
 /// Unified end-of-level sheet for both win and lose outcomes.
-struct SchmojiGameEndView: View {
+struct PotatoGameEndView: View {
     enum Outcome {
         case win(perfect: Bool, unlockProgress: SchmojiSelection.UnlockProgress?, potatoesEarned: Int)
         case lose
@@ -70,7 +70,7 @@ struct SchmojiGameEndView: View {
     }
 }
 
-private extension SchmojiGameEndView {
+private extension PotatoGameEndView {
     @ViewBuilder
     func summarySection(badge: SchmojiGameEndCard.BadgeView, status: String) -> some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -383,7 +383,7 @@ private struct DismissButton: View {
 }
 
 #Preview("Game End – Perfect Win") {
-    SchmojiGameEndView(
+    PotatoGameEndView(
         level: PreviewSampleData.sampleLevel(levelNumber: 4, state: .winPerfect, potatoes: 12),
         outcome: .win(
             perfect: true,
@@ -395,7 +395,7 @@ private struct DismissButton: View {
 }
 
 #Preview("Game End – Lose") {
-    SchmojiGameEndView(
+    PotatoGameEndView(
         level: PreviewSampleData.sampleLevel(levelNumber: 5, state: .lose, potatoes: 3),
         outcome: .lose,
         isNextLevelAvailable: false

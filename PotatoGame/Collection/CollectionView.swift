@@ -14,7 +14,7 @@ import SwiftUI
 
 struct SchmojiCollectionView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var selections: [SchmojiSelection]
+    @Query private var selections: [EmojiSelection]
     var body: some View {
         let selectionLookup = Dictionary(uniqueKeysWithValues: selections.map { ($0.color, $0) })
 
@@ -34,7 +34,7 @@ struct SchmojiCollectionView: View {
                     }
                 }
             }
-            .frame(maxWidth: CGFloat(SchmojiOptions.width), alignment: .leading)
+            .frame(maxWidth: CGFloat(PotatoGameOptions.width), alignment: .leading)
             .padding()
             .frame(maxWidth: .infinity, alignment: .center)
         }
@@ -48,7 +48,7 @@ struct SchmojiCollectionView: View {
         #endif
     }
 
-    private func updateSelection(_ selection: SchmojiSelection, to hex: String) {
+    private func updateSelection(_ selection: EmojiSelection, to hex: String) {
         guard selection.displayHexcode() != hex else { return }
         selection.selectedHex = hex
         do {
@@ -61,7 +61,7 @@ struct SchmojiCollectionView: View {
 
 private extension SchmojiCollectionView {
     var totalAvailableSchmojis: Int {
-        SchmojiColor.allCases.reduce(into: 0) { count, color in
+        PotatoColor.allCases.reduce(into: 0) { count, color in
             count += color.schmojis.count
         }
     }
@@ -80,11 +80,11 @@ private extension SchmojiCollectionView {
         )
     }
 
-    var displayColors: [SchmojiColor] {
-        if let hidden = SchmojiOptions.lastColor {
-            return SchmojiColor.allCases.filter { $0 != hidden }
+    var displayColors: [PotatoColor] {
+        if let hidden = PotatoGameOptions.lastColor {
+            return PotatoColor.allCases.filter { $0 != hidden }
         }
-        return SchmojiColor.allCases
+        return PotatoColor.allCases
     }
 }
 

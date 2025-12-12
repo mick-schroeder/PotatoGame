@@ -17,7 +17,7 @@ final class SchmojiSpriteNode: SKSpriteNode {
     private static var circleTextureCache: [CircleTextureCacheKey: SKTexture] = [:]
 
     private struct CircleTextureCacheKey: Hashable {
-        let color: SchmojiColor
+        let color: PotatoColor
         let radius: CGFloat
         let signature: ColorSignature?
     }
@@ -77,8 +77,8 @@ final class SchmojiSpriteNode: SKSpriteNode {
         static let halo = "SchmojiHalo"
     }
 
-    var schmojiObject: SchmojiBoardObject
-    let schmojiColor: SchmojiColor
+    var schmojiObject: PotatoGameBoardObject
+    let schmojiColor: PotatoColor
     private(set) var collisionRadius: CGFloat
     private(set) var visualRadius: CGFloat
     var unlockable: Bool = true
@@ -88,15 +88,15 @@ final class SchmojiSpriteNode: SKSpriteNode {
     private weak var backgroundNode: SKSpriteNode?
     private weak var selectionHalo: SKShapeNode?
 
-    init(schmojiObject: SchmojiBoardObject, appearance: SchmojiAppearance?) {
-        let resolvedColor: SchmojiColor = schmojiObject.color
+    init(schmojiObject: PotatoGameBoardObject, appearance: PotatoGameAppearance?) {
+        let resolvedColor: PotatoColor = schmojiObject.color
 
         let hexcode = appearance?.hexcode
             ?? resolvedColor.schmojis.first
-            ?? SchmojiOptions.potatoHex
+            ?? PotatoGameOptions.potatoHex
 
         let targetDiameter = resolvedColor.size
-        let texture = SchmojiArt.texture(forHexcode: hexcode, targetDiameter: targetDiameter)
+        let texture = PotatoGameArt.texture(forHexcode: hexcode, targetDiameter: targetDiameter)
         let metrics = GeometryMetrics.make(for: texture, targetDiameter: targetDiameter)
 
         self.schmojiObject = schmojiObject
@@ -145,9 +145,9 @@ final class SchmojiSpriteNode: SKSpriteNode {
 
     private func makePhysicsBody() -> SKPhysicsBody {
         let body = SKPhysicsBody(circleOfRadius: collisionRadius)
-        let edge = SchmojiPhysicsCategory.edge
-        let schmoji = SchmojiPhysicsCategory.schmoji
-        SchmojiPhysicsCategory.configure(
+        let edge = PotatoGamePhysicsCategory.edge
+        let schmoji = PotatoGamePhysicsCategory.schmoji
+        PotatoGamePhysicsCategory.configure(
             body,
             category: schmoji,
             collisions: edge | schmoji,
@@ -195,7 +195,7 @@ final class SchmojiSpriteNode: SKSpriteNode {
         #endif
     }
 
-    private static func circleTexture(for color: SchmojiColor, radius: CGFloat, baseColor: UIColor) -> SKTexture {
+    private static func circleTexture(for color: PotatoColor, radius: CGFloat, baseColor: UIColor) -> SKTexture {
         let fillColor = baseColor.withAlphaComponent(Constants.circleFillAlpha)
         let strokeColor = baseColor.withAlphaComponent(Constants.circleStrokeAlpha)
 
@@ -415,14 +415,14 @@ final class SchmojiSpriteNode: SKSpriteNode {
         removeFromParent()
     }
 
-    func updateAppearance(_ appearance: SchmojiAppearance) {
+    func updateAppearance(_ appearance: PotatoGameAppearance) {
         guard appearance.color == schmojiColor else { return }
         let targetDiameter = schmojiColor.size
-        let updatedTexture = SchmojiArt.texture(forHexcode: appearance.hexcode, targetDiameter: targetDiameter)
+        let updatedTexture = PotatoGameArt.texture(forHexcode: appearance.hexcode, targetDiameter: targetDiameter)
         texture = updatedTexture
         let metrics = GeometryMetrics.make(for: updatedTexture, targetDiameter: targetDiameter)
         applyGeometry(metrics)
-        let scheme = (scene as? SchmojiGameScene)?.colorScheme ?? .light
+        let scheme = (scene as? PotatoGameScene)?.colorScheme ?? .light
         refreshCircleAppearance(for: scheme)
     }
 
@@ -489,7 +489,7 @@ final class SchmojiSpriteNode: SKSpriteNode {
 
     private func explosionEmitter() -> SKEmitterNode {
         let emitter = SKEmitterNode()
-        let palette = SchmojiColor.allCases.map { platformColor(for: .light, overriding: $0) }
+        let palette = PotatoColor.allCases.map { platformColor(for: .light, overriding: $0) }
         #if os(iOS)
             let skPalette = palette.map { SKColor(cgColor: Self.cgColor(from: $0)) }
         #else
@@ -564,24 +564,24 @@ final class SchmojiSpriteNode: SKSpriteNode {
 }
 
 extension SchmojiSpriteNode {
-    static func prewarmCircleTextures(for palette: [SchmojiAppearance], colorScheme: ColorScheme) {
+    static func prewarmCircleTextures(for palette: [PotatoGameAppearance], colorScheme: ColorScheme) {
         let byColor = Dictionary(uniqueKeysWithValues: palette.map { ($0.color, $0) })
         for (color, appearance) in byColor {
             let hexcode = appearance.hexcode
             let targetDiameter = color.size
-            let faceTexture = SchmojiArt.texture(forHexcode: hexcode, targetDiameter: targetDiameter)
+            let faceTexture = PotatoGameArt.texture(forHexcode: hexcode, targetDiameter: targetDiameter)
             let metrics = GeometryMetrics.make(for: faceTexture, targetDiameter: targetDiameter)
             let baseColor = platformColor(for: colorScheme, color: color)
             _ = circleTexture(for: color, radius: metrics.visualRadius, baseColor: baseColor)
         }
     }
 
-    func platformColor(for scheme: ColorScheme? = nil, overriding overrideColor: SchmojiColor? = nil) -> UIColor {
+    func platformColor(for scheme: ColorScheme? = nil, overriding overrideColor: PotatoColor? = nil) -> UIColor {
         let resolved = overrideColor ?? schmojiColor
         return Self.platformColor(for: scheme, color: resolved)
     }
 
-    static func platformColor(for scheme: ColorScheme? = nil, color: SchmojiColor) -> UIColor {
+    static func platformColor(for scheme: ColorScheme? = nil, color: PotatoColor) -> UIColor {
         let base = UIColor(color.color)
         #if os(iOS)
             guard let scheme else { return base }

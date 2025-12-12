@@ -8,8 +8,8 @@ import SwiftUI
 
 /// Persistence helpers that coordinate autosave, dedupe, and migrations.
 @MainActor
-extension SchmojiGameSessionManager {
-    func saveGame(from scene: SchmojiGameScene, immediate: Bool = false) {
+extension PotatoGameSessionManager {
+    func saveGame(from scene: PotatoGameScene, immediate: Bool = false) {
         if currentLevel.gameState == .playing, let updatedObjects = scene.extractUpdatedObjects() {
             pendingLayoutSnapshot = updatedObjects
         }
@@ -358,7 +358,7 @@ actor GamePersistenceActor {
 
 // MARK: - Shared Helpers
 
-extension SchmojiGameSessionManager {
+extension PotatoGameSessionManager {
     func notifyLevelUpdate(force: Bool = false) {
         let digest = LevelUpdateDigest(level: currentLevel)
         if force == false, digest == lastLevelUpdateDigest {
@@ -383,7 +383,7 @@ extension SchmojiGameSessionManager {
         persistScene(scene, layoutSnapshot: snapshot)
     }
 
-    func performImmediateSave(with scene: SchmojiGameScene) {
+    func performImmediateSave(with scene: PotatoGameScene) {
         pendingSceneReference = nil
         pendingSaveTask?.cancel()
         pendingSaveTask = nil
@@ -424,7 +424,7 @@ extension SchmojiGameSessionManager {
     }
 
     /// Serializes the live scene (or a supplied snapshot) back into persistence.
-    func persistScene(_ scene: SchmojiGameScene?, layoutSnapshot: [SchmojiBoardObject]? = nil) {
+    func persistScene(_ scene: PotatoGameScene?, layoutSnapshot: [SchmojiBoardObject]? = nil) {
         var snapshotObjects = layoutSnapshot
         if currentLevel.gameState == .playing {
             if snapshotObjects == nil, let scene, let updatedObjects = scene.extractUpdatedObjects() {
@@ -442,7 +442,7 @@ extension SchmojiGameSessionManager {
     }
 
     /// Throttled save used during rapid match chains so we don’t spam disk.
-    func scheduleEvolutionSave(from scene: SchmojiGameScene) {
+    func scheduleEvolutionSave(from scene: PotatoGameScene) {
         guard currentLevel.gameState == .playing else { return }
         let now = Date()
         if let last = lastEvolutionSaveDate, now.timeIntervalSince(last) < evolutionSaveCooldown {
@@ -454,7 +454,7 @@ extension SchmojiGameSessionManager {
     }
 
     /// Periodic save loop that runs while the level is in the playing state.
-    func startAutosaveLoop(scene: SchmojiGameScene) {
+    func startAutosaveLoop(scene: PotatoGameScene) {
         autosaveTask?.cancel()
         autosaveTask = Task { [weak self, weak scene] in
             guard let self else { return }

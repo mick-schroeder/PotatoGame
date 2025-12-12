@@ -8,7 +8,7 @@ import SwiftUI
 
 /// Coordinates SpriteKit gameplay with SwiftData persistence, StoreKit unlocks, and progress tracking.
 @MainActor
-class SchmojiGameSessionManager {
+class PotatoGameSessionManager {
     let logger = Logger(subsystem: "PotatoGame", category: "GameSession")
     let saveDebounceInterval: TimeInterval = 0.25
     var pendingSaveTask: Task<Void, Never>?
@@ -16,7 +16,7 @@ class SchmojiGameSessionManager {
     let gameEndDelay: TimeInterval = 0.6
     var pendingGameEndTask: Task<Void, Never>?
     /// We keep the scene alive between debounce cycles so the layout can be re-read.
-    weak var pendingSceneReference: SchmojiGameScene?
+    weak var pendingSceneReference: PotatoGameScene?
     /// Snapshot generated during gameplay that will eventually be persisted.
     var pendingLayoutSnapshot: [SchmojiBoardObject]?
     /// Periodic autosave loop that runs while the level is active.
@@ -64,13 +64,13 @@ class SchmojiGameSessionManager {
     }
 
     /// Spins up a brand new SpriteKit scene, primed with level data and autosave.
-    func startGame() -> SchmojiGameScene {
+    func startGame() -> PotatoGameScene {
         potatoesCreatedThisRun = currentLevel.numOfPotatoesCreated
         // Make sure brand-new progress rows have a generated board before the scene boots.
         ensureLevelLayout()
         lastEvolutionSaveDate = nil
         let presentation = SchmojiLevelPresentation(levelInfo: currentLevel)
-        let scene = SchmojiGameScene(levelPresentation: presentation)
+        let scene = PotatoGameScene(levelPresentation: presentation)
         scene.keyboardSettings = keyboardSettings
         scene.sessionManager = self
         currentLevel.startPlaying(in: modelContext)
@@ -109,7 +109,7 @@ class SchmojiGameSessionManager {
     }
 
     /// Rebuilds the current level and kicks the autosave loop again.
-    func restartLevel(in scene: SchmojiGameScene) {
+    func restartLevel(in scene: PotatoGameScene) {
         resetLevelState()
         let presentation = SchmojiLevelPresentation(levelInfo: currentLevel)
         scene.reloadLevel(with: presentation)
@@ -119,7 +119,7 @@ class SchmojiGameSessionManager {
     }
 
     /// Called when a sheet dismissal wants to resume play without resetting.
-    func continueCurrentLevel(in scene: SchmojiGameScene) {
+    func continueCurrentLevel(in scene: PotatoGameScene) {
         currentLevel.startPlaying(in: modelContext)
         currentLevel.gameState = .playing
         saveGame(from: scene, immediate: true)
@@ -150,7 +150,7 @@ class SchmojiGameSessionManager {
     }
 
     /// Determines win/lose/perfect state based on the live board snapshot.
-    func evaluateGameEnd(in scene: SchmojiGameScene, forced: Bool = false) {
+    func evaluateGameEnd(in scene: PotatoGameScene, forced: Bool = false) {
         guard let lastColor = SchmojiOptions.lastColor else { return }
         let matchThreshold = max(2, SchmojiOptions.matchCountMin)
 
@@ -241,7 +241,7 @@ class SchmojiGameSessionManager {
     }
 
     /// Applies win bookkeeping, updates unlocks, and persists the final state.
-    func handleWin(in scene: SchmojiGameScene, perfect: Bool = false) {
+    func handleWin(in scene: PotatoGameScene, perfect: Bool = false) {
         scene.playSound(perfect ? .perfectWin : .win)
         currentLevel.completeLevel(perfect: perfect, in: modelContext)
         finishGame()
@@ -253,7 +253,7 @@ class SchmojiGameSessionManager {
     }
 
     /// Applies loss bookkeeping and persists state for a retry.
-    func handleLoss(in scene: SchmojiGameScene) {
+    func handleLoss(in scene: PotatoGameScene) {
         scene.playSound(.loss)
         if let progress = currentLevel.ensureProgressIfNeeded(modelContext) {
             progress.gameState = .lose
@@ -266,7 +266,7 @@ class SchmojiGameSessionManager {
     }
 
     /// Manual “end level” button that reuses the same evaluation flow.
-    func handleEnd(in scene: SchmojiGameScene) {
+    func handleEnd(in scene: PotatoGameScene) {
         evaluateGameEnd(in: scene, forced: true)
     }
 
@@ -315,7 +315,7 @@ class SchmojiGameSessionManager {
         }
 
         currentLevel.removeLevelObject(withId: object.id, in: modelContext)
-        if let gameScene = scene as? SchmojiGameScene {
+        if let gameScene = scene as? PotatoGameScene {
             gameScene.applyStoredObjectRemoval(withId: object.id)
         }
 
@@ -323,7 +323,7 @@ class SchmojiGameSessionManager {
     }
 
     /// Persists dynamically spawned Schmojis so the board stays in sync.
-    func registerSpawnedObject(_ object: SchmojiBoardObject, in scene: SchmojiGameScene?) {
+    func registerSpawnedObject(_ object: SchmojiBoardObject, in scene: PotatoGameScene?) {
         currentLevel.addLevelObject(object, in: modelContext)
         scene?.appendStoredObject(object)
         notifyLevelUpdate()

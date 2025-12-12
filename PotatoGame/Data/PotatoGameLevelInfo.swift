@@ -47,9 +47,9 @@ struct SchmojiLevelInfo: Identifiable, Hashable {
     var id: Int { levelNumber }
 
     let levelNumber: Int
-    let levelBackgroundColor: SchmojiColor
+    let levelBackgroundColor: PotatoColor
     let potentialPotatoCount: Int
-    var progress: SchmojiLevelProgress?
+    var progress: PotatoGameLevelProgress?
     let ownedLevelPackIDs: Set<String>
 
     var startedDate: Date? { progress?.startedDate }
@@ -76,7 +76,7 @@ struct SchmojiLevelInfo: Identifiable, Hashable {
         return ownedLevelPackIDs.contains(pack.id) == false
     }
 
-    init(template: LevelTemplate, progress: SchmojiLevelProgress? = nil, ownedLevelPackIDs: Set<String> = []) {
+    init(template: LevelTemplate, progress: PotatoGameLevelProgress? = nil, ownedLevelPackIDs: Set<String> = []) {
         levelNumber = template.levelNumber
         levelBackgroundColor = template.backgroundColor
         potentialPotatoCount = template.potentialPotatoCount
@@ -85,9 +85,9 @@ struct SchmojiLevelInfo: Identifiable, Hashable {
     }
 
     init(levelNumber: Int,
-         levelBackgroundColor: SchmojiColor,
+         levelBackgroundColor: PotatoColor,
          potentialPotatoCount: Int,
-         progress: SchmojiLevelProgress? = nil,
+         progress: PotatoGameLevelProgress? = nil,
          ownedLevelPackIDs: Set<String> = [])
     {
         self.levelNumber = levelNumber
@@ -106,14 +106,14 @@ extension SchmojiLevelInfo {
         LevelTemplateByNumber[levelNumber]
     }
 
-    static func allLevels(progress: [SchmojiLevelProgress], ownedLevelPackIDs: Set<String>) -> [SchmojiLevelInfo] {
+    static func allLevels(progress: [PotatoGameLevelProgress], ownedLevelPackIDs: Set<String>) -> [SchmojiLevelInfo] {
         let lookup = normalizedProgressLookup(from: progress)
         return LevelTemplates.map { template in
             SchmojiLevelInfo(template: template, progress: lookup[template.levelNumber], ownedLevelPackIDs: ownedLevelPackIDs)
         }
     }
 
-    static func nextPlayableLevel(progress: [SchmojiLevelProgress], ownedLevelPackIDs: Set<String>) -> SchmojiLevelInfo? {
+    static func nextPlayableLevel(progress: [PotatoGameLevelProgress], ownedLevelPackIDs: Set<String>) -> SchmojiLevelInfo? {
         nextPlayableLevel(in: allLevels(progress: progress, ownedLevelPackIDs: ownedLevelPackIDs))
     }
 
@@ -124,7 +124,7 @@ extension SchmojiLevelInfo {
             ?? levels.first
     }
 
-    static func level(number: Int, progress: [SchmojiLevelProgress], ownedLevelPackIDs: Set<String>) -> SchmojiLevelInfo? {
+    static func level(number: Int, progress: [PotatoGameLevelProgress], ownedLevelPackIDs: Set<String>) -> SchmojiLevelInfo? {
         guard let template = LevelTemplateByNumber[number] else {
             return nil
         }
@@ -136,7 +136,7 @@ extension SchmojiLevelInfo {
         guard let template = LevelTemplateByNumber[number] else {
             return nil
         }
-        var descriptor = FetchDescriptor<SchmojiLevelProgress>()
+        var descriptor = FetchDescriptor<PotatoGameLevelProgress>()
         descriptor.predicate = #Predicate { $0.levelNumber == number }
         descriptor.fetchLimit = 1
         let progress = try? context.fetch(descriptor).first
@@ -147,7 +147,7 @@ extension SchmojiLevelInfo {
 @MainActor
 extension SchmojiLevelInfo {
     @discardableResult
-    mutating func ensureProgress(in context: ModelContext) -> SchmojiLevelProgress {
+    mutating func ensureProgress(in context: ModelContext) -> PotatoGameLevelProgress {
         guard let ensured = ensureProgressIfNeeded(context) else {
             fatalError("Unable to create progress for level \(levelNumber)")
         }
@@ -229,18 +229,18 @@ extension SchmojiLevelInfo {
     }
 
     @discardableResult
-    mutating func ensureProgressIfNeeded(_ context: ModelContext?) -> SchmojiLevelProgress? {
+    mutating func ensureProgressIfNeeded(_ context: ModelContext?) -> PotatoGameLevelProgress? {
         if let existing = progress {
             return existing
         }
         guard let ctx = context else { return nil }
 
-        if let persisted = SchmojiLevelProgress.progress(levelNumber: levelNumber, in: ctx) {
+        if let persisted = PotatoGameLevelProgress.progress(levelNumber: levelNumber, in: ctx) {
             progress = persisted
             return persisted
         }
 
-        let created = SchmojiLevelProgress(levelNumber: levelNumber, gameState: defaultState)
+        let created = PotatoGameLevelProgress(levelNumber: levelNumber, gameState: defaultState)
         ctx.insert(created)
         created.loadFromTemplateIfNeeded()
         progress = created
@@ -255,20 +255,20 @@ extension SchmojiLevelInfo {
         return created
     }
 
-    mutating func updateProgress(in context: ModelContext?, _ update: (SchmojiLevelProgress) -> Void) {
+    mutating func updateProgress(in context: ModelContext?, _ update: (PotatoGameLevelProgress) -> Void) {
         guard let progress = ensureProgressIfNeeded(context) else { return }
         update(progress)
     }
 
-    func potentialPotatoCountInGame(using providedCounts: [SchmojiColor: Int]? = nil) -> Int {
-        guard let lastColor = SchmojiOptions.lastColor else { return 0 }
-        let matchThreshold = max(2, SchmojiOptions.matchCountMin)
+    func potentialPotatoCountInGame(using providedCounts: [PotatoColor: Int]? = nil) -> Int {
+        guard let lastColor = PotatoGameOptions.lastColor else { return 0 }
+        let matchThreshold = max(2, PotatoGameOptions.matchCountMin)
 
-        let colorCounts: [SchmojiColor: Int]
+        let colorCounts: [PotatoColor: Int]
         if let providedCounts {
             colorCounts = providedCounts
         } else {
-            var computedCounts: [SchmojiColor: Int] = [:]
+            var computedCounts: [PotatoColor: Int] = [:]
             for object in schmojiInLevel {
                 let color = object.color
                 computedCounts[color, default: 0] += 1
@@ -276,7 +276,7 @@ extension SchmojiLevelInfo {
             colorCounts = computedCounts
         }
 
-        var promotableColors = SchmojiColor.allCases.filter { $0 != lastColor }
+        var promotableColors = PotatoColor.allCases.filter { $0 != lastColor }
         promotableColors.sort { $0.order < $1.order }
         guard promotableColors.isEmpty == false else { return 0 }
 
@@ -308,8 +308,8 @@ extension SchmojiLevelInfo {
 }
 
 private extension SchmojiLevelInfo {
-    static func normalizedProgressLookup(from entries: [SchmojiLevelProgress]) -> [Int: SchmojiLevelProgress] {
-        var lookup: [Int: SchmojiLevelProgress] = [:]
+    static func normalizedProgressLookup(from entries: [PotatoGameLevelProgress]) -> [Int: PotatoGameLevelProgress] {
+        var lookup: [Int: PotatoGameLevelProgress] = [:]
         var duplicateLevels: Set<Int> = []
 
         for entry in entries {

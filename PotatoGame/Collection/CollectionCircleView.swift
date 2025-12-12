@@ -3,15 +3,15 @@
 
 import SwiftUI
 
-struct SchmojiCircleView: View {
+struct CollectionCircleView: View {
     @Environment(\.colorScheme) private var colorScheme
 
-    let color: SchmojiColor
+    let color: PotatoColor
     let hexcode: String
 
     var body: some View {
         VStack(spacing: 4) {
-            SchmojiArt.image(forHexcode: hexcode, targetDiameter: 48)
+            PotatoGameArt.image(forHexcode: hexcode, targetDiameter: 48)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 44, height: 44)
@@ -42,9 +42,9 @@ struct SchmojiCircleView: View {
 }
 
 #Preview("Schmoji Circle") {
-    SchmojiCircleView(
+    CollectionCircleView(
         color: .green,
-        hexcode: SchmojiColor.green.schmojis.first ?? SchmojiOptions.potatoHex
+        hexcode: PotatoColor.green.schmojis.first ?? PotatoGameOptions.potatoHex
     )
     .padding()
     .background(Color.appBackground)

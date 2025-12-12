@@ -5,8 +5,8 @@ import SwiftData
 import SwiftUI
 
 /// Simple horizontal legend showing the current appearance palette.
-struct SchmojiColorsLegendGenericView: View {
-    @Query private var selections: [SchmojiSelection]
+struct PotatoGameLegendView: View {
+    @Query private var selections: [EmojiSelection]
 
     private var palette: [SchmojiAppearance] {
         SchmojiAppearance.palette(from: selections)
@@ -22,7 +22,7 @@ struct SchmojiColorsLegendGenericView: View {
                             .foregroundStyle(appearance.color.color)
                             .contentShape(Circle())
 
-                        SchmojiArt.image(forHexcode: appearance.hexcode, targetDiameter: max(24, side))
+                        PotatoGameArt.image(forHexcode: appearance.hexcode, targetDiameter: max(24, side))
                             .resizable()
                             .scaledToFit()
                             .padding(side * 0.1)
@@ -31,7 +31,7 @@ struct SchmojiColorsLegendGenericView: View {
                     .frame(width: side)
                 }
                 .aspectRatio(1, contentMode: .fit)
-                if appearance.color != SchmojiOptions.lastColor {
+                if appearance.color != PotatoGameOptions.lastColor {
                     Image(systemName: "chevron.right")
                         .font(.subheadline)
                         .fontWeight(.black)
@@ -43,7 +43,7 @@ struct SchmojiColorsLegendGenericView: View {
 }
 
 #Preview("Schmoji Legend") {
-    SchmojiColorsLegendGenericView()
+    PotatoGameLegendView()
         .padding()
         .background(Color.appBackground)
         .modelContainer(PreviewSampleData.makeContainer())

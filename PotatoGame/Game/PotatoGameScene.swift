@@ -15,7 +15,7 @@ import SwiftUI
 
 /// Live SpriteKit scene that handles physics, input, and match interactions.
 @MainActor
-final class SchmojiGameScene: SKScene {
+final class PotatoGameScene: SKScene {
     #if os(iOS)
         static let preferredFramesPerSecond: Int = {
             let fps = UIScreen.main.maximumFramesPerSecond

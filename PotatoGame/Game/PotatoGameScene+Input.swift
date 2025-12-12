@@ -14,7 +14,7 @@ import SpriteKit
 
 /// Handles touch, keyboard, and controller input for the SpriteKit scene.
 @MainActor
-extension SchmojiGameScene {
+extension PotatoGameScene {
     #if os(iOS)
         override func touchesBegan(_ touches: Set<UITouch>, with _: UIEvent?) {
             guard let touch = touches.first else { return }
@@ -491,7 +491,7 @@ extension SchmojiGameScene {
 
 #if os(iOS)
     /// Creates a CoreMotion handler that hops back to the main actor before mutating scene state.
-    private func deviceMotionHandler(for scene: SchmojiGameScene) -> CMDeviceMotionHandler {
+    private func deviceMotionHandler(for scene: PotatoGameScene) -> CMDeviceMotionHandler {
         { [weak scene] motion, _ in
             guard let gravity = motion?.gravity else { return }
             let gx = gravity.x

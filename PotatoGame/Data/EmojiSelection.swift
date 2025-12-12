@@ -6,14 +6,14 @@ import OSLog
 import SwiftData
 
 public struct SchmojiAppearance: Identifiable, Hashable {
-    public let color: SchmojiColor
+    public let color: PotatoColor
     public let hexcode: String
-    public var id: SchmojiColor { color }
+    public var id: PotatoColor { color }
 }
 
 @Model
-public final class SchmojiSelection {
-    public var colorRawValue: SchmojiColor.RawValue = SchmojiColor.green.rawValue
+public final class EmojiSelection {
+    public var colorRawValue: PotatoColor.RawValue = PotatoColor.green.rawValue
     public var selectedHex: String = ""
     public var perfectWinCount: Int = 0
     @Relationship(deleteRule: .cascade, inverse: \SchmojiUnlockedHex.selection)
@@ -28,7 +28,7 @@ public final class SchmojiSelection {
                 .map(\.hexcode)
         }
         set {
-            unlockedHexEntries = SchmojiSelection
+            unlockedHexEntries = EmojiSelection
                 .sanitizedUnlockedList(newValue, available: availableHexes)
                 .enumerated()
                 .map { index, hex in
@@ -37,18 +37,18 @@ public final class SchmojiSelection {
         }
     }
 
-    public init(color: SchmojiColor, selectedHex: String? = nil, unlockedHexes: [String]? = nil) {
+    public init(color: PotatoColor, selectedHex: String? = nil, unlockedHexes: [String]? = nil) {
         colorRawValue = color.rawValue
         let defaults = color.schmojis
-        let resolvedSelection = selectedHex ?? defaults.first ?? SchmojiOptions.potatoHex
+        let resolvedSelection = selectedHex ?? defaults.first ?? PotatoGameOptions.potatoHex
         self.selectedHex = resolvedSelection
         let resolvedUnlocked = unlockedHexes ?? [resolvedSelection]
         let list = Self.sanitizedUnlockedList(resolvedUnlocked + [resolvedSelection], available: defaults)
         self.unlockedHexes = list
     }
 
-    public var color: SchmojiColor {
-        get { SchmojiColor(rawValue: colorRawValue) ?? .green }
+    public var color: PotatoColor {
+        get { PotatoColor(rawValue: colorRawValue) ?? .green }
         set {
             colorRawValue = newValue.rawValue
             sanitizeSelection()
@@ -72,12 +72,12 @@ public final class SchmojiSelection {
         if availableHexes.contains(selectedHex) {
             return selectedHex
         }
-        return availableHexes.first ?? SchmojiOptions.potatoHex
+        return availableHexes.first ?? PotatoGameOptions.potatoHex
     }
 
     private func sanitizeSelection() {
         if availableHexes.contains(selectedHex) == false {
-            selectedHex = availableHexes.first ?? SchmojiOptions.potatoHex
+            selectedHex = availableHexes.first ?? PotatoGameOptions.potatoHex
         }
         var hexes = unlockedHexes.filter { availableHexes.contains($0) }
         if hexes.contains(selectedHex) == false {
@@ -87,9 +87,9 @@ public final class SchmojiSelection {
     }
 }
 
-extension SchmojiSelection {
+extension EmojiSelection {
     public struct UnlockProgress: Equatable {
-        public let color: SchmojiColor
+        public let color: PotatoColor
         public let totalPerfectWins: Int
         public let winsTowardNextUnlock: Int
         public let winsRequired: Int
@@ -125,25 +125,25 @@ extension SchmojiSelection {
         buildUnlockProgress(unlockedHex: nil)
     }
 
-    static func selection(for color: SchmojiColor, in context: ModelContext) -> SchmojiSelection? {
-        var descriptor = FetchDescriptor<SchmojiSelection>()
+    static func selection(for color: PotatoColor, in context: ModelContext) -> EmojiSelection? {
+        var descriptor = FetchDescriptor<EmojiSelection>()
         descriptor.predicate = #Predicate { $0.colorRawValue == color.rawValue }
         descriptor.fetchLimit = 1
         descriptor.includePendingChanges = true
         return try? context.fetch(descriptor).first
     }
 
-    static func resolve(color: SchmojiColor, in context: ModelContext) -> SchmojiSelection {
+    static func resolve(color: PotatoColor, in context: ModelContext) -> EmojiSelection {
         if let existing = selection(for: color, in: context) {
             return existing
         }
-        let selection = SchmojiSelection(color: color)
+        let selection = EmojiSelection(color: color)
         context.insert(selection)
         return selection
     }
 }
 
-private extension SchmojiSelection {
+private extension EmojiSelection {
     static func sanitizedUnlockedList(_ hexes: [String], available: [String]) -> [String] {
         var ordered: [String] = []
         for hex in hexes {
@@ -203,28 +203,28 @@ private extension SchmojiSelection {
 }
 
 public extension SchmojiAppearance {
-    static func palette(from selections: [SchmojiSelection]) -> [SchmojiAppearance] {
-        var lookup: [SchmojiColor: String] = [:]
+    static func palette(from selections: [EmojiSelection]) -> [SchmojiAppearance] {
+        var lookup: [PotatoColor: String] = [:]
         for selection in selections {
             lookup[selection.color] = selection.displayHexcode()
         }
 
-        return SchmojiColor.allCases.map { color in
-            let hex = lookup[color] ?? color.schmojis.first ?? SchmojiOptions.potatoHex
+        return PotatoColor.allCases.map { color in
+            let hex = lookup[color] ?? color.schmojis.first ?? PotatoGameOptions.potatoHex
             return SchmojiAppearance(color: color, hexcode: hex)
         }
     }
 }
 
-public extension SchmojiSelection {
+public extension EmojiSelection {
     static func ensureDefaults(in context: ModelContext) {
         let logger = Logger(subsystem: "PotatoGame", category: "SchmojiSelection")
-        var descriptor = FetchDescriptor<SchmojiSelection>()
+        var descriptor = FetchDescriptor<EmojiSelection>()
         descriptor.includePendingChanges = true
         let existingSelections = (try? context.fetch(descriptor)) ?? []
 
-        var seen: [SchmojiColor: SchmojiSelection] = [:]
-        var duplicates: [SchmojiSelection] = []
+        var seen: [PotatoColor: EmojiSelection] = [:]
+        var duplicates: [EmojiSelection] = []
 
         for selection in existingSelections {
             let color = selection.color
@@ -249,9 +249,9 @@ public extension SchmojiSelection {
             selection.sanitizeSelection()
         }
 
-        let missingColors = SchmojiColor.allCases.filter { existingColors.contains($0) == false }
+        let missingColors = PotatoColor.allCases.filter { existingColors.contains($0) == false }
         for color in missingColors {
-            let selection = SchmojiSelection(color: color)
+            let selection = EmojiSelection(color: color)
             context.insert(selection)
         }
 

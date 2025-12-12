@@ -12,30 +12,30 @@ enum SchmojiSchemas {
         DataGeneration.self,
         Account.self,
         AccountPurchasedPack.self,
-        SchmojiSelection.self,
-        SchmojiUnlockedHex.self,
+        EmojiSelection.self,
+        PotatoGameUnlockedHex.self,
     ])
 
     /// Models that should remain local-only.
     static let localOnly = Schema([
-        SchmojiLevelProgress.self,
-        SchmojiLevelTile.self,
+        PotatoGameLevelProgress.self,
+        PotatoGameLevelTile.self,
     ])
 
     static let full = Schema([
         DataGeneration.self,
         Account.self,
         AccountPurchasedPack.self,
-        SchmojiSelection.self,
-        SchmojiUnlockedHex.self,
-        SchmojiLevelProgress.self,
-        SchmojiLevelTile.self,
+        EmojiSelection.self,
+        PotatoGameUnlockedHex.self,
+        PotatoGameLevelProgress.self,
+        PotatoGameLevelTile.self,
     ])
 }
 
 @MainActor
-final class SchmojiModelContainerProvider {
-    static let shared = SchmojiModelContainerProvider()
+final class PotatoGameModelContainerProvider {
+    static let shared = PotatoGameModelContainerProvider()
     private static let logger = Logger(subsystem: "PotatoGame", category: "SchmojiDataContainer")
     private static let promotionDefaultsKey = "SchmojiCloudKitPromotionCompleted"
     private static let storeDirectoryName = "PotatoGameData"
@@ -50,11 +50,11 @@ final class SchmojiModelContainerProvider {
     }
 
     private lazy var accountIDTask = Task<String, Never> {
-        await SchmojiModelContainerProvider.resolveAccountID()
+        await PotatoGameModelContainerProvider.resolveAccountID()
     }
 
     static func accountID() async -> String {
-        await SchmojiModelContainerProvider.shared.accountIDTask.value
+        await PotatoGameModelContainerProvider.shared.accountIDTask.value
     }
 
     /// CloudKit availability resolved once per launch.
@@ -130,10 +130,10 @@ final class SchmojiModelContainerProvider {
         }
     }
 
-    private init(inMemory: Bool = SchmojiOptions.inMemoryPersistence) {
+    private init(inMemory: Bool = PotatoGameOptions.inMemoryPersistence) {
         let start = Date()
         do {
-            container = try SchmojiModelContainerProvider.buildContainer(inMemory: inMemory)
+            container = try PotatoGameModelContainerProvider.buildContainer(inMemory: inMemory)
             bootstrapDataIfNeeded()
             let elapsed = Date().timeIntervalSince(start)
             Self.logger.notice("ModelContainer ready in \(elapsed, privacy: .public)s.")
@@ -383,18 +383,18 @@ private actor CloudPromotionMigrator {
     }
 
     private func copySelections(from source: ModelContext, to destination: ModelContext) throws {
-        let selections = try source.fetch(FetchDescriptor<SchmojiSelection>())
+        let selections = try source.fetch(FetchDescriptor<EmojiSelection>())
         for selection in selections {
-            let clone = SchmojiSelection(color: selection.color, selectedHex: selection.selectedHex, unlockedHexes: selection.unlockedHexes)
+            let clone = EmojiSelection(color: selection.color, selectedHex: selection.selectedHex, unlockedHexes: selection.unlockedHexes)
             clone.perfectWinCount = selection.perfectWinCount
             destination.insert(clone)
         }
     }
 
     private func copyLevelProgress(from source: ModelContext, to destination: ModelContext) throws {
-        let progresses = try source.fetch(FetchDescriptor<SchmojiLevelProgress>())
+        let progresses = try source.fetch(FetchDescriptor<PotatoGameLevelProgress>())
         for progress in progresses {
-            let clone = SchmojiLevelProgress(levelNumber: progress.levelNumber, gameState: progress.gameState)
+            let clone = PotatoGameLevelProgress(levelNumber: progress.levelNumber, gameState: progress.gameState)
             clone.numOfPotatoesCreated = progress.numOfPotatoesCreated
             clone.isDeleted = progress.isDeleted
             clone.startedDate = progress.startedDate
@@ -403,7 +403,7 @@ private actor CloudPromotionMigrator {
 
             if let tiles = progress.storedTiles {
                 clone.storedTiles = tiles.map { tile in
-                    SchmojiLevelTile(
+                    PotatoGameLevelTile(
                         id: tile.id,
                         color: tile.color,
                         positionX: tile.positionX,

@@ -10,14 +10,14 @@ import SpriteKit
 import SwiftUI
 
 @MainActor
-enum SchmojiArt {
+enum PotatoGameArt {
     private static let assetPrefix = ""
     private static var textureCache: [String: SKTexture] = [:]
 
     private static func normalizedHexcode(_ hexcode: String) -> String {
         let trimmed = hexcode.trimmingCharacters(in: .whitespacesAndNewlines)
         if trimmed.isEmpty {
-            return SchmojiOptions.potatoHex
+            return PotatoGameOptions.potatoHex
         }
         return trimmed
     }
@@ -57,7 +57,7 @@ enum SchmojiArt {
 
 // MARK: - Private helpers
 
-private extension SchmojiArt {
+private extension PotatoGameArt {
     static func cacheKeyName(for name: String, diameter: CGFloat) -> String {
         let scale = renderingScale
         let scaledSize = Int(round(max(diameter, 1) * scale))

@@ -10,7 +10,7 @@ import SwiftUI
     import AppKit
 #endif
 
-public enum SchmojiColor: String, Codable, CaseIterable, Hashable, ShapeStyle {
+public enum PotatoColor: String, Codable, CaseIterable, Hashable, ShapeStyle {
     case green = "Green"
     case yellow = "Yellow"
     case orange = "Orange"
@@ -108,8 +108,8 @@ public enum SchmojiColor: String, Codable, CaseIterable, Hashable, ShapeStyle {
         }
     }
 
-    public func nextColor() -> SchmojiColor {
-        let cases = SchmojiColor.allCases
+    public func nextColor() -> PotatoColor {
+        let cases = PotatoColor.allCases
         guard let idx = cases.firstIndex(of: self) else { return .green }
         // If we're already at the last element, stay on it (clamped)
         let lastIndex = cases.index(before: cases.endIndex)
@@ -118,8 +118,8 @@ public enum SchmojiColor: String, Codable, CaseIterable, Hashable, ShapeStyle {
         return cases[nextIndex]
     }
 
-    public func previousColor() -> SchmojiColor {
-        let cases = SchmojiColor.allCases
+    public func previousColor() -> PotatoColor {
+        let cases = PotatoColor.allCases
         guard let idx = cases.firstIndex(of: self) else { return .green }
         // If we're already at the first element, stay on it (clamped)
         if idx == cases.startIndex { return cases[idx] }
@@ -128,13 +128,13 @@ public enum SchmojiColor: String, Codable, CaseIterable, Hashable, ShapeStyle {
     }
 }
 
-extension SchmojiColor: Identifiable {
+extension PotatoColor: Identifiable {
     public var id: RawValue { rawValue }
 }
 
-public extension SchmojiColor {
+public extension PotatoColor {
     init?(order: Int) {
-        guard let color = SchmojiColor.allCases.first(where: { $0.order == order }) else {
+        guard let color = PotatoColor.allCases.first(where: { $0.order == order }) else {
             return nil
         }
         self = color

@@ -4,7 +4,7 @@
 import Foundation
 import SwiftUI
 
-public class SchmojiOptions {
+public class PotatoGameOptions {
     /// For Testing: When true, do not save data to disk. When false, saves data to disk.
     public static let inMemoryPersistence = false
 
@@ -21,8 +21,8 @@ public class SchmojiOptions {
     public static let height: Int = 960
     public static let baseSizePotatoTank: Double = 90.0
     public static let baseSize: Double = 44.0
-    public static let lastColor = SchmojiColor.allCases.last
-    public static let schmojiColorCount = SchmojiColor.allCases.count
+    public static let lastColor = PotatoColor.allCases.last
+    public static let schmojiColorCount = PotatoColor.allCases.count
 }
 
 enum AppScreen: Codable, Hashable, Identifiable, CaseIterable {

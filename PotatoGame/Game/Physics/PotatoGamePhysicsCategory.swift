@@ -3,7 +3,7 @@
 
 import SpriteKit
 
-enum SchmojiPhysicsCategory {
+enum PotatoGamePhysicsCategory {
     static let edge: UInt32 = 1 << 0
     static let schmoji: UInt32 = 1 << 1
 

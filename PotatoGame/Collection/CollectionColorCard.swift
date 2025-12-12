@@ -3,10 +3,10 @@
 
 import SwiftUI
 
-struct SchmojiCollectionColorCard: View {
-    let color: SchmojiColor
-    let selection: SchmojiSelection?
-    let updateSelection: (SchmojiSelection, String) -> Void
+struct CollectionColorCard: View {
+    let color: PotatoColor
+    let selection: EmojiSelection?
+    let updateSelection: (EmojiSelection, String) -> Void
 
     @Environment(\.colorScheme) private var colorScheme
 
@@ -42,7 +42,7 @@ struct SchmojiCollectionColorCard: View {
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                 }
             } else {
-                SchmojiCircleView(color: color, hexcode: color.schmojis.first ?? SchmojiOptions.potatoHex)
+                SchmojiCircleView(color: color, hexcode: color.schmojis.first ?? PotatoGameOptions.potatoHex)
                     .frame(minWidth: 48, idealWidth: 64, maxWidth: 72, minHeight: 48, idealHeight: 64, maxHeight: 72)
             }
         }
@@ -55,7 +55,7 @@ struct SchmojiCollectionColorCard: View {
     }
 }
 
-private extension SchmojiCollectionColorCard {
+private extension CollectionColorCard {
     func header(unlocked: Int, total: Int) -> some View {
         HStack(alignment: .firstTextBaseline) {
             Text(color.localizedName)
@@ -70,7 +70,7 @@ private extension SchmojiCollectionColorCard {
         }
     }
 
-    func selectionGrid(selection: SchmojiSelection, accent: Color) -> some View {
+    func selectionGrid(selection: EmojiSelection, accent: Color) -> some View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))], spacing: 10) {
             ForEach(selection.availableHexes, id: \.self) { hex in
                 Button {
@@ -100,7 +100,7 @@ private extension SchmojiCollectionColorCard {
         .padding(.horizontal, 4)
     }
 
-    func statusIcon(selection: SchmojiSelection, hex: String) -> String {
+    func statusIcon(selection: EmojiSelection, hex: String) -> String {
         if selection.displayHexcode() == hex { return "checkmark.circle.fill" }
         if selection.isUnlocked(hex) == false { return "lock.fill" }
         return "circle"
@@ -108,8 +108,8 @@ private extension SchmojiCollectionColorCard {
 }
 
 private enum SchmojiCollectionPreviewFactory {
-    static func selection(color: SchmojiColor, unlockedCount: Int) -> SchmojiSelection {
-        let selection = SchmojiSelection(color: color)
+    static func selection(color: PotatoColor, unlockedCount: Int) -> EmojiSelection {
+        let selection = EmojiSelection(color: color)
         let unlockedHexes = Array(selection.availableHexes.prefix(unlockedCount))
         unlockedHexes.forEach { selection.unlock(hexcode: $0) }
         selection.selectedHex = unlockedHexes.first ?? selection.displayHexcode()
@@ -120,7 +120,7 @@ private enum SchmojiCollectionPreviewFactory {
 
 #Preview("Color Card – Progress") {
     let selection = SchmojiCollectionPreviewFactory.selection(color: .orange, unlockedCount: 3)
-    return SchmojiCollectionColorCard(
+    return CollectionColorCard(
         color: .green,
         selection: selection,
         updateSelection: { _, _ in }
@@ -131,7 +131,7 @@ private enum SchmojiCollectionPreviewFactory {
 }
 
 #Preview("Color Card – Locked") {
-    SchmojiCollectionColorCard(
+    CollectionColorCard(
         color: .purple,
         selection: nil,
         updateSelection: { _, _ in }

@@ -9,7 +9,7 @@ import SwiftUI
 /// Glue layer that keeps SwiftUI state, SpriteKit scenes, and persistence in sync.
 @MainActor
 @Observable
-final class GameSessionViewModel {
+final class PotatoGameSessionViewModel {
     private(set) var level: SchmojiLevelInfo?
     private(set) var scene: SchmojiGameScene?
     private(set) var unlockProgress: SchmojiSelection.UnlockProgress?
@@ -194,7 +194,7 @@ final class GameSessionViewModel {
 
 // MARK: - Session lifecycle
 
-private extension GameSessionViewModel {
+private extension PotatoGameSessionViewModel {
     var palette: [SchmojiAppearance] {
         SchmojiAppearance.palette(from: selections)
     }

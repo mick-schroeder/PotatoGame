@@ -4,7 +4,7 @@
 import CoreGraphics
 import Foundation
 
-enum SchmojiLevelLayoutGenerator {
+enum PotatoGameLevelLayoutGenerator {
     static func layoutObjects(for levelNumber: Int) -> [SchmojiBoardObject] {
         guard let template = LevelTemplateByNumber[levelNumber] else { return [] }
         let rows = template.rows
@@ -31,7 +31,7 @@ enum SchmojiLevelLayoutGenerator {
             for (columnIndex, maybeID) in row.enumerated() {
                 guard
                     let order = maybeID,
-                    let color = SchmojiColor(order: order)
+                    let color = PotatoColor(order: order)
                 else { continue }
 
                 let centerX = offsetX + (CGFloat(columnIndex) + 0.5) * stepX
@@ -49,15 +49,15 @@ enum SchmojiLevelLayoutGenerator {
     }
 }
 
-private extension SchmojiLevelLayoutGenerator {
+private extension PotatoGameLevelLayoutGenerator {
     static var stageRect: CGRect {
-        CGRect(x: 0, y: 0, width: CGFloat(SchmojiOptions.width), height: CGFloat(SchmojiOptions.height))
+        CGRect(x: 0, y: 0, width: CGFloat(PotatoGameOptions.width), height: CGFloat(PotatoGameOptions.height))
     }
 
     static func playableFrame() -> CGRect {
         let inset: CGFloat = 40
-        let width = CGFloat(SchmojiOptions.width)
-        let height = CGFloat(SchmojiOptions.height)
+        let width = CGFloat(PotatoGameOptions.width)
+        let height = CGFloat(PotatoGameOptions.height)
         return CGRect(
             x: inset,
             y: inset,

@@ -4,15 +4,15 @@
 import Foundation
 import SwiftData
 
-@Model final class SchmojiLevelTile {
+@Model final class PotatoGameLevelTile {
     var id: UUID = UUID()
-    var colorRawValue: String = SchmojiColor.green.rawValue
+    var colorRawValue: String = PotatoColor.green.rawValue
     var positionX: Double?
     var positionY: Double?
 
-    var progress: SchmojiLevelProgress?
+    var progress: PotatoGameLevelProgress?
 
-    init(id: UUID = UUID(), color: SchmojiColor, positionX: Double?, positionY: Double?, progress: SchmojiLevelProgress? = nil) {
+    init(id: UUID = UUID(), color: PotatoColor, positionX: Double?, positionY: Double?, progress: PotatoGameLevelProgress? = nil) {
         self.id = id
         colorRawValue = color.rawValue
         self.positionX = positionX
@@ -21,9 +21,9 @@ import SwiftData
     }
 }
 
-extension SchmojiLevelTile {
-    var color: SchmojiColor {
-        get { SchmojiColor(rawValue: colorRawValue) ?? .green }
+extension PotatoGameLevelTile {
+    var color: PotatoColor {
+        get { PotatoColor(rawValue: colorRawValue) ?? .green }
         set { colorRawValue = newValue.rawValue }
     }
 

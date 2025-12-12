@@ -3,7 +3,7 @@
 
 import SpriteKit
 
-extension SchmojiGameScene {
+extension PotatoGameScene {
     #if os(iOS)
         func prepareCollisionFeedbackIfNeeded() {
             guard hapticsEnabled else { return }
@@ -29,7 +29,7 @@ extension SchmojiGameScene {
     #endif
 }
 
-extension SchmojiGameScene {
+extension PotatoGameScene {
     enum CollisionKind {
         case schmojiEdge
         case schmojiSchmoji

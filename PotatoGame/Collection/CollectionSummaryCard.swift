@@ -3,7 +3,7 @@
 
 import SwiftUI
 
-struct SchmojiCollectionSummaryCard: View {
+struct CollectionSummaryCard: View {
     let unlocked: Int
     let total: Int
 
@@ -64,7 +64,7 @@ struct SchmojiCollectionSummaryCard: View {
     }
 }
 
-private extension SchmojiCollectionSummaryCard {
+private extension CollectionSummaryCard {
     func summaryCard(
         alignment: HorizontalAlignment = .leading,
         spacing: CGFloat = 12,
@@ -80,14 +80,14 @@ private extension SchmojiCollectionSummaryCard {
 }
 
 #Preview("Summary – In Progress") {
-    SchmojiCollectionSummaryCard(unlocked: 18, total: 64)
+    CollectionSummaryCard(unlocked: 18, total: 64)
         .padding()
         .frame(maxWidth: 360)
         .background(Color.gray.opacity(0.1))
 }
 
 #Preview("Summary – Complete") {
-    SchmojiCollectionSummaryCard(unlocked: 64, total: 64)
+    CollectionSummaryCard(unlocked: 64, total: 64)
         .padding()
         .frame(maxWidth: 360)
         .background(Color.gray.opacity(0.1))

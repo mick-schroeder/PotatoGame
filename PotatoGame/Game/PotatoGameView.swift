@@ -22,10 +22,14 @@ struct SchmojiGameView: View {
     @AppStorage("showLegend") private var legendVisible: Bool = SchmojiOptions.showLegend
     @AppStorage("sound") private var soundEnabled: Bool = SchmojiOptions.sound
     @AppStorage("haptics") private var hapticsEnabled: Bool = SchmojiOptions.haptics
+    @AppStorage("mergeTutorialSeen") private var mergeTutorialSeen: Bool = false
+    @AppStorage("mergeTutorialAccountJoinDate") private var mergeTutorialAccountJoinDate: TimeInterval = 0
 
     @State private var viewModel: GameSessionViewModel
     @State private var isSeedingAccount = false
     @State private var howToPlayVisible = false
+    @State private var mergeTutorialVisible = false
+    @State private var wasPausedBeforeTutorial = false
     #if os(iOS)
         @State private var didApplyOrientationLock = false
     #endif
@@ -95,6 +99,7 @@ struct SchmojiGameView: View {
                     purchasedPackIDs: levelPackStore.purchasedPackIDs,
                     keyboardSettings: keyboardSettings
                 )
+                presentMergeTutorialIfNeeded()
             }
             .onDisappear {
                 viewModel.persistSessionState()
@@ -105,6 +110,17 @@ struct SchmojiGameView: View {
                         didApplyOrientationLock = false
                     }
                 #endif
+            }
+
+            .onChange(of: mergeTutorialVisible) { _, isVisible in
+                viewModel.withSession { _, scene in
+                    if isVisible {
+                        wasPausedBeforeTutorial = scene.isPaused
+                        scene.isPaused = true
+                    } else {
+                        scene.isPaused = wasPausedBeforeTutorial
+                    }
+                }
             }
 
         #if DEBUG
@@ -155,6 +171,12 @@ struct SchmojiGameView: View {
             #endif
 
                 .frame(maxWidth: CGFloat(SchmojiOptions.width), alignment: .center)
+
+            if mergeTutorialVisible {
+                mergeTutorialOverlay
+                    .transition(.opacity.combined(with: .scale))
+                    .zIndex(1)
+            }
         }
     }
 }
@@ -300,6 +322,39 @@ struct SchmojiGameView: View {
         }
     }
 
+    /// Keep the first-play merge tutorial tightly scoped to level 1.
+    var isLikelyFirstSession: Bool {
+        guard let currentLevel = viewModel.level else { return false }
+        guard currentLevel.levelNumber == 1 else { return false }
+        
+        return true
+    }
+
+    func presentMergeTutorialIfNeeded() {
+        resetMergeTutorialIfAccountChanged()
+        guard mergeTutorialVisible == false else { return }
+        guard viewModel.level != nil else { return }
+        guard isLikelyFirstSession else { return }
+        guard mergeTutorialSeen == false else { return }
+        withAnimation(.spring(response: 0.5, dampingFraction: 0.88)) {
+            mergeTutorialVisible = true
+        }
+    }
+
+    func dismissMergeTutorial() {
+        mergeTutorialSeen = true
+        withAnimation(.easeOut(duration: 0.2)) {
+            mergeTutorialVisible = false
+        }
+    }
+
+    private func resetMergeTutorialIfAccountChanged() {
+        guard let joinDate = accounts.first?.joinDate.timeIntervalSince1970 else { return }
+        guard mergeTutorialAccountJoinDate != joinDate else { return }
+        mergeTutorialAccountJoinDate = joinDate
+        mergeTutorialSeen = false
+    }
+
     /// Gradient background matching the current level tint.
     var backgroundView: some View {
         let colors: [Color] = [
@@ -393,6 +448,106 @@ struct SchmojiGameView: View {
     var legendOverlay: some View {
         SchmojiColorsLegendGenericView()
             .allowsHitTesting(false)
+    }
+
+    /// First-time onboarding overlay that explains the merge mechanic.
+    var mergeTutorialOverlay: some View {
+        ZStack {
+            Rectangle()
+                .fill(.regularMaterial)
+                .ignoresSafeArea()
+                .contentShape(Rectangle())
+                .opacity(0.75)
+            
+            VStack(spacing: 20) {
+                HStack(alignment: .center, spacing: 14) {
+                    Image(systemName: "sparkles")
+                        .font(.system(size: 30, weight: .bold, design: .rounded))
+                        .symbolRenderingMode(.hierarchical)
+                        .foregroundStyle(.yellow)
+                        .padding(12)
+                        .background(
+                            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                                .fill(.ultraThinMaterial)
+                        )
+
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("merge_tutorial.title")
+                            .font(.title2.weight(.heavy))
+                            .foregroundStyle(.primary)
+
+                        Text("merge_tutorial.body")
+                            .font(.body)
+                            .foregroundStyle(.secondary)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                SchmojiColorsLegendGenericView()
+               VStack(spacing: 12) {
+                    Button {
+                        dismissMergeTutorial()
+                    } label: {
+                        Label {
+                            Text("merge_tutorial.cta")
+                        } icon: {
+                            Image(systemName: "play.fill")
+                        }
+                        .frame(maxWidth: .infinity)
+                        .font(.headline)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .controlSize(.large)
+
+                    Button {
+                        dismissMergeTutorial()
+                        howToPlayVisible = true
+                    } label: {
+                        Label {
+                            Text("navigation.how_to_play")
+                        } icon: {
+                            Image(systemName: "book")
+                        }
+                        .frame(maxWidth: .infinity)
+                        .font(.headline)
+                    }
+                    .buttonStyle(.bordered)
+                    .controlSize(.large)
+                }
+            }
+            .padding(.vertical, 22)
+            .padding(.horizontal, 20)
+            .frame(maxWidth: 520)
+            .background {
+                RoundedRectangle(cornerRadius: 28, style: .continuous)
+                    .fill(.regularMaterial)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 28, style: .continuous)
+                            .strokeBorder(Color.white.opacity(colorScheme == .dark ? 0.12 : 0.18), lineWidth: 1)
+                    )
+                    .shadow(color: .black.opacity(colorScheme == .dark ? 0.35 : 0.2), radius: 28, x: 0, y: 18)
+            }
+            .padding(.horizontal, 24)
+            .accessibilityAddTraits(.isModal)
+        }
+    }
+
+    @ViewBuilder
+    private func badgePill(systemName: String, text: String) -> some View {
+        Label {
+            Text(text)
+                .font(.subheadline.weight(.semibold))
+        } icon: {
+            Image(systemName: systemName)
+                .symbolRenderingMode(.hierarchical)
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
+        .background(
+            Capsule(style: .continuous)
+                .fill(Color.white.opacity(colorScheme == .dark ? 0.09 : 0.14))
+        )
+        .foregroundStyle(.primary)
     }
 
     /// Wraps the win/lose view in a helper so we can attach lifecycle hooks.
