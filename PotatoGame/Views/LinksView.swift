@@ -7,7 +7,7 @@ import SwiftUI
 struct NavigationTile: View {
     let title: LocalizedStringResource
     let icon: String
-    let detail: String?
+    let detail: LocalizedStringResource?
     let destination: AppScreen
     @Environment(\.router) private var router
     @AppStorage("haptics") private var hapticsEnabled: Bool = PotatoGameOptions.haptics
@@ -72,7 +72,7 @@ struct LinksView: View {
         NavigationTile(
             title: LocalizedStringResource.linksLevels,
             icon: "circle.hexagongrid.fill",
-            detail: "42 / 99",
+            detail: LinksViewModel.progressDetail(completed: 42, total: 99),
             destination: .levels
         )
         .padding()
@@ -93,7 +93,7 @@ private struct LinksViewModel {
         let destination: AppScreen
         let title: LocalizedStringResource
         let iconName: String
-        let detail: String?
+        let detail: LocalizedStringResource?
 
         var id: AppScreen { destination }
     }
@@ -147,18 +147,18 @@ private struct LinksViewModel {
 }
 
 private extension LinksViewModel {
-    static func makeLevelDetail(levelProgress: [PotatoGameLevelProgress], totalLevels: Int) -> String? {
+    static func makeLevelDetail(levelProgress: [PotatoGameLevelProgress], totalLevels: Int) -> LocalizedStringResource? {
         guard totalLevels > 0 else { return nil }
         let completed = levelProgress.filter { $0.gameState == .win || $0.gameState == .winPerfect }.count
         return progressDetail(completed: completed, total: totalLevels)
     }
 
-    static func makeStoreDetail(purchasedPackIDs: Set<String>, availablePackCount: Int) -> String? {
+    static func makeStoreDetail(purchasedPackIDs: Set<String>, availablePackCount: Int) -> LocalizedStringResource? {
         guard availablePackCount > 0 else { return nil }
         return progressDetail(completed: purchasedPackIDs.count, total: availablePackCount)
     }
 
-    static func makeCollectionDetail(selections: [EmojiSelection]) -> String? {
+    static func makeCollectionDetail(selections: [EmojiSelection]) -> LocalizedStringResource? {
         let total = PotatoColor.allCases.reduce(0) { partial, color in
             partial + color.schmojis.count
         }
@@ -173,7 +173,7 @@ private extension LinksViewModel {
         return progressDetail(completed: unlocked, total: total)
     }
 
-    static func progressDetail(completed: Int, total: Int) -> String {
-        String(localized: "metrics.progress_format", defaultValue: "\(completed) / \(total)")
+    static func progressDetail(completed: Int, total: Int) -> LocalizedStringResource {
+        LocalizedStringResource("metrics.progress_format", defaultValue: "\(completed) / \(total)")
     }
 }

@@ -43,32 +43,32 @@ struct HowToPlayView: View {
                 VStack(alignment: .leading, spacing: 20) {
                     Group {
                         InstructionSection(
-                            title: String(localized: "how_to.play.title"),
+                            title: LocalizedStringResource("how_to.play.title"),
                             systemImage: "gamecontroller.fill",
-                            text: String(localized: "how_to.play.body")
+                            text: LocalizedStringResource("how_to.play.body")
                         )
                         InstructionSection(
-                            title: String(localized: "how_to.goal.title"),
+                            title: LocalizedStringResource("how_to.goal.title"),
                             systemImage: "trophy.fill",
-                            text: String(localized: "how_to.goal.body")
+                            text: LocalizedStringResource("how_to.goal.body")
                         )
                         InstructionSection(
-                            title: String(localized: "how_to.controls.title"),
+                            title: LocalizedStringResource("how_to.controls.title"),
                             systemImage: "hand.tap.fill",
-                            text: String(localized: "how_to.controls.body")
+                            text: LocalizedStringResource("how_to.controls.body")
                         )
                         if showsKeyboardHelp {
                             KeyboardShortcutsSection(keyboardSettings: keyboardSettings)
                         }
                         InstructionSection(
-                            title: String(localized: "how_to.collection.title"),
+                            title: LocalizedStringResource("how_to.collection.title"),
                             systemImage: "sparkles",
-                            text: String(localized: "how_to.collection.body")
+                            text: .howToCollectionBody
                         )
                         InstructionSection(
-                            title: String(localized: "how_to.tip.title"),
+                            title: LocalizedStringResource("how_to.tip.title"),
                             systemImage: "lightbulb.max.fill",
-                            text: String(localized: "how_to.tip.body")
+                            text: LocalizedStringResource("how_to.tip.body")
                         )
                     }
                     .padding(EdgeInsets(top: 16,
@@ -89,9 +89,9 @@ struct HowToPlayView: View {
 }
 
 private struct InstructionSection: View {
-    let title: String
+    let title: LocalizedStringResource
     let systemImage: String
-    let text: String
+    let text: LocalizedStringResource
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {

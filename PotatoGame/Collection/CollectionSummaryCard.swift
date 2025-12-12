@@ -59,8 +59,10 @@ struct CollectionSummaryCard: View {
                             .font(.caption.monospacedDigit())
                     }
                     .progressViewStyle(.linear)
-                    
-                    Text(String(localized: "how_to.collection.body"))
+
+                    Text(.howToCollectionBody)
+                        .font(.callout)
+                        .foregroundStyle(.secondary)
 
                 }
             }

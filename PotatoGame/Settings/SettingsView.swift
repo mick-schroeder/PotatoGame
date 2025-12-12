@@ -151,7 +151,12 @@ struct SettingsView: View {
                 }
             } message: {
                 if let conflictAction, let conflictShortcut {
-                    Text("\(conflictShortcut.displayLabel) is already assigned to \(String(localized: conflictAction.title)). Change that action first.")
+                    Text(
+                        LocalizedStringResource(
+                            "settings.keyboard.shortcutConflict",
+                            defaultValue: "\(conflictShortcut.displayLabel) is already assigned to \(conflictAction.title). Change that action first."
+                        )
+                    )
                 } else {
                     Text("That shortcut is already assigned. Change the other binding first.")
                 }

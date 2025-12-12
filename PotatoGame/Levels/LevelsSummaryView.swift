@@ -175,8 +175,12 @@ private struct LevelStoreNavigationButton: View {
 
     private var accessibilityLabel: Text {
         if let requiredPack {
-            let packName = String(localized: requiredPack.displayName)
-            return Text("Open Store to unlock \(packName)")
+            return Text(
+                LocalizedStringResource(
+                    "accessibility.levels.visit-store-required",
+                    defaultValue: "Open Store to unlock \(requiredPack.displayName)"
+                )
+            )
         }
         return Text(LocalizedStringResource("accessibility.levels.visit-store", defaultValue: "Open Level Store"))
     }

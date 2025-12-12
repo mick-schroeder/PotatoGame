@@ -94,13 +94,6 @@ private struct LevelPackProductCard: View {
         levelPackStore.purchasedPackIDs.contains(pack.id)
     }
 
-    private var priceText: String {
-        if let product = levelPackStore.product(for: pack) {
-            return product.displayPrice
-        }
-        return String(localized: LocalizedStringResource("store.pack.loadingPrice", defaultValue: "Loading price…"))
-    }
-
     private var levelRangeText: String {
         let lower = pack.levelRange.lowerBound.formatted()
         let upper = pack.levelRange.upperBound.formatted()
@@ -139,8 +132,13 @@ private struct LevelPackProductCard: View {
                             Text(LocalizedStringResource("store.pack.purchasing", defaultValue: "Purchasing…"))
                                 .fontWeight(.semibold)
                         } else {
-                            Text(priceText)
-                                .fontWeight(.semibold)
+                            if let product = levelPackStore.product(for: pack) {
+                                Text(product.displayPrice)
+                                    .fontWeight(.semibold)
+                            } else {
+                                Text(LocalizedStringResource("store.pack.loadingPrice", defaultValue: "Loading price…"))
+                                    .fontWeight(.semibold)
+                            }
                         }
                     }
                     .frame(maxWidth: .infinity)

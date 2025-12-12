@@ -38,20 +38,20 @@ struct PotatoGameEndView: View {
         }
     }
 
-    private var sheetTitle: String {
-        String(localized: .levelsTileTitle(level.levelNumber))
+    private var sheetTitle: LocalizedStringResource {
+        .levelsTileTitle(level.levelNumber)
     }
 
-    private var statusTitle: String {
+    private var statusTitle: LocalizedStringResource {
         switch outcome {
         case let .win(perfect, _, _):
             if perfect {
-                String(localized: .levelsStatusPerfect)
+                .levelsStatusPerfect
             } else {
-                String(localized: .levelsStatusCompleted)
+                .levelsStatusCompleted
             }
         case .lose:
-            String(localized: .levelsStatusLost)
+            .levelsStatusLost
         }
     }
 
@@ -72,7 +72,7 @@ struct PotatoGameEndView: View {
 
 private extension PotatoGameEndView {
     @ViewBuilder
-    func summarySection(badge: PotatoGameEndCard.BadgeView, status: String) -> some View {
+    func summarySection(badge: PotatoGameEndCard.BadgeView, status: LocalizedStringResource) -> some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
                 Spacer()
@@ -113,11 +113,7 @@ private extension PotatoGameEndView {
                         .accessibilityHidden(true)
                 }
                 .accessibilityLabel(
-                    Text(
-                        String(
-                            localized: .gameEndPotatoesEarned
-                        )
-                    )
+                    Text(.gameEndPotatoesEarned)
                 )
                 .accessibilityValue(Text("\(potatoesEarned)"))
 
@@ -271,14 +267,14 @@ struct PotatoGameEndCard: View {
 
     private let headerContent: AnyView
     private let actionsContent: AnyView
-    private let title: String
+    private let title: LocalizedStringResource
     private let onDismissTapped: (() -> Void)?
 
     init(
         emphasis: Emphasis,
         iconSystemName: String,
-        title: String,
-        @ViewBuilder headerContent: (_ badge: BadgeView, _ title: String) -> some View,
+        title: LocalizedStringResource,
+        @ViewBuilder headerContent: (_ badge: BadgeView, _ title: LocalizedStringResource) -> some View,
         @ViewBuilder actionsContent: () -> some View,
         onDismissTapped: (() -> Void)? = nil
     ) {
@@ -303,7 +299,7 @@ struct PotatoGameEndCard: View {
             .padding(.horizontal)
             .safeAreaPadding(.bottom)
             .frame(maxWidth: .infinity, alignment: .center)
-            .navigationTitle(title)
+            .navigationTitle(Text(title))
             #if !os(macOS)
                 .navigationBarTitleDisplayMode(.inline)
             #endif
