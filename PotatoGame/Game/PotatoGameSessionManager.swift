@@ -12,8 +12,8 @@ class PotatoGameSessionManager {
     let logger = Logger(subsystem: "PotatoGame", category: "GameSession")
     let saveDebounceInterval: TimeInterval = 0.25
     var pendingSaveTask: Task<Void, Never>?
-    /// Small pause before finalizing a game so the last spawn/sound can breathe.
-    let gameEndDelay: TimeInterval = 0.6
+    /// Small pause before finalizing a game so the last spawn/sound can finish.
+    let gameEndDelay: TimeInterval = 2
     var pendingGameEndTask: Task<Void, Never>?
     /// We keep the scene alive between debounce cycles so the layout can be re-read.
     weak var pendingSceneReference: PotatoGameScene?

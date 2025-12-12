@@ -46,6 +46,7 @@ struct CollectionSummaryCard: View {
                     Text(.collectionSummaryUnlockedCount(unlocked, total))
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
+                    
 
                     ProgressView(
                         value: Double(unlocked),
@@ -58,6 +59,9 @@ struct CollectionSummaryCard: View {
                             .font(.caption.monospacedDigit())
                     }
                     .progressViewStyle(.linear)
+                    
+                    Text(String(localized: "how_to.collection.body"))
+
                 }
             }
         }
