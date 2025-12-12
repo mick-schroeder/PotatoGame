@@ -209,43 +209,6 @@ struct PotatoGameView: View {
                     Image(systemName: "arrow.counterclockwise.circle")
                 }
             }
-            #if DEBUG
-                Button {
-                    viewModel.withSession { manager, scene in
-                        manager.handleWin(in: scene)
-                    }
-                } label: {
-                    Label {
-                        Text(.buttonWinLevel)
-                    } icon: {
-                        Image(systemName: "flag.checkered")
-                    }
-                }
-
-                Button {
-                    viewModel.withSession { manager, scene in
-                        manager.handleWin(in: scene, perfect: true)
-                    }
-                } label: {
-                    Label {
-                        Text(.buttonPerfectWin)
-                    } icon: {
-                        Image(systemName: "star.circle.fill")
-                    }
-                }
-
-                Button {
-                    viewModel.withSession { manager, scene in
-                        manager.handleLoss(in: scene)
-                    }
-                } label: {
-                    Label {
-                        Text(.buttonLoseLevel)
-                    } icon: {
-                        Image(systemName: "x.circle")
-                    }
-                }
-            #endif
             Button {
                 viewModel.withSession { manager, scene in
                     manager.handleEnd(in: scene)
@@ -291,11 +254,49 @@ struct PotatoGameView: View {
                 }
             }
             #if DEBUG
-                Toggle(isOn: $debugMatchOverlayEnabled) {
-                    Label {
-                        Text(.gameMenuDebugMatchOverlay)
-                    } icon: {
-                        Image(systemName: debugMatchOverlayEnabled ? "viewfinder.circle" : "viewfinder.circle.fill")
+                Section("Debug") {
+                    Button {
+                        viewModel.withSession { manager, scene in
+                            manager.handleWin(in: scene)
+                        }
+                    } label: {
+                        Label {
+                            Text(.buttonWinLevel)
+                        } icon: {
+                            Image(systemName: "flag.checkered")
+                        }
+                    }
+
+                    Button {
+                        viewModel.withSession { manager, scene in
+                            manager.handleWin(in: scene, perfect: true)
+                        }
+                    } label: {
+                        Label {
+                            Text(.buttonPerfectWin)
+                        } icon: {
+                            Image(systemName: "star.circle.fill")
+                        }
+                    }
+
+                    Button {
+                        viewModel.withSession { manager, scene in
+                            manager.handleLoss(in: scene)
+                        }
+                    } label: {
+                        Label {
+                            Text(.buttonLoseLevel)
+                        } icon: {
+                            Image(systemName: "x.circle")
+                        }
+                    }
+
+                    Toggle(isOn: $debugMatchOverlayEnabled) {
+                        Label {
+                            Text(.gameMenuDebugMatchOverlay)
+                        } icon: {
+                            Image(systemName: debugMatchOverlayEnabled ? "viewfinder.circle" : "viewfinder.circle.fill")
+                        }
                     }
                 }
             #endif
