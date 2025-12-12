@@ -29,7 +29,7 @@ enum PreviewSampleData {
         state: GameState = .playing,
         potatoes: Int = 6,
         ownedLevelPackIDs: Set<String> = []
-    ) -> SchmojiLevelInfo {
+    ) -> PotatoGameLevelInfo {
         let template = LevelTemplateByNumber[levelNumber]
             ?? LevelTemplates.first
             ?? LevelTemplate(
@@ -39,17 +39,17 @@ enum PreviewSampleData {
                 potentialPotatoCount: potatoes
             )
 
-        let progress = SchmojiLevelProgress(levelNumber: template.levelNumber, gameState: state)
+        let progress = PotatoGameLevelProgress(levelNumber: template.levelNumber, gameState: state)
         progress.numOfPotatoesCreated = potatoes
-        return SchmojiLevelInfo(
+        return PotatoGameLevelInfo(
             template: template,
             progress: progress,
             ownedLevelPackIDs: ownedLevelPackIDs
         )
     }
 
-    static func sampleLevels() -> [SchmojiLevelInfo] {
-        let lockedLevelNumber = SchmojiOptions.baseGameLevelLimit + 1
+    static func sampleLevels() -> [PotatoGameLevelInfo] {
+        let lockedLevelNumber = PotatoGameOptions.baseGameLevelLimit + 1
         return [
             sampleLevel(levelNumber: 1, state: .newUnlocked, potatoes: 2),
             sampleLevel(levelNumber: 2, state: .playing, potatoes: 3),
@@ -60,8 +60,8 @@ enum PreviewSampleData {
         ]
     }
 
-    static func sampleUnlockProgress() -> SchmojiSelection.UnlockProgress {
-        let selection = SchmojiSelection(color: .yellow)
+    static func sampleUnlockProgress() -> EmojiSelection.UnlockProgress {
+        let selection = EmojiSelection(color: .yellow)
         selection.perfectWinCount = 7
         if let secondHex = selection.availableHexes.dropFirst().first {
             selection.unlock(hexcode: secondHex)
@@ -102,7 +102,7 @@ private extension PreviewSampleData {
 
     @MainActor
     static func seedSelections(in context: ModelContext) {
-        let descriptor = FetchDescriptor<SchmojiSelection>()
+        let descriptor = FetchDescriptor<EmojiSelection>()
         let selections = (try? context.fetch(descriptor)) ?? []
         for selection in selections {
             let unlocks = Array(selection.availableHexes.prefix(3))
@@ -117,14 +117,14 @@ private extension PreviewSampleData {
         let sampleStates: [GameState] = [.newUnlocked, .playing, .win, .winPerfect, .lose]
         for (offset, state) in sampleStates.enumerated() {
             let levelNumber = offset + 1
-            let progress = SchmojiLevelProgress(levelNumber: levelNumber, gameState: state)
+            let progress = PotatoGameLevelProgress(levelNumber: levelNumber, gameState: state)
             progress.numOfPotatoesCreated = (offset + 1) * 3
             progress.loadFromTemplateIfNeeded()
             context.insert(progress)
         }
 
-        let lockedLevelNumber = SchmojiOptions.baseGameLevelLimit + 1
-        let lockedProgress = SchmojiLevelProgress(levelNumber: lockedLevelNumber, gameState: .newUnlocked)
+        let lockedLevelNumber = PotatoGameOptions.baseGameLevelLimit + 1
+        let lockedProgress = PotatoGameLevelProgress(levelNumber: lockedLevelNumber, gameState: .newUnlocked)
         lockedProgress.loadFromTemplateIfNeeded()
         context.insert(lockedProgress)
     }

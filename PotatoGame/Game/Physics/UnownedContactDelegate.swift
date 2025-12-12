@@ -10,9 +10,9 @@ struct SchmojiCollisionSummary {
 }
 
 final class UnownedContactDelegate: NSObject, SKPhysicsContactDelegate {
-    private weak var scene: SchmojiGameScene?
+    private weak var scene: PotatoGameScene?
 
-    init(scene: SchmojiGameScene) {
+    init(scene: PotatoGameScene) {
         self.scene = scene
     }
 
@@ -21,15 +21,15 @@ final class UnownedContactDelegate: NSObject, SKPhysicsContactDelegate {
         let categoryA = contact.bodyA.categoryBitMask
         let categoryB = contact.bodyB.categoryBitMask
         let impulse = contact.collisionImpulse
-        let schmoji = SchmojiPhysicsCategory.schmoji
-        let edge = SchmojiPhysicsCategory.edge
+        let schmoji = PotatoGamePhysicsCategory.schmoji
+        let edge = PotatoGamePhysicsCategory.edge
 
         let firstIsSchmoji = categoryA == schmoji
         let secondIsSchmoji = categoryB == schmoji
         guard firstIsSchmoji || secondIsSchmoji else { return }
         let otherMask = firstIsSchmoji ? categoryB : categoryA
 
-        let collisionKind: SchmojiGameScene.CollisionKind? = switch otherMask {
+        let collisionKind: PotatoGameScene.CollisionKind? = switch otherMask {
         case edge:
             .schmojiEdge
         case schmoji:
@@ -38,7 +38,7 @@ final class UnownedContactDelegate: NSObject, SKPhysicsContactDelegate {
             nil
         }
         guard let kind = collisionKind else { return }
-        guard impulse >= SchmojiGameScene.CollisionHaptics.threshold(for: kind) else { return }
+        guard impulse >= PotatoGameScene.CollisionHaptics.threshold(for: kind) else { return }
 
         guard let scene else { return }
 

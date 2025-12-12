@@ -48,7 +48,7 @@ extension PotatoGameSessionManager {
     }
 }
 
-/// Summary of the bits of `SchmojiLevelInfo` we expose to SwiftUI observers.
+/// Summary of the bits of `PotatoGameLevelInfo` we expose to SwiftUI observers.
 /// Comparing digests lets us skip redundant `@Published` updates when a save touches unrelated fields.
 struct LevelUpdateDigest: Equatable {
     let levelNumber: Int
@@ -59,7 +59,7 @@ struct LevelUpdateDigest: Equatable {
     let ownedLevelPackIDs: Set<String>
 
     @MainActor
-    init(level: SchmojiLevelInfo) {
+    init(level: PotatoGameLevelInfo) {
         levelNumber = level.levelNumber
         gameState = level.gameState
         numOfPotatoesCreated = level.numOfPotatoesCreated
@@ -77,11 +77,11 @@ private struct LevelPersistenceSnapshot: Sendable {
     let numOfPotatoesCreated: Int
     let startedDate: Date?
     let completedDate: Date?
-    let objects: [SchmojiBoardObject]?
+    let objects: [PotatoGameBoardObject]?
     let defaultState: GameState
 
     @MainActor
-    init(level: SchmojiLevelInfo, boardObjects: [SchmojiBoardObject]? = nil) {
+    init(level: PotatoGameLevelInfo, boardObjects: [PotatoGameBoardObject]? = nil) {
         levelNumber = level.levelNumber
         gameState = level.gameState
         numOfPotatoesCreated = level.numOfPotatoesCreated
@@ -112,7 +112,7 @@ private struct SelectionPersistenceSnapshot: Sendable {
     let perfectWinCount: Int
     let unlockedHexes: [String]
 
-    init(selection: SchmojiSelection) {
+    init(selection: EmojiSelection) {
         colorRawValue = selection.colorRawValue
         selectedHex = selection.selectedHex
         perfectWinCount = selection.perfectWinCount
@@ -150,17 +150,17 @@ actor GamePersistenceActor {
     fileprivate func persistLevel(_ snapshot: LevelPersistenceSnapshot, account: AccountPersistenceSnapshot?, reason: String) async {
         do {
             let levelNumber = snapshot.levelNumber
-            var descriptor = FetchDescriptor<SchmojiLevelProgress>()
+            var descriptor = FetchDescriptor<PotatoGameLevelProgress>()
             descriptor.predicate = #Predicate { $0.levelNumber == levelNumber }
             descriptor.sortBy = [SortDescriptor(\.updatedAt, order: .reverse)]
             descriptor.includePendingChanges = true
 
             var matches = try context.fetch(descriptor)
-            let progress: SchmojiLevelProgress
+            let progress: PotatoGameLevelProgress
             if let existing = matches.first {
                 progress = existing
             } else {
-                let created = SchmojiLevelProgress(levelNumber: levelNumber, gameState: snapshot.defaultState)
+                let created = PotatoGameLevelProgress(levelNumber: levelNumber, gameState: snapshot.defaultState)
                 created.loadFromTemplateIfNeeded()
                 context.insert(created)
                 progress = created
@@ -206,17 +206,17 @@ actor GamePersistenceActor {
     fileprivate func persistSelection(_ snapshot: SelectionPersistenceSnapshot) async {
         do {
             let colorRawValue = snapshot.colorRawValue
-            var descriptor = FetchDescriptor<SchmojiSelection>()
+            var descriptor = FetchDescriptor<EmojiSelection>()
             descriptor.predicate = #Predicate { $0.colorRawValue == colorRawValue }
             descriptor.includePendingChanges = true
 
             let matches = try context.fetch(descriptor)
-            let selection: SchmojiSelection
+            let selection: EmojiSelection
             if let existing = matches.first {
                 selection = existing
             } else {
-                let color = SchmojiColor(rawValue: snapshot.colorRawValue) ?? .green
-                let created = SchmojiSelection(color: color, selectedHex: snapshot.selectedHex, unlockedHexes: snapshot.unlockedHexes)
+                let color = PotatoColor(rawValue: snapshot.colorRawValue) ?? .green
+                let created = EmojiSelection(color: color, selectedHex: snapshot.selectedHex, unlockedHexes: snapshot.unlockedHexes)
                 created.perfectWinCount = snapshot.perfectWinCount
                 context.insert(created)
                 selection = created
@@ -241,7 +241,7 @@ actor GamePersistenceActor {
 
     func discardLayout(for levelNumber: Int) async {
         do {
-            if let progress = SchmojiLevelProgress.progress(levelNumber: levelNumber, in: context) {
+            if let progress = PotatoGameLevelProgress.progress(levelNumber: levelNumber, in: context) {
                 progress.storedTiles = []
                 progress.updatedAt = .now
                 if context.hasChanges {
@@ -255,7 +255,7 @@ actor GamePersistenceActor {
 
     func ensureTemplateLayout(for levelNumber: Int) async {
         do {
-            let progress = SchmojiLevelProgress.ensure(levelNumber: levelNumber, defaultState: .newUnlocked, in: context)
+            let progress = PotatoGameLevelProgress.ensure(levelNumber: levelNumber, defaultState: .newUnlocked, in: context)
             let generated = progress.loadFromTemplateIfNeeded()
             if generated, context.hasChanges {
                 try context.save()
@@ -297,12 +297,12 @@ actor GamePersistenceActor {
     }
 
     private func pruneLevelDuplicates() throws {
-        var descriptor = FetchDescriptor<SchmojiLevelProgress>()
+        var descriptor = FetchDescriptor<PotatoGameLevelProgress>()
         descriptor.sortBy = [SortDescriptor(\.updatedAt, order: .reverse)]
         descriptor.includePendingChanges = true
         let allProgress = try context.fetch(descriptor)
         var seen: Set<Int> = []
-        var duplicates: [SchmojiLevelProgress] = []
+        var duplicates: [PotatoGameLevelProgress] = []
         for entry in allProgress {
             let levelNumber = entry.levelNumber
             if seen.insert(levelNumber).inserted {
@@ -337,11 +337,11 @@ actor GamePersistenceActor {
     }
 
     private func pruneSelectionDuplicates() throws {
-        var descriptor = FetchDescriptor<SchmojiSelection>()
+        var descriptor = FetchDescriptor<EmojiSelection>()
         descriptor.includePendingChanges = true
         let allSelections = try context.fetch(descriptor)
         var seen: Set<String> = []
-        var duplicates: [SchmojiSelection] = []
+        var duplicates: [EmojiSelection] = []
         for selection in allSelections {
             let raw = selection.colorRawValue
             if seen.insert(raw).inserted {
@@ -391,7 +391,7 @@ extension PotatoGameSessionManager {
         persistScene(scene, layoutSnapshot: snapshot)
     }
 
-    private func drainPendingLayoutSnapshot() -> [SchmojiBoardObject]? {
+    private func drainPendingLayoutSnapshot() -> [PotatoGameBoardObject]? {
         defer { pendingLayoutSnapshot = nil }
         return pendingLayoutSnapshot
     }
@@ -424,7 +424,7 @@ extension PotatoGameSessionManager {
     }
 
     /// Serializes the live scene (or a supplied snapshot) back into persistence.
-    func persistScene(_ scene: PotatoGameScene?, layoutSnapshot: [SchmojiBoardObject]? = nil) {
+    func persistScene(_ scene: PotatoGameScene?, layoutSnapshot: [PotatoGameBoardObject]? = nil) {
         var snapshotObjects = layoutSnapshot
         if currentLevel.gameState == .playing {
             if snapshotObjects == nil, let scene, let updatedObjects = scene.extractUpdatedObjects() {
@@ -479,7 +479,7 @@ extension PotatoGameSessionManager {
         autosaveTask = nil
     }
 
-    private func persistLevelState(reason: String, boardObjectsOverride: [SchmojiBoardObject]? = nil, includeAccount: Bool = false) {
+    private func persistLevelState(reason: String, boardObjectsOverride: [PotatoGameBoardObject]? = nil, includeAccount: Bool = false) {
         let levelSnapshot = LevelPersistenceSnapshot(level: currentLevel, boardObjects: boardObjectsOverride)
         let accountSnapshot = includeAccount ? AccountPersistenceSnapshot(account: currentAccount) : nil
         Task(priority: .utility) { [actor = persistenceActor] in
@@ -494,7 +494,7 @@ extension PotatoGameSessionManager {
         }
     }
 
-    private func persistSelectionState(_ selection: SchmojiSelection) {
+    private func persistSelectionState(_ selection: EmojiSelection) {
         let snapshot = SelectionPersistenceSnapshot(selection: selection)
         Task(priority: .utility) { [actor = persistenceActor] in
             await actor.persistSelection(snapshot)
@@ -522,8 +522,8 @@ extension PotatoGameSessionManager {
     /// Tracks perfect wins vs normal wins for collection unlock progress.
     func updateColorUnlockProgress(perfect: Bool) {
         let color = currentLevel.levelBackgroundColor
-        let selection = SchmojiSelection.resolve(color: color, in: modelContext)
-        let progress: SchmojiSelection.UnlockProgress = if perfect {
+        let selection = EmojiSelection.resolve(color: color, in: modelContext)
+        let progress: EmojiSelection.UnlockProgress = if perfect {
             selection.recordPerfectWin()
         } else {
             selection.currentUnlockProgress()
@@ -536,16 +536,16 @@ extension PotatoGameSessionManager {
 
     func reportGameCenterLifetimeProgress() {
         #if os(iOS)
-            let preference = UserDefaults.standard.object(forKey: "gamecenter") as? Bool ?? SchmojiOptions.gameCenter
+            let preference = UserDefaults.standard.object(forKey: "gamecenter") as? Bool ?? PotatoGameOptions.gameCenter
             guard preference else { return }
-            let descriptor = FetchDescriptor<SchmojiLevelProgress>()
+            let descriptor = FetchDescriptor<PotatoGameLevelProgress>()
             let completedLevels = (try? modelContext.fetch(descriptor))?.reduce(into: 0) { sum, entry in
                 if entry.gameState == .win || entry.gameState == .winPerfect {
                     sum += 1
                 }
             } ?? 0
 
-            var selectionDescriptor = FetchDescriptor<SchmojiSelection>()
+            var selectionDescriptor = FetchDescriptor<EmojiSelection>()
             selectionDescriptor.includePendingChanges = true
             let selections = (try? modelContext.fetch(selectionDescriptor)) ?? []
 
@@ -554,7 +554,7 @@ extension PotatoGameSessionManager {
                 count += unlocked.count
             }
 
-            let totalAvailableSchmojis = SchmojiColor.allCases.reduce(into: 0) { count, color in
+            let totalAvailableSchmojis = PotatoColor.allCases.reduce(into: 0) { count, color in
                 count += color.schmojis.count
             }
 

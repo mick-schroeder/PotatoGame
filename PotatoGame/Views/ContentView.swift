@@ -28,8 +28,8 @@ struct ContentView: View {
 
     // MARK: - Game Center
 
-    @AppStorage("gamecenter") var gameCenter: Bool = SchmojiOptions.gameCenter
-    @AppStorage("haptics") private var hapticsEnabled: Bool = SchmojiOptions.haptics
+    @AppStorage("gamecenter") var gameCenter: Bool = PotatoGameOptions.gameCenter
+    @AppStorage("haptics") private var hapticsEnabled: Bool = PotatoGameOptions.haptics
 
     #if os(iOS)
         @StateObject private var gameCenterManager = GameCenterManager.shared
@@ -125,7 +125,7 @@ struct ContentView: View {
         VStack(alignment: .leading, spacing: 20) {
             heroHeader
             potatoCountSection
-            SchmojiColorsLegendGenericView()
+            PotatoGameLegendView()
                 .foregroundStyle(PotatoTheme.secondaryText)
             playButton
             LinksView()

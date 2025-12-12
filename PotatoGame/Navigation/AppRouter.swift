@@ -16,7 +16,7 @@ final class AppRouter {
         path.append(screen)
     }
 
-    func navigate(to level: SchmojiLevelInfo) {
+    func navigate(to level: PotatoGameLevelInfo) {
         path.append(level)
     }
 

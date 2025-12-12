@@ -4,15 +4,15 @@
 import Foundation
 
 /// Lightweight DTO that mirrors the level data needed by SpriteKit.
-struct SchmojiLevelPresentation {
+struct PotatoLevelPresentation {
     let levelNumber: Int
-    let backgroundColor: SchmojiColor
+    let backgroundColor: PotatoColor
     let potentialPotatoCount: Int
     let ownedLevelPackIDs: Set<String>
-    var objects: [SchmojiBoardObject]
+    var objects: [PotatoGameBoardObject]
 
     @MainActor
-    init(levelInfo: SchmojiLevelInfo) {
+    init(levelInfo: PotatoGameLevelInfo) {
         levelNumber = levelInfo.levelNumber
         backgroundColor = levelInfo.levelBackgroundColor
         potentialPotatoCount = levelInfo.potentialPotatoCount

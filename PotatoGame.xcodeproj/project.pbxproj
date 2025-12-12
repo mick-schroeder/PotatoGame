@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00125F232EAEAF8800C7051D /* SchmojiSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00125F222EAEAF8800C7051D /* SchmojiSelection.swift */; };
-		00125F6F2EAEF78C00C7051D /* SchmojiLevelProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00125F6E2EAEF78C00C7051D /* SchmojiLevelProgress.swift */; };
-		00125F712EAEF79200C7051D /* SchmojiLevelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00125F702EAEF79200C7051D /* SchmojiLevelInfo.swift */; };
-		00166D362EB3D420003999E7 /* SchmojiLevelLayoutGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00166D352EB3D41F003999E7 /* SchmojiLevelLayoutGenerator.swift */; };
+		00125F232EAEAF8800C7051D /* EmojiSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00125F222EAEAF8800C7051D /* EmojiSelection.swift */; };
+		00125F6F2EAEF78C00C7051D /* PotatoGameLevelProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00125F6E2EAEF78C00C7051D /* PotatoGameLevelProgress.swift */; };
+		00125F712EAEF79200C7051D /* PotatoGameLevelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00125F702EAEF79200C7051D /* PotatoGameLevelInfo.swift */; };
+		00166D362EB3D420003999E7 /* PotatoGameLevelLayoutGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00166D352EB3D41F003999E7 /* PotatoGameLevelLayoutGenerator.swift */; };
 		00166D3D2EB50F79003999E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00166D382EB50F79003999E7 /* Assets.xcassets */; };
 		00166D3E2EB50F79003999E7 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 00166D392EB50F79003999E7 /* Localizable.xcstrings */; };
 		00166D3F2EB50F79003999E7 /* Potato Game.icon in Resources */ = {isa = PBXBuildFile; fileRef = 00166D3A2EB50F79003999E7 /* Potato Game.icon */; };
@@ -19,12 +19,12 @@
 		00166E252EB6A1E4003999E7 /* PotatoGameWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 00166E142EB6A1E3003999E7 /* PotatoGameWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0019873A2B69A54A00BE621B /* PotatoCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001987392B69A54A00BE621B /* PotatoCountView.swift */; };
 		00277B922B72BB6E0013F780 /* LevelsGridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00277B912B72BB6E0013F780 /* LevelsGridItem.swift */; };
-		002C54F92EBBB12400737B61 /* SchmojiGameEndWinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002C54F82EBBB12400737B61 /* SchmojiGameEndWinView.swift */; };
-		002E3D0F2B7660DD00D938E1 /* SchmojiColorsLegendGenericView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E3D0E2B7660DD00D938E1 /* SchmojiColorsLegendGenericView.swift */; };
-		002FB2602EC9FAA000258787 /* SchmojiLevelPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FB25F2EC9FAA000258787 /* SchmojiLevelPresentation.swift */; };
-		002FB2632ECBF65A00258787 /* SchmojiBoardObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FB2622ECBF65A00258787 /* SchmojiBoardObject.swift */; };
-		002FB2662ECC081500258787 /* SchmojiLevelTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FB2652ECC081500258787 /* SchmojiLevelTile.swift */; };
-		002FB2682ECC0D0500258787 /* SchmojiUnlockedHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FB2672ECC0D0500258787 /* SchmojiUnlockedHex.swift */; };
+		002C54F92EBBB12400737B61 /* PotatoGameEndWinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002C54F82EBBB12400737B61 /* PotatoGameEndWinView.swift */; };
+		002E3D0F2B7660DD00D938E1 /* PotatoGameLegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E3D0E2B7660DD00D938E1 /* PotatoGameLegendView.swift */; };
+		002FB2602EC9FAA000258787 /* PotatoLevelPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FB25F2EC9FAA000258787 /* PotatoLevelPresentation.swift */; };
+		002FB2632ECBF65A00258787 /* PotatoGameBoardObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FB2622ECBF65A00258787 /* PotatoGameBoardObject.swift */; };
+		002FB2662ECC081500258787 /* PotatoGameLevelTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FB2652ECC081500258787 /* PotatoGameLevelTile.swift */; };
+		002FB2682ECC0D0500258787 /* PotatoGameUnlockedHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FB2672ECC0D0500258787 /* PotatoGameUnlockedHex.swift */; };
 		002FB26A2ECC140A00258787 /* AccountPurchasedPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FB2692ECC140A00258787 /* AccountPurchasedPack.swift */; };
 		0039B9842EC26FD60094663E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00166D382EB50F79003999E7 /* Assets.xcassets */; };
 		0039B9852EC270450094663E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 00166D392EB50F79003999E7 /* Localizable.xcstrings */; };
@@ -37,7 +37,9 @@
 		004196662EEAE01800FD7128 /* mixkit-explainer-video-pops-whoosh-light-pop-3005.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0041965B2EEAE01800FD7128 /* mixkit-explainer-video-pops-whoosh-light-pop-3005.wav */; };
 		004196672EEAE01800FD7128 /* mixkit-player-losing-or-failing-2042.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0041965C2EEAE01800FD7128 /* mixkit-player-losing-or-failing-2042.wav */; };
 		004196682EEAE01800FD7128 /* mixkit-winning-notification-2018.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0041965D2EEAE01800FD7128 /* mixkit-winning-notification-2018.wav */; };
-		004196692EEAE01800FD7128 /* Fluent Emoji.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0041965F2EEAE01800FD7128 /* Fluent Emoji.xcassets */; };
+		0041966D2EEC3AF900FD7128 /* Fluent Emoji LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0041966B2EEC3AF900FD7128 /* Fluent Emoji LICENSE */; };
+		0041966E2EEC3AF900FD7128 /* Fluent Emoji.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0041966A2EEC3AF900FD7128 /* Fluent Emoji.xcassets */; };
+		004196722EEC3B2500FD7128 /* mixkit LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 004196712EEC3B2500FD7128 /* mixkit LICENSE */; };
 		00420B772EC5441E00AAEB58 /* GameKeyboardCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00420B752EC5441E00AAEB58 /* GameKeyboardCommands.swift */; };
 		00420B782EC5441E00AAEB58 /* GameKeyboardBindings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00420B742EC5441E00AAEB58 /* GameKeyboardBindings.swift */; };
 		00420B7A2EC5442E00AAEB58 /* KeyboardBindingCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00420B792EC5442E00AAEB58 /* KeyboardBindingCaptureView.swift */; };
@@ -46,26 +48,26 @@
 		004342002B7A4192004BB7BA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004341FD2B7A4192004BB7BA /* SettingsView.swift */; };
 		0043420A2B7A4F86004BB7BA /* LevelGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004342092B7A4F86004BB7BA /* LevelGrid.swift */; };
 		0043420E2B7A503D004BB7BA /* LevelsSearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043420D2B7A503D004BB7BA /* LevelsSearchResults.swift */; };
-		0043F9B32EC8F69B00ABE7D7 /* GameSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043F9B22EC8F69B00ABE7D7 /* GameSessionViewModel.swift */; };
-		004A19BB2B463A350027762C /* SchmojiGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A19BA2B463A350027762C /* SchmojiGameView.swift */; };
-		004CE67C2B3E0028009855C2 /* SchmojiCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE67B2B3E0028009855C2 /* SchmojiCircleView.swift */; };
-		004CE6882B3F1B49009855C2 /* SchmojiCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE6872B3F1B49009855C2 /* SchmojiCollectionView.swift */; };
-		005483802EAA41150051ADB0 /* SchmojiArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0054837F2EAA41150051ADB0 /* SchmojiArt.swift */; };
+		0043F9B32EC8F69B00ABE7D7 /* PotatoGameSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043F9B22EC8F69B00ABE7D7 /* PotatoGameSessionViewModel.swift */; };
+		004A19BB2B463A350027762C /* PotatoGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A19BA2B463A350027762C /* PotatoGameView.swift */; };
+		004CE67C2B3E0028009855C2 /* CollectionCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE67B2B3E0028009855C2 /* CollectionCircleView.swift */; };
+		004CE6882B3F1B49009855C2 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE6872B3F1B49009855C2 /* CollectionView.swift */; };
+		005483802EAA41150051ADB0 /* PotatoGameArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0054837F2EAA41150051ADB0 /* PotatoGameArt.swift */; };
 		005558FA2EC395DA00508762 /* LevelsSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005558F92EC395D000508762 /* LevelsSummaryView.swift */; };
 		005CF8592EE2065500462B5A /* HapticsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005CF8572EE2065500462B5A /* HapticsCoordinator.swift */; };
 		0063BCEA2ECD0D1600300CF2 /* View+AppDestinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063BCE82ECD0D1600300CF2 /* View+AppDestinations.swift */; };
 		0063BCEB2ECD0D1600300CF2 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063BCE72ECD0D1600300CF2 /* AppRouter.swift */; };
 		0063BCED2ECD18DC00300CF2 /* View+PlatformEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063BCEC2ECD18DC00300CF2 /* View+PlatformEffects.swift */; };
 		0063BCEE2ECD190100300CF2 /* View+PlatformEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063BCEC2ECD18DC00300CF2 /* View+PlatformEffects.swift */; };
-		0063BCF72ECD1DDC00300CF2 /* SchmojiPhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063BCF42ECD1DDC00300CF2 /* SchmojiPhysicsCategory.swift */; };
+		0063BCF72ECD1DDC00300CF2 /* PotatoGamePhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063BCF42ECD1DDC00300CF2 /* PotatoGamePhysicsCategory.swift */; };
 		0063BCF82ECD1DDC00300CF2 /* UnownedContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063BCF52ECD1DDC00300CF2 /* UnownedContactDelegate.swift */; };
-		0063BCFA2ECDFB0A00300CF2 /* SchmojiGameScene+Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063BCF92ECDFB0A00300CF2 /* SchmojiGameScene+Haptics.swift */; };
-		0066EFE32B44ADAE000FAEE1 /* SchmojiGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0066EFE22B44ADAE000FAEE1 /* SchmojiGameScene.swift */; };
+		0063BCFA2ECDFB0A00300CF2 /* PotatoGameScene+Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063BCF92ECDFB0A00300CF2 /* PotatoGameScene+Haptics.swift */; };
+		0066EFE32B44ADAE000FAEE1 /* PotatoGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0066EFE22B44ADAE000FAEE1 /* PotatoGameScene.swift */; };
 		008CB1682B4D62C600461A0C /* SchmojiSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008CB1672B4D62C600461A0C /* SchmojiSpriteNode.swift */; };
 		009AADFD2EA5BC8B00ED7F84 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AADFC2EA5BC8B00ED7F84 /* GameCenterManager.swift */; };
 		00A391DC2B3C4C8F005A0231 /* PotatoGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A391DB2B3C4C8F005A0231 /* PotatoGameApp.swift */; };
 		00A391DE2B3C4C8F005A0231 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A391DD2B3C4C8F005A0231 /* ContentView.swift */; };
-		00A391F52B3C7A56005A0231 /* SchmojiColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A391F42B3C7A56005A0231 /* SchmojiColor.swift */; };
+		00A391F52B3C7A56005A0231 /* PotatoColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A391F42B3C7A56005A0231 /* PotatoColor.swift */; };
 		00B443B72DD9512A00E9A15C /* PotatoTankScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B443B62DD9512400E9A15C /* PotatoTankScene.swift */; };
 		00CF15FD2EE46CA7008F4829 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 00CF15FC2EE46CA7008F4829 /* LICENSE */; };
 		00CF15FE2EE46CA7008F4829 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 00CF15FC2EE46CA7008F4829 /* LICENSE */; };
@@ -224,21 +226,21 @@
 		00E3C2192EC78152005220F8 /* PotatoTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3C2172EC78152005220F8 /* PotatoTheme.swift */; };
 		00E3C21A2EC78152005220F8 /* PotatoTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3C2172EC78152005220F8 /* PotatoTheme.swift */; };
 		00E3C2202EC7DE15005220F8 /* OrientationLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3C21F2EC7DE15005220F8 /* OrientationLock.swift */; };
-		00E5D0012F10A5B100F5D4D1 /* SchmojiCollectionSummaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5D0002F10A5B100F5D4D1 /* SchmojiCollectionSummaryCard.swift */; };
-		00E5D0032F10A5B100F5D4D1 /* SchmojiCollectionColorCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5D0022F10A5B100F5D4D1 /* SchmojiCollectionColorCard.swift */; };
-		00EADDB12DDF67CF0075E15D /* SchmojiGameSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EADDB02DDF67C50075E15D /* SchmojiGameSessionManager.swift */; };
+		00E5D0012F10A5B100F5D4D1 /* CollectionSummaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5D0002F10A5B100F5D4D1 /* CollectionSummaryCard.swift */; };
+		00E5D0032F10A5B100F5D4D1 /* CollectionColorCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5D0022F10A5B100F5D4D1 /* CollectionColorCard.swift */; };
+		00EADDB12DDF67CF0075E15D /* PotatoGameSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EADDB02DDF67C50075E15D /* PotatoGameSessionManager.swift */; };
 		00ED7BDA2D26CB5500E29F0E /* PotatoTankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ED7BD92D26CB5500E29F0E /* PotatoTankView.swift */; };
 		00F059422D25EE7400713AF7 /* LinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F059412D25EE7400713AF7 /* LinksView.swift */; };
 		00F059482D260A1500713AF7 /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F059472D260A0C00713AF7 /* HowToPlayView.swift */; };
 		00F9F1B82EEFC5BF008D0DDA /* PreviewSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F9F1B72EEFC5BF008D0DDA /* PreviewSampleData.swift */; };
-		00FCAFEF2B6ED76700E7527C /* SchmojiDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCAFEE2B6ED76700E7527C /* SchmojiDataContainer.swift */; };
+		00FCAFEF2B6ED76700E7527C /* PotatoGameDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCAFEE2B6ED76700E7527C /* PotatoGameDataContainer.swift */; };
 		00FCAFF12B6ED81200E7527C /* DataGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCAFF02B6ED81200E7527C /* DataGeneration.swift */; };
-		00FCAFF32B6ED82100E7527C /* SchmojiOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCAFF22B6ED82100E7527C /* SchmojiOptions.swift */; };
+		00FCAFF32B6ED82100E7527C /* PotatoGameOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCAFF22B6ED82100E7527C /* PotatoGameOptions.swift */; };
 		00FCAFFC2B6FC32600E7527C /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCAFFA2B6FC32600E7527C /* Account.swift */; };
 		00FCAFFD2B6FC32600E7527C /* Account+DataGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCAFFB2B6FC32600E7527C /* Account+DataGeneration.swift */; };
-		06A1BF75EC8D6024A664197A /* SchmojiGameSessionManager+Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF38BEAE60744D8744F4D4 /* SchmojiGameSessionManager+Persistence.swift */; };
-		32B325B27D491B41F977EBE4 /* SchmojiGameScene+Matching.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34352C2D2339FEFC394DE3E /* SchmojiGameScene+Matching.swift */; };
-		599C3257F8C3FCC4311D31A0 /* SchmojiGameScene+Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439B38B87F9FA328D30161DD /* SchmojiGameScene+Input.swift */; };
+		06A1BF75EC8D6024A664197A /* PotatoGameSessionManager+Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF38BEAE60744D8744F4D4 /* PotatoGameSessionManager+Persistence.swift */; };
+		32B325B27D491B41F977EBE4 /* PotatoGameScene+Matching.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34352C2D2339FEFC394DE3E /* PotatoGameScene+Matching.swift */; };
+		599C3257F8C3FCC4311D31A0 /* PotatoGameScene+Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439B38B87F9FA328D30161DD /* PotatoGameScene+Input.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -266,10 +268,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		00125F222EAEAF8800C7051D /* SchmojiSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiSelection.swift; sourceTree = "<group>"; };
-		00125F6E2EAEF78C00C7051D /* SchmojiLevelProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiLevelProgress.swift; sourceTree = "<group>"; };
-		00125F702EAEF79200C7051D /* SchmojiLevelInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiLevelInfo.swift; sourceTree = "<group>"; };
-		00166D352EB3D41F003999E7 /* SchmojiLevelLayoutGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiLevelLayoutGenerator.swift; sourceTree = "<group>"; };
+		00125F222EAEAF8800C7051D /* EmojiSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiSelection.swift; sourceTree = "<group>"; };
+		00125F6E2EAEF78C00C7051D /* PotatoGameLevelProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoGameLevelProgress.swift; sourceTree = "<group>"; };
+		00125F702EAEF79200C7051D /* PotatoGameLevelInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoGameLevelInfo.swift; sourceTree = "<group>"; };
+		00166D352EB3D41F003999E7 /* PotatoGameLevelLayoutGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoGameLevelLayoutGenerator.swift; sourceTree = "<group>"; };
 		00166D382EB50F79003999E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00166D392EB50F79003999E7 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		00166D3A2EB50F79003999E7 /* Potato Game.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Potato Game.icon"; sourceTree = "<group>"; };
@@ -280,12 +282,12 @@
 		00166E492EB6B69A003999E7 /* PotatoGameWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PotatoGameWidgetExtension.entitlements; sourceTree = "<group>"; };
 		001987392B69A54A00BE621B /* PotatoCountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotatoCountView.swift; sourceTree = "<group>"; };
 		00277B912B72BB6E0013F780 /* LevelsGridItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsGridItem.swift; sourceTree = "<group>"; };
-		002C54F82EBBB12400737B61 /* SchmojiGameEndWinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiGameEndWinView.swift; sourceTree = "<group>"; };
-		002E3D0E2B7660DD00D938E1 /* SchmojiColorsLegendGenericView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchmojiColorsLegendGenericView.swift; sourceTree = "<group>"; };
-		002FB25F2EC9FAA000258787 /* SchmojiLevelPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiLevelPresentation.swift; sourceTree = "<group>"; };
-		002FB2622ECBF65A00258787 /* SchmojiBoardObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiBoardObject.swift; sourceTree = "<group>"; };
-		002FB2652ECC081500258787 /* SchmojiLevelTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiLevelTile.swift; sourceTree = "<group>"; };
-		002FB2672ECC0D0500258787 /* SchmojiUnlockedHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiUnlockedHex.swift; sourceTree = "<group>"; };
+		002C54F82EBBB12400737B61 /* PotatoGameEndWinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoGameEndWinView.swift; sourceTree = "<group>"; };
+		002E3D0E2B7660DD00D938E1 /* PotatoGameLegendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotatoGameLegendView.swift; sourceTree = "<group>"; };
+		002FB25F2EC9FAA000258787 /* PotatoLevelPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoLevelPresentation.swift; sourceTree = "<group>"; };
+		002FB2622ECBF65A00258787 /* PotatoGameBoardObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoGameBoardObject.swift; sourceTree = "<group>"; };
+		002FB2652ECC081500258787 /* PotatoGameLevelTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoGameLevelTile.swift; sourceTree = "<group>"; };
+		002FB2672ECC0D0500258787 /* PotatoGameUnlockedHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoGameUnlockedHex.swift; sourceTree = "<group>"; };
 		002FB2692ECC140A00258787 /* AccountPurchasedPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPurchasedPack.swift; sourceTree = "<group>"; };
 		004196562EEAE01800FD7128 /* mixkit-bonus-extra-in-a-video-game-2064.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-bonus-extra-in-a-video-game-2064.wav"; sourceTree = "<group>"; };
 		004196572EEAE01800FD7128 /* mixkit-click-error-1110.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-click-error-1110.wav"; sourceTree = "<group>"; };
@@ -295,7 +297,9 @@
 		0041965B2EEAE01800FD7128 /* mixkit-explainer-video-pops-whoosh-light-pop-3005.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-explainer-video-pops-whoosh-light-pop-3005.wav"; sourceTree = "<group>"; };
 		0041965C2EEAE01800FD7128 /* mixkit-player-losing-or-failing-2042.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-player-losing-or-failing-2042.wav"; sourceTree = "<group>"; };
 		0041965D2EEAE01800FD7128 /* mixkit-winning-notification-2018.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-winning-notification-2018.wav"; sourceTree = "<group>"; };
-		0041965F2EEAE01800FD7128 /* Fluent Emoji.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Fluent Emoji.xcassets"; sourceTree = "<group>"; };
+		0041966A2EEC3AF900FD7128 /* Fluent Emoji.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Fluent Emoji.xcassets"; sourceTree = "<group>"; };
+		0041966B2EEC3AF900FD7128 /* Fluent Emoji LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Fluent Emoji LICENSE"; sourceTree = "<group>"; };
+		004196712EEC3B2500FD7128 /* mixkit LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = "mixkit LICENSE"; sourceTree = "<group>"; };
 		00420B742EC5441E00AAEB58 /* GameKeyboardBindings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameKeyboardBindings.swift; sourceTree = "<group>"; };
 		00420B752EC5441E00AAEB58 /* GameKeyboardCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameKeyboardCommands.swift; sourceTree = "<group>"; };
 		00420B792EC5442E00AAEB58 /* KeyboardBindingCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardBindingCaptureView.swift; sourceTree = "<group>"; };
@@ -304,27 +308,27 @@
 		004341FD2B7A4192004BB7BA /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		004342092B7A4F86004BB7BA /* LevelGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelGrid.swift; sourceTree = "<group>"; };
 		0043420D2B7A503D004BB7BA /* LevelsSearchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsSearchResults.swift; sourceTree = "<group>"; };
-		0043F9B22EC8F69B00ABE7D7 /* GameSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionViewModel.swift; sourceTree = "<group>"; };
-		004A19BA2B463A350027762C /* SchmojiGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiGameView.swift; sourceTree = "<group>"; };
-		004CE67B2B3E0028009855C2 /* SchmojiCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiCircleView.swift; sourceTree = "<group>"; };
-		004CE6872B3F1B49009855C2 /* SchmojiCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchmojiCollectionView.swift; sourceTree = "<group>"; };
-		0054837F2EAA41150051ADB0 /* SchmojiArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiArt.swift; sourceTree = "<group>"; };
+		0043F9B22EC8F69B00ABE7D7 /* PotatoGameSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoGameSessionViewModel.swift; sourceTree = "<group>"; };
+		004A19BA2B463A350027762C /* PotatoGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoGameView.swift; sourceTree = "<group>"; };
+		004CE67B2B3E0028009855C2 /* CollectionCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCircleView.swift; sourceTree = "<group>"; };
+		004CE6872B3F1B49009855C2 /* CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		0054837F2EAA41150051ADB0 /* PotatoGameArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoGameArt.swift; sourceTree = "<group>"; };
 		005558F92EC395D000508762 /* LevelsSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsSummaryView.swift; sourceTree = "<group>"; };
 		005CF8572EE2065500462B5A /* HapticsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsCoordinator.swift; sourceTree = "<group>"; };
 		0063BCE72ECD0D1600300CF2 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		0063BCE82ECD0D1600300CF2 /* View+AppDestinations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+AppDestinations.swift"; sourceTree = "<group>"; };
 		0063BCEC2ECD18DC00300CF2 /* View+PlatformEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+PlatformEffects.swift"; sourceTree = "<group>"; };
-		0063BCF42ECD1DDC00300CF2 /* SchmojiPhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiPhysicsCategory.swift; sourceTree = "<group>"; };
+		0063BCF42ECD1DDC00300CF2 /* PotatoGamePhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoGamePhysicsCategory.swift; sourceTree = "<group>"; };
 		0063BCF52ECD1DDC00300CF2 /* UnownedContactDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnownedContactDelegate.swift; sourceTree = "<group>"; };
-		0063BCF92ECDFB0A00300CF2 /* SchmojiGameScene+Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiGameScene+Haptics.swift"; sourceTree = "<group>"; };
-		0066EFE22B44ADAE000FAEE1 /* SchmojiGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiGameScene.swift; sourceTree = "<group>"; };
+		0063BCF92ECDFB0A00300CF2 /* PotatoGameScene+Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PotatoGameScene+Haptics.swift"; sourceTree = "<group>"; };
+		0066EFE22B44ADAE000FAEE1 /* PotatoGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoGameScene.swift; sourceTree = "<group>"; };
 		008CB1672B4D62C600461A0C /* SchmojiSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiSpriteNode.swift; sourceTree = "<group>"; };
 		009AADFC2EA5BC8B00ED7F84 /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
 		00A391D82B3C4C8F005A0231 /* PotatoGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PotatoGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A391DB2B3C4C8F005A0231 /* PotatoGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoGameApp.swift; sourceTree = "<group>"; };
 		00A391DD2B3C4C8F005A0231 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		00A391E72B3C4C90005A0231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00A391F42B3C7A56005A0231 /* SchmojiColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchmojiColor.swift; sourceTree = "<group>"; };
+		00A391F42B3C7A56005A0231 /* PotatoColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotatoColor.swift; sourceTree = "<group>"; };
 		00B443B62DD9512400E9A15C /* PotatoTankScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoTankScene.swift; sourceTree = "<group>"; };
 		00B443B92DD9705C00E9A15C /* GameplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameplayKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.4.sdk/System/Library/Frameworks/GameplayKit.framework; sourceTree = DEVELOPER_DIR; };
 		00CF15FC2EE46CA7008F4829 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -483,21 +487,21 @@
 		00E3C2172EC78152005220F8 /* PotatoTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoTheme.swift; sourceTree = "<group>"; };
 		00E3C21D2EC7DD75005220F8 /* GameKeyboardBindings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameKeyboardBindings.swift; sourceTree = "<group>"; };
 		00E3C21F2EC7DE15005220F8 /* OrientationLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationLock.swift; sourceTree = "<group>"; };
-		00E5D0002F10A5B100F5D4D1 /* SchmojiCollectionSummaryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiCollectionSummaryCard.swift; sourceTree = "<group>"; };
-		00E5D0022F10A5B100F5D4D1 /* SchmojiCollectionColorCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiCollectionColorCard.swift; sourceTree = "<group>"; };
-		00EADDB02DDF67C50075E15D /* SchmojiGameSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchmojiGameSessionManager.swift; sourceTree = "<group>"; };
+		00E5D0002F10A5B100F5D4D1 /* CollectionSummaryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSummaryCard.swift; sourceTree = "<group>"; };
+		00E5D0022F10A5B100F5D4D1 /* CollectionColorCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionColorCard.swift; sourceTree = "<group>"; };
+		00EADDB02DDF67C50075E15D /* PotatoGameSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoGameSessionManager.swift; sourceTree = "<group>"; };
 		00ED7BD92D26CB5500E29F0E /* PotatoTankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatoTankView.swift; sourceTree = "<group>"; };
 		00F059412D25EE7400713AF7 /* LinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksView.swift; sourceTree = "<group>"; };
 		00F059472D260A0C00713AF7 /* HowToPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayView.swift; sourceTree = "<group>"; };
 		00F9F1B72EEFC5BF008D0DDA /* PreviewSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSampleData.swift; sourceTree = "<group>"; };
-		00FCAFEE2B6ED76700E7527C /* SchmojiDataContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchmojiDataContainer.swift; sourceTree = "<group>"; };
+		00FCAFEE2B6ED76700E7527C /* PotatoGameDataContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotatoGameDataContainer.swift; sourceTree = "<group>"; };
 		00FCAFF02B6ED81200E7527C /* DataGeneration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGeneration.swift; sourceTree = "<group>"; };
-		00FCAFF22B6ED82100E7527C /* SchmojiOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchmojiOptions.swift; sourceTree = "<group>"; };
+		00FCAFF22B6ED82100E7527C /* PotatoGameOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotatoGameOptions.swift; sourceTree = "<group>"; };
 		00FCAFFA2B6FC32600E7527C /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		00FCAFFB2B6FC32600E7527C /* Account+DataGeneration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account+DataGeneration.swift"; sourceTree = "<group>"; };
-		439B38B87F9FA328D30161DD /* SchmojiGameScene+Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiGameScene+Input.swift"; sourceTree = "<group>"; };
-		8CEF38BEAE60744D8744F4D4 /* SchmojiGameSessionManager+Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiGameSessionManager+Persistence.swift"; sourceTree = "<group>"; };
-		D34352C2D2339FEFC394DE3E /* SchmojiGameScene+Matching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchmojiGameScene+Matching.swift"; sourceTree = "<group>"; };
+		439B38B87F9FA328D30161DD /* PotatoGameScene+Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PotatoGameScene+Input.swift"; sourceTree = "<group>"; };
+		8CEF38BEAE60744D8744F4D4 /* PotatoGameSessionManager+Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PotatoGameSessionManager+Persistence.swift"; sourceTree = "<group>"; };
+		D34352C2D2339FEFC394DE3E /* PotatoGameScene+Matching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PotatoGameScene+Matching.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -725,10 +729,10 @@
 		00277B942B72BEAA0013F780 /* Collection */ = {
 			isa = PBXGroup;
 			children = (
-				004CE6872B3F1B49009855C2 /* SchmojiCollectionView.swift */,
-				00E5D0022F10A5B100F5D4D1 /* SchmojiCollectionColorCard.swift */,
-				00E5D0002F10A5B100F5D4D1 /* SchmojiCollectionSummaryCard.swift */,
-				004CE67B2B3E0028009855C2 /* SchmojiCircleView.swift */,
+				004CE6872B3F1B49009855C2 /* CollectionView.swift */,
+				00E5D0022F10A5B100F5D4D1 /* CollectionColorCard.swift */,
+				00E5D0002F10A5B100F5D4D1 /* CollectionSummaryCard.swift */,
+				004CE67B2B3E0028009855C2 /* CollectionCircleView.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -738,18 +742,18 @@
 			children = (
 				005CF8582EE2065500462B5A /* Haptics */,
 				0063BCF62ECD1DDC00300CF2 /* Physics */,
-				004A19BA2B463A350027762C /* SchmojiGameView.swift */,
-				0043F9B22EC8F69B00ABE7D7 /* GameSessionViewModel.swift */,
-				002E3D0E2B7660DD00D938E1 /* SchmojiColorsLegendGenericView.swift */,
-				002C54F82EBBB12400737B61 /* SchmojiGameEndWinView.swift */,
-				0066EFE22B44ADAE000FAEE1 /* SchmojiGameScene.swift */,
-				0063BCF92ECDFB0A00300CF2 /* SchmojiGameScene+Haptics.swift */,
-				D34352C2D2339FEFC394DE3E /* SchmojiGameScene+Matching.swift */,
-				439B38B87F9FA328D30161DD /* SchmojiGameScene+Input.swift */,
-				00EADDB02DDF67C50075E15D /* SchmojiGameSessionManager.swift */,
-				8CEF38BEAE60744D8744F4D4 /* SchmojiGameSessionManager+Persistence.swift */,
+				004A19BA2B463A350027762C /* PotatoGameView.swift */,
+				0043F9B22EC8F69B00ABE7D7 /* PotatoGameSessionViewModel.swift */,
+				002E3D0E2B7660DD00D938E1 /* PotatoGameLegendView.swift */,
+				002C54F82EBBB12400737B61 /* PotatoGameEndWinView.swift */,
+				0066EFE22B44ADAE000FAEE1 /* PotatoGameScene.swift */,
+				0063BCF92ECDFB0A00300CF2 /* PotatoGameScene+Haptics.swift */,
+				D34352C2D2339FEFC394DE3E /* PotatoGameScene+Matching.swift */,
+				439B38B87F9FA328D30161DD /* PotatoGameScene+Input.swift */,
+				00EADDB02DDF67C50075E15D /* PotatoGameSessionManager.swift */,
+				8CEF38BEAE60744D8744F4D4 /* PotatoGameSessionManager+Persistence.swift */,
 				008CB1672B4D62C600461A0C /* SchmojiSpriteNode.swift */,
-				002FB25F2EC9FAA000258787 /* SchmojiLevelPresentation.swift */,
+				002FB25F2EC9FAA000258787 /* PotatoLevelPresentation.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -765,6 +769,7 @@
 				0041965B2EEAE01800FD7128 /* mixkit-explainer-video-pops-whoosh-light-pop-3005.wav */,
 				0041965C2EEAE01800FD7128 /* mixkit-player-losing-or-failing-2042.wav */,
 				0041965D2EEAE01800FD7128 /* mixkit-winning-notification-2018.wav */,
+				004196712EEC3B2500FD7128 /* mixkit LICENSE */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -773,9 +778,18 @@
 			isa = PBXGroup;
 			children = (
 				0041965E2EEAE01800FD7128 /* Sounds */,
-				0041965F2EEAE01800FD7128 /* Fluent Emoji.xcassets */,
+				0041966C2EEC3AF900FD7128 /* Fluent Emoji */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		0041966C2EEC3AF900FD7128 /* Fluent Emoji */ = {
+			isa = PBXGroup;
+			children = (
+				0041966A2EEC3AF900FD7128 /* Fluent Emoji.xcassets */,
+				0041966B2EEC3AF900FD7128 /* Fluent Emoji LICENSE */,
+			);
+			path = "Fluent Emoji";
 			sourceTree = "<group>";
 		};
 		00420B762EC5441E00AAEB58 /* GameInput */ = {
@@ -831,7 +845,7 @@
 		0063BCF62ECD1DDC00300CF2 /* Physics */ = {
 			isa = PBXGroup;
 			children = (
-				0063BCF42ECD1DDC00300CF2 /* SchmojiPhysicsCategory.swift */,
+				0063BCF42ECD1DDC00300CF2 /* PotatoGamePhysicsCategory.swift */,
 				0063BCF52ECD1DDC00300CF2 /* UnownedContactDelegate.swift */,
 			);
 			path = Physics;
@@ -883,22 +897,22 @@
 		00A391F32B3C76D2005A0231 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				00A391F42B3C7A56005A0231 /* SchmojiColor.swift */,
-				00125F6E2EAEF78C00C7051D /* SchmojiLevelProgress.swift */,
-				00125F702EAEF79200C7051D /* SchmojiLevelInfo.swift */,
-				00166D352EB3D41F003999E7 /* SchmojiLevelLayoutGenerator.swift */,
-				002FB2652ECC081500258787 /* SchmojiLevelTile.swift */,
-				002FB2672ECC0D0500258787 /* SchmojiUnlockedHex.swift */,
-				002FB2622ECBF65A00258787 /* SchmojiBoardObject.swift */,
-				00FCAFEE2B6ED76700E7527C /* SchmojiDataContainer.swift */,
-				00FCAFF22B6ED82100E7527C /* SchmojiOptions.swift */,
+				00A391F42B3C7A56005A0231 /* PotatoColor.swift */,
+				00125F6E2EAEF78C00C7051D /* PotatoGameLevelProgress.swift */,
+				00125F702EAEF79200C7051D /* PotatoGameLevelInfo.swift */,
+				00166D352EB3D41F003999E7 /* PotatoGameLevelLayoutGenerator.swift */,
+				002FB2652ECC081500258787 /* PotatoGameLevelTile.swift */,
+				002FB2672ECC0D0500258787 /* PotatoGameUnlockedHex.swift */,
+				002FB2622ECBF65A00258787 /* PotatoGameBoardObject.swift */,
+				00FCAFEE2B6ED76700E7527C /* PotatoGameDataContainer.swift */,
+				00FCAFF22B6ED82100E7527C /* PotatoGameOptions.swift */,
 				009AADFC2EA5BC8B00ED7F84 /* GameCenterManager.swift */,
 				00FCAFF02B6ED81200E7527C /* DataGeneration.swift */,
 				00FCAFFA2B6FC32600E7527C /* Account.swift */,
 				002FB2692ECC140A00258787 /* AccountPurchasedPack.swift */,
 				00FCAFFB2B6FC32600E7527C /* Account+DataGeneration.swift */,
-				0054837F2EAA41150051ADB0 /* SchmojiArt.swift */,
-				00125F222EAEAF8800C7051D /* SchmojiSelection.swift */,
+				0054837F2EAA41150051ADB0 /* PotatoGameArt.swift */,
+				00125F222EAEAF8800C7051D /* EmojiSelection.swift */,
 				0042493F2EC0001F00920B42 /* LevelPackRegistry.swift */,
 				004249412EC0009600920B42 /* LevelPackStore.swift */,
 			);
@@ -1050,12 +1064,14 @@
 				004196612EEAE01800FD7128 /* mixkit-bonus-extra-in-a-video-game-2064.wav in Resources */,
 				004196622EEAE01800FD7128 /* mixkit-click-error-1110.wav in Resources */,
 				004196632EEAE01800FD7128 /* mixkit-completion-of-a-level-2063.wav in Resources */,
+				0041966D2EEC3AF900FD7128 /* Fluent Emoji LICENSE in Resources */,
+				0041966E2EEC3AF900FD7128 /* Fluent Emoji.xcassets in Resources */,
+				004196722EEC3B2500FD7128 /* mixkit LICENSE in Resources */,
 				004196642EEAE01800FD7128 /* mixkit-dry-pop-up-notification-alert-2356.wav in Resources */,
 				004196652EEAE01800FD7128 /* mixkit-explainer-video-game-alert-sweep-236.wav in Resources */,
 				004196662EEAE01800FD7128 /* mixkit-explainer-video-pops-whoosh-light-pop-3005.wav in Resources */,
 				004196672EEAE01800FD7128 /* mixkit-player-losing-or-failing-2042.wav in Resources */,
 				004196682EEAE01800FD7128 /* mixkit-winning-notification-2018.wav in Resources */,
-				004196692EEAE01800FD7128 /* Fluent Emoji.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1076,39 +1092,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				00420B7A2EC5442E00AAEB58 /* KeyboardBindingCaptureView.swift in Sources */,
-				005483802EAA41150051ADB0 /* SchmojiArt.swift in Sources */,
+				005483802EAA41150051ADB0 /* PotatoGameArt.swift in Sources */,
 				00B443B72DD9512A00E9A15C /* PotatoTankScene.swift in Sources */,
 				005558FA2EC395DA00508762 /* LevelsSummaryView.swift in Sources */,
 				004249422EC0009600920B42 /* LevelPackStore.swift in Sources */,
 				00A391DE2B3C4C8F005A0231 /* ContentView.swift in Sources */,
-				0066EFE32B44ADAE000FAEE1 /* SchmojiGameScene.swift in Sources */,
-				32B325B27D491B41F977EBE4 /* SchmojiGameScene+Matching.swift in Sources */,
-				599C3257F8C3FCC4311D31A0 /* SchmojiGameScene+Input.swift in Sources */,
+				0066EFE32B44ADAE000FAEE1 /* PotatoGameScene.swift in Sources */,
+				32B325B27D491B41F977EBE4 /* PotatoGameScene+Matching.swift in Sources */,
+				599C3257F8C3FCC4311D31A0 /* PotatoGameScene+Input.swift in Sources */,
 				0043420A2B7A4F86004BB7BA /* LevelGrid.swift in Sources */,
 				0019873A2B69A54A00BE621B /* PotatoCountView.swift in Sources */,
 				00FCAFFD2B6FC32600E7527C /* Account+DataGeneration.swift in Sources */,
 				00A391DC2B3C4C8F005A0231 /* PotatoGameApp.swift in Sources */,
 				009AADFD2EA5BC8B00ED7F84 /* GameCenterManager.swift in Sources */,
 				00F059482D260A1500713AF7 /* HowToPlayView.swift in Sources */,
-				00E5D0012F10A5B100F5D4D1 /* SchmojiCollectionSummaryCard.swift in Sources */,
-				00E5D0032F10A5B100F5D4D1 /* SchmojiCollectionColorCard.swift in Sources */,
-				004CE6882B3F1B49009855C2 /* SchmojiCollectionView.swift in Sources */,
+				00E5D0012F10A5B100F5D4D1 /* CollectionSummaryCard.swift in Sources */,
+				00E5D0032F10A5B100F5D4D1 /* CollectionColorCard.swift in Sources */,
+				004CE6882B3F1B49009855C2 /* CollectionView.swift in Sources */,
 				00FCAFFC2B6FC32600E7527C /* Account.swift in Sources */,
 				00420B772EC5441E00AAEB58 /* GameKeyboardCommands.swift in Sources */,
 				00420B782EC5441E00AAEB58 /* GameKeyboardBindings.swift in Sources */,
-				00125F712EAEF79200C7051D /* SchmojiLevelInfo.swift in Sources */,
+				00125F712EAEF79200C7051D /* PotatoGameLevelInfo.swift in Sources */,
 				0063BCED2ECD18DC00300CF2 /* View+PlatformEffects.swift in Sources */,
-				002C54F92EBBB12400737B61 /* SchmojiGameEndWinView.swift in Sources */,
+				002C54F92EBBB12400737B61 /* PotatoGameEndWinView.swift in Sources */,
 				00277B922B72BB6E0013F780 /* LevelsGridItem.swift in Sources */,
 				00E3C2202EC7DE15005220F8 /* OrientationLock.swift in Sources */,
-				00EADDB12DDF67CF0075E15D /* SchmojiGameSessionManager.swift in Sources */,
+				00EADDB12DDF67CF0075E15D /* PotatoGameSessionManager.swift in Sources */,
 				00E3C2192EC78152005220F8 /* PotatoTheme.swift in Sources */,
-				06A1BF75EC8D6024A664197A /* SchmojiGameSessionManager+Persistence.swift in Sources */,
+				06A1BF75EC8D6024A664197A /* PotatoGameSessionManager+Persistence.swift in Sources */,
 				004249402EC0001F00920B42 /* LevelPackRegistry.swift in Sources */,
 				00FCAFF12B6ED81200E7527C /* DataGeneration.swift in Sources */,
 				00F9F1B82EEFC5BF008D0DDA /* PreviewSampleData.swift in Sources */,
-				004A19BB2B463A350027762C /* SchmojiGameView.swift in Sources */,
-				0043F9B32EC8F69B00ABE7D7 /* GameSessionViewModel.swift in Sources */,
+				004A19BB2B463A350027762C /* PotatoGameView.swift in Sources */,
+				0043F9B32EC8F69B00ABE7D7 /* PotatoGameSessionViewModel.swift in Sources */,
 				00ED7BDA2D26CB5500E29F0E /* PotatoTankView.swift in Sources */,
 				00D416292EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch19.swift in Sources */,
 				00D4162A2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch122.swift in Sources */,
@@ -1150,7 +1166,7 @@
 				0063BCEB2ECD0D1600300CF2 /* AppRouter.swift in Sources */,
 				00D4164C2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch81.swift in Sources */,
 				00D4164D2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch08.swift in Sources */,
-				0063BCF72ECD1DDC00300CF2 /* SchmojiPhysicsCategory.swift in Sources */,
+				0063BCF72ECD1DDC00300CF2 /* PotatoGamePhysicsCategory.swift in Sources */,
 				0063BCF82ECD1DDC00300CF2 /* UnownedContactDelegate.swift in Sources */,
 				00D4164E2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch74.swift in Sources */,
 				00D4164F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch18.swift in Sources */,
@@ -1188,15 +1204,15 @@
 				00D4166F2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch02.swift in Sources */,
 				00D416702EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch65.swift in Sources */,
 				00D416712EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch80.swift in Sources */,
-				002FB2602EC9FAA000258787 /* SchmojiLevelPresentation.swift in Sources */,
-				002FB2632ECBF65A00258787 /* SchmojiBoardObject.swift in Sources */,
-				002FB2662ECC081500258787 /* SchmojiLevelTile.swift in Sources */,
-				002FB2682ECC0D0500258787 /* SchmojiUnlockedHex.swift in Sources */,
+				002FB2602EC9FAA000258787 /* PotatoLevelPresentation.swift in Sources */,
+				002FB2632ECBF65A00258787 /* PotatoGameBoardObject.swift in Sources */,
+				002FB2662ECC081500258787 /* PotatoGameLevelTile.swift in Sources */,
+				002FB2682ECC0D0500258787 /* PotatoGameUnlockedHex.swift in Sources */,
 				002FB26A2ECC140A00258787 /* AccountPurchasedPack.swift in Sources */,
 				00D416722EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch114.swift in Sources */,
 				00D416732EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch53.swift in Sources */,
 				00D416742EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch86.swift in Sources */,
-				0063BCFA2ECDFB0A00300CF2 /* SchmojiGameScene+Haptics.swift in Sources */,
+				0063BCFA2ECDFB0A00300CF2 /* PotatoGameScene+Haptics.swift in Sources */,
 				00D416752EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch62.swift in Sources */,
 				00D416762EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch134.swift in Sources */,
 				00D416772EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch50.swift in Sources */,
@@ -1272,19 +1288,19 @@
 				00D416BD2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch83.swift in Sources */,
 				00D416BE2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch03.swift in Sources */,
 				00D416BF2EC8CC30009F4D68 /* SchmojiLevelTemplates+Batch118.swift in Sources */,
-				002E3D0F2B7660DD00D938E1 /* SchmojiColorsLegendGenericView.swift in Sources */,
+				002E3D0F2B7660DD00D938E1 /* PotatoGameLegendView.swift in Sources */,
 				004342002B7A4192004BB7BA /* SettingsView.swift in Sources */,
 				00D415912EC8C7F7009F4D68 /* StoreView.swift in Sources */,
-				00A391F52B3C7A56005A0231 /* SchmojiColor.swift in Sources */,
-				004CE67C2B3E0028009855C2 /* SchmojiCircleView.swift in Sources */,
+				00A391F52B3C7A56005A0231 /* PotatoColor.swift in Sources */,
+				004CE67C2B3E0028009855C2 /* CollectionCircleView.swift in Sources */,
 				008CB1682B4D62C600461A0C /* SchmojiSpriteNode.swift in Sources */,
-				00125F232EAEAF8800C7051D /* SchmojiSelection.swift in Sources */,
+				00125F232EAEAF8800C7051D /* EmojiSelection.swift in Sources */,
 				0043420E2B7A503D004BB7BA /* LevelsSearchResults.swift in Sources */,
 				00F059422D25EE7400713AF7 /* LinksView.swift in Sources */,
-				00FCAFF32B6ED82100E7527C /* SchmojiOptions.swift in Sources */,
-				00166D362EB3D420003999E7 /* SchmojiLevelLayoutGenerator.swift in Sources */,
-				00FCAFEF2B6ED76700E7527C /* SchmojiDataContainer.swift in Sources */,
-				00125F6F2EAEF78C00C7051D /* SchmojiLevelProgress.swift in Sources */,
+				00FCAFF32B6ED82100E7527C /* PotatoGameOptions.swift in Sources */,
+				00166D362EB3D420003999E7 /* PotatoGameLevelLayoutGenerator.swift in Sources */,
+				00FCAFEF2B6ED76700E7527C /* PotatoGameDataContainer.swift in Sources */,
+				00125F6F2EAEF78C00C7051D /* PotatoGameLevelProgress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,8 +8,8 @@ import SwiftUI
 struct PotatoGameLegendView: View {
     @Query private var selections: [EmojiSelection]
 
-    private var palette: [SchmojiAppearance] {
-        SchmojiAppearance.palette(from: selections)
+    private var palette: [PotatoGameAppearance] {
+        PotatoGameAppearance.palette(from: selections)
     }
 
     var body: some View {
@@ -42,7 +42,7 @@ struct PotatoGameLegendView: View {
     }
 }
 
-#Preview("Schmoji Legend") {
+#Preview("Legend") {
     PotatoGameLegendView()
         .padding()
         .background(Color.appBackground)

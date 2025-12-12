@@ -30,9 +30,9 @@ final class PotatoGameScene: SKScene {
     #else
         static let preferredFramesPerSecond = 60
     #endif
-    weak var sessionManager: SchmojiGameSessionManager?
+    weak var sessionManager: PotatoGameSessionManager?
     /// Immutable snapshot describing the level when this scene was created/reloaded.
-    private(set) var levelPresentation: SchmojiLevelPresentation?
+    private(set) var levelPresentation: PotatoLevelPresentation?
     #if os(iOS)
         let motionManager = CMMotionManager()
         let motionQueue: OperationQueue = {
@@ -54,11 +54,11 @@ final class PotatoGameScene: SKScene {
     #endif
     var selectedSchmojiNodes: [SchmojiSpriteNode] = []
     /// Local copy of the board state so SpriteKit doesn’t reach into SwiftData models directly.
-    private var storedLevelObjects: [SchmojiBoardObject] = []
+    private var storedLevelObjects: [PotatoGameBoardObject] = []
     private var hasLoadedInitialLayout = false
     var colorScheme: ColorScheme = .light
-    private(set) var hapticsEnabled: Bool = SchmojiOptions.haptics
-    private(set) var soundEnabled: Bool = SchmojiOptions.sound
+    private(set) var hapticsEnabled: Bool = PotatoGameOptions.haptics
+    private(set) var soundEnabled: Bool = PotatoGameOptions.sound
     let defaultGravity = CGVector(dx: 0, dy: -9.8)
     let matchExpansionFraction: CGFloat = 0.2
     let matchExpansionMinimum: CGFloat = 8
@@ -100,10 +100,10 @@ final class PotatoGameScene: SKScene {
     var currentMatchClusterIndex: Int = -1
     var controllerIdentifiers = Set<ObjectIdentifier>()
 
-    init(levelPresentation: SchmojiLevelPresentation) {
+    init(levelPresentation: PotatoLevelPresentation) {
         self.levelPresentation = levelPresentation
         storedLevelObjects = levelPresentation.objects
-        let sceneSize = CGSize(width: SchmojiOptions.width, height: SchmojiOptions.height)
+        let sceneSize = CGSize(width: PotatoGameOptions.width, height: PotatoGameOptions.height)
         super.init(size: sceneSize)
         scaleMode = .aspectFit
     }
@@ -140,11 +140,11 @@ final class PotatoGameScene: SKScene {
         // Physics world setup
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
         if let edgeBody = physicsBody {
-            SchmojiPhysicsCategory.configure(
+            PotatoGamePhysicsCategory.configure(
                 edgeBody,
-                category: SchmojiPhysicsCategory.edge,
-                collisions: SchmojiPhysicsCategory.schmoji,
-                contacts: SchmojiPhysicsCategory.schmoji
+                category: PotatoGamePhysicsCategory.edge,
+                collisions: PotatoGamePhysicsCategory.schmoji,
+                contacts: PotatoGamePhysicsCategory.schmoji
             )
         }
         contactDelegateProxy = UnownedContactDelegate(scene: self)
@@ -213,7 +213,7 @@ final class PotatoGameScene: SKScene {
     }
 
     /// Resets physics/input state and rebuilds nodes for the supplied level snapshot.
-    func reloadLevel(with presentation: SchmojiLevelPresentation) {
+    func reloadLevel(with presentation: PotatoLevelPresentation) {
         levelPresentation = presentation
         storedLevelObjects = presentation.objects
         selectedSchmojiNodes.removeAll()
@@ -232,7 +232,7 @@ final class PotatoGameScene: SKScene {
         loadLevelObjectsIfNeeded(force: true)
     }
 
-    func extractUpdatedObjects() -> [SchmojiBoardObject]? {
+    func extractUpdatedObjects() -> [PotatoGameBoardObject]? {
         // Snapshot even while paused/off-screen so persistence can run after sheets or backgrounding.
 
         let storedObjects = storedLevelObjects
@@ -252,7 +252,7 @@ final class PotatoGameScene: SKScene {
             nodeLookup[node.schmojiObject.id] = node
         }
 
-        var updatedObjects: [SchmojiBoardObject] = []
+        var updatedObjects: [PotatoGameBoardObject] = []
         updatedObjects.reserveCapacity(max(storedObjects.count, schmojiNodes.count))
         var matchedCount = 0
 
@@ -320,7 +320,7 @@ final class PotatoGameScene: SKScene {
     }
 
     /// Updates node textures/colors when the palette changes.
-    func applyPalette(_ palette: [SchmojiAppearance]) {
+    func applyPalette(_ palette: [PotatoGameAppearance]) {
         SchmojiSpriteNode.prewarmCircleTextures(for: palette, colorScheme: colorScheme)
         let lookup = Dictionary(uniqueKeysWithValues: palette.map { ($0.color, $0) })
         forEachSchmojiNode { node in
@@ -336,13 +336,13 @@ final class PotatoGameScene: SKScene {
     }
 
     /// Track objects spawned from match evolutions before persistence round-trips.
-    func appendStoredObject(_ object: SchmojiBoardObject) {
+    func appendStoredObject(_ object: PotatoGameBoardObject) {
         storedLevelObjects.append(object)
         syncPresentationObjects()
     }
 
     /// Used when the session manager injects a brand-new layout snapshot.
-    func replaceStoredObjects(_ objects: [SchmojiBoardObject]) {
+    func replaceStoredObjects(_ objects: [PotatoGameBoardObject]) {
         storedLevelObjects = objects
         syncPresentationObjects()
     }

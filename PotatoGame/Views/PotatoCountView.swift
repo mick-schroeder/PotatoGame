@@ -10,7 +10,6 @@ struct PotatoCountView: View {
     var body: some View {
         if let account = accounts.first {
             HStack(spacing: 8) {
-                // SchmojiArt.image(forHexcode: SchmojiOptions.potatoHex, targetDiameter: 72)
                 Image("Cool Potato")
                     .resizable()
                     .scaledToFit()

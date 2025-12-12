@@ -5,7 +5,7 @@ import Foundation
 import OSLog
 import SwiftData
 
-public struct SchmojiAppearance: Identifiable, Hashable {
+public struct PotatoGameAppearance: Identifiable, Hashable {
     public let color: PotatoColor
     public let hexcode: String
     public var id: PotatoColor { color }
@@ -16,8 +16,8 @@ public final class EmojiSelection {
     public var colorRawValue: PotatoColor.RawValue = PotatoColor.green.rawValue
     public var selectedHex: String = ""
     public var perfectWinCount: Int = 0
-    @Relationship(deleteRule: .cascade, inverse: \SchmojiUnlockedHex.selection)
-    var unlockedHexEntries: [SchmojiUnlockedHex]?
+    @Relationship(deleteRule: .cascade, inverse: \PotatoGameUnlockedHex.selection)
+    var unlockedHexEntries: [PotatoGameUnlockedHex]?
 
     private static let perfectWinsMilestone = 5
 
@@ -32,7 +32,7 @@ public final class EmojiSelection {
                 .sanitizedUnlockedList(newValue, available: availableHexes)
                 .enumerated()
                 .map { index, hex in
-                    SchmojiUnlockedHex(hexcode: hex, orderIndex: index, selection: self)
+                    PotatoGameUnlockedHex(hexcode: hex, orderIndex: index, selection: self)
                 }
         }
     }
@@ -202,8 +202,8 @@ private extension EmojiSelection {
     }
 }
 
-public extension SchmojiAppearance {
-    static func palette(from selections: [EmojiSelection]) -> [SchmojiAppearance] {
+public extension PotatoGameAppearance {
+    static func palette(from selections: [EmojiSelection]) -> [PotatoGameAppearance] {
         var lookup: [PotatoColor: String] = [:]
         for selection in selections {
             lookup[selection.color] = selection.displayHexcode()
@@ -211,7 +211,7 @@ public extension SchmojiAppearance {
 
         return PotatoColor.allCases.map { color in
             let hex = lookup[color] ?? color.schmojis.first ?? PotatoGameOptions.potatoHex
-            return SchmojiAppearance(color: color, hexcode: hex)
+            return PotatoGameAppearance(color: color, hexcode: hex)
         }
     }
 }

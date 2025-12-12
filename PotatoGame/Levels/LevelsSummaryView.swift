@@ -6,8 +6,8 @@ import SwiftUI
 struct LevelsSummaryView: View {
     let completedLevels: Int
     let totalLevels: Int
-    let nextLevel: SchmojiLevelInfo
-    let playLevel: SchmojiLevelInfo
+    let nextLevel: PotatoGameLevelInfo
+    let playLevel: PotatoGameLevelInfo
     let playIsLocked: Bool
     let shouldShowUnlockButton: Bool
     var body: some View {
@@ -112,7 +112,7 @@ private extension LevelsSummaryView {
             Text(.levelsSummaryLevelPackPrompt)
                 .font(.footnote.weight(.semibold))
 
-            Text(.levelsSummaryLevelPackDescription(baseGameLevelLimit: SchmojiOptions.baseGameLevelLimit))
+            Text(.levelsSummaryLevelPackDescription(baseGameLevelLimit: PotatoGameOptions.baseGameLevelLimit))
                 .font(.footnote)
                 .foregroundStyle(.secondary)
 
@@ -128,9 +128,9 @@ private extension LevelsSummaryView {
 }
 
 private struct PlayNavigationButton: View {
-    let level: SchmojiLevelInfo
+    let level: PotatoGameLevelInfo
     @Environment(\.router) private var router
-    @AppStorage("haptics") private var hapticsEnabled: Bool = SchmojiOptions.haptics
+    @AppStorage("haptics") private var hapticsEnabled: Bool = PotatoGameOptions.haptics
 
     var body: some View {
         Button {
@@ -156,7 +156,7 @@ private struct PlayNavigationButton: View {
 private struct LevelStoreNavigationButton: View {
     let requiredPack: LevelPackDefinition?
     @Environment(\.router) private var router
-    @AppStorage("haptics") private var hapticsEnabled: Bool = SchmojiOptions.haptics
+    @AppStorage("haptics") private var hapticsEnabled: Bool = PotatoGameOptions.haptics
 
     var body: some View {
         Button {
@@ -221,9 +221,9 @@ private struct LevelStoreNavigationButton: View {
     .environment(PreviewSampleData.makeLevelPackStore())
 }
 
-private extension SchmojiLevelInfo {
-    static func preview(levelNumber: Int) -> SchmojiLevelInfo {
-        SchmojiLevelInfo(
+private extension PotatoGameLevelInfo {
+    static func preview(levelNumber: Int) -> PotatoGameLevelInfo {
+        PotatoGameLevelInfo(
             levelNumber: levelNumber,
             levelBackgroundColor: .green,
             potentialPotatoCount: 5

@@ -27,11 +27,11 @@ extension PotatoGameLevelTile {
         set { colorRawValue = newValue.rawValue }
     }
 
-    var boardObject: SchmojiBoardObject {
-        SchmojiBoardObject(id: id, color: color, positionX: positionX, positionY: positionY)
+    var boardObject: PotatoGameBoardObject {
+        PotatoGameBoardObject(id: id, color: color, positionX: positionX, positionY: positionY)
     }
 
-    func update(from boardObject: SchmojiBoardObject) {
+    func update(from boardObject: PotatoGameBoardObject) {
         id = boardObject.id
         color = boardObject.color
         positionX = boardObject.positionX

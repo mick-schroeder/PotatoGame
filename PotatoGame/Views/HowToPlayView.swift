@@ -35,13 +35,18 @@ struct HowToPlayView: View {
                         .foregroundStyle(.primary)
                 }.foregroundStyle(PotatoTheme.accent)
 
-                SchmojiColorsLegendGenericView()
+                PotatoGameLegendView()
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding()
                     .potatoCardStyle(cornerRadius: 24)
 
                 VStack(alignment: .leading, spacing: 20) {
                     Group {
+                        InstructionSection(
+                            title: String(localized: "how_to.play.title"),
+                            systemImage: "gamecontroller.fill",
+                            text: String(localized: "how_to.play.body")
+                        )
                         InstructionSection(
                             title: String(localized: "how_to.goal.title"),
                             systemImage: "trophy.fill",
@@ -60,6 +65,11 @@ struct HowToPlayView: View {
                             systemImage: "sparkles",
                             text: String(localized: "how_to.collection.body")
                         )
+                        InstructionSection(
+                            title: String(localized: "how_to.tip.title"),
+                            systemImage: "lightbulb.max.fill",
+                            text: String(localized: "how_to.tip.body")
+                        )
                     }
                     .padding(EdgeInsets(top: 16,
                                         leading: sideInset,
@@ -70,7 +80,7 @@ struct HowToPlayView: View {
             }
             .padding(.horizontal, 24)
             .padding(.vertical, 28)
-            .frame(maxWidth: CGFloat(SchmojiOptions.width))
+            .frame(maxWidth: CGFloat(PotatoGameOptions.width))
             .frame(maxWidth: .infinity, alignment: .center)
         }
         .potatoBackground()

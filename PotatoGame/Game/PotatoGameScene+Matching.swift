@@ -78,9 +78,9 @@ extension PotatoGameScene {
             return
         }
 
-        if selectedSchmojiNodes.contains(where: { $0 === tappedNode }), tappedNode.schmojiColor != SchmojiOptions.lastColor {
+        if selectedSchmojiNodes.contains(where: { $0 === tappedNode }), tappedNode.schmojiColor != PotatoGameOptions.lastColor {
             evolveChain(from: tappedNode)
-        } else if tappedNode.schmojiColor == SchmojiOptions.lastColor {
+        } else if tappedNode.schmojiColor == PotatoGameOptions.lastColor {
             // Do nothing for final color
             clearSchmojiSelection()
         } else {
@@ -150,7 +150,7 @@ extension PotatoGameScene {
 
         let count = selectedSchmojiNodes.count
 
-        if count >= SchmojiOptions.matchCountMin {
+        if count >= PotatoGameOptions.matchCountMin {
             for schmoji in selectedSchmojiNodes {
                 schmoji.remove = true
                 schmoji.makeSelected()
@@ -206,7 +206,7 @@ extension PotatoGameScene {
         let clampedY = max(offset, min(rawY, size.height - offset))
         let newPosition = CGPoint(x: clampedX, y: clampedY)
 
-        let newLevelObject = SchmojiBoardObject(
+        let newLevelObject = PotatoGameBoardObject(
             color: nextColor,
             positionX: Double(newPosition.x),
             positionY: Double(newPosition.y)
@@ -219,7 +219,7 @@ extension PotatoGameScene {
         addChild(newNode)
         registerSchmojiNode(newNode)
         runSpawnAnimation(for: newNode, originalScaleX: originalScaleX, originalScaleY: originalScaleY)
-        if newNode.schmojiColor == SchmojiOptions.lastColor {
+        if newNode.schmojiColor == PotatoGameOptions.lastColor {
             playSound(.potatoCreated)
         }
     }
@@ -257,7 +257,7 @@ extension PotatoGameScene {
             }
             let combo = schmojiCombo(accumulated: [], around: node)
             combo.forEach { visited.insert(ObjectIdentifier($0)) }
-            guard combo.count >= SchmojiOptions.matchCountMin, node.schmojiColor != SchmojiOptions.lastColor else {
+            guard combo.count >= PotatoGameOptions.matchCountMin, node.schmojiColor != PotatoGameOptions.lastColor else {
                 continue
             }
             clusters.append(combo)
@@ -396,9 +396,9 @@ extension PotatoGameScene {
 
     /// Brief visual that shows the current color evolving into the next one.
     @discardableResult
-    private func runEvolutionVisualization(for nodes: [SchmojiSpriteNode], color: SchmojiColor) -> TimeInterval {
+    private func runEvolutionVisualization(for nodes: [SchmojiSpriteNode], color: PotatoColor) -> TimeInterval {
         guard nodes.isEmpty == false else { return 0 }
-        let pulseDuration: TimeInterval = 0.5
+        let pulseDuration: TimeInterval = 0.25
         let animationColor = SchmojiSpriteNode.platformColor(for: colorScheme, color: color)
         
         let nextStroke = animationColor.withAlphaComponent(0.9)
@@ -444,6 +444,6 @@ extension PotatoGameScene {
             node.run(nodeSequence, withKey: "SchmojiEvolutionPreview")
         }
 
-        return pulseDuration + 0.04 * Double(nodes.count)
+        return pulseDuration + 0.02 * Double(nodes.count)
     }
 }

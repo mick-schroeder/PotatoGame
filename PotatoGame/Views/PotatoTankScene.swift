@@ -158,7 +158,7 @@ class PotatoTankScene: SKScene {
 
     private func spawnPotatoes(with texture: SKTexture) {
         let count = Int.random(in: potatoSpawnRange)
-        let baseSize = CGFloat(SchmojiOptions.baseSizePotatoTank)
+        let baseSize = CGFloat(PotatoGameOptions.baseSizePotatoTank)
         let spawnAction = SKAction.sequence([
             SKAction.run { [weak self] in
                 guard let self else { return }
@@ -197,9 +197,9 @@ class PotatoTankScene: SKScene {
 
     private func makePotatoTexture() -> SKTexture? {
         // Render large enough for the maximum runtime scale so SVG detail stays sharp.
-        let targetDiameter = CGFloat(SchmojiOptions.baseSizePotatoTank) * potatoScaleRange.upperBound
-        return SchmojiArt.texture(
-            forHexcode: SchmojiOptions.potatoHex,
+        let targetDiameter = CGFloat(PotatoGameOptions.baseSizePotatoTank) * potatoScaleRange.upperBound
+        return PotatoGameArt.texture(
+            forHexcode: PotatoGameOptions.potatoHex,
             targetDiameter: targetDiameter
         )
     }

@@ -11,11 +11,11 @@ import SwiftUI
 #endif
 
 struct LevelsGridItem: View {
-    let level: SchmojiLevelInfo
+    let level: PotatoGameLevelInfo
     @Environment(LevelPackStore.self) private var levelPackStore
     @Environment(\.router) private var router
     @Environment(\.colorScheme) private var colorScheme
-    @AppStorage("haptics") private var hapticsEnabled: Bool = SchmojiOptions.haptics
+    @AppStorage("haptics") private var hapticsEnabled: Bool = PotatoGameOptions.haptics
     @ScaledMetric(relativeTo: .title2) private var badgeSize: CGFloat = 64
 
     private let tileCornerRadius: CGFloat = 24

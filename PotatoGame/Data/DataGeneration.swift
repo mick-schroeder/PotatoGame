@@ -58,8 +58,6 @@ private let logger = Logger(subsystem: "PotatoGame", category: "DataGeneration")
     private func generateInitialData(modelContext: ModelContext, userID: String) {
         logger.info("Generating initial data…")
         Self.ensureBaselineData(modelContext: modelContext, userID: userID)
-        // SchmojiLevel.generateAll(modelContext: modelContext)
-
         initializationDate = .now
         do {
             try modelContext.save()
@@ -103,7 +101,7 @@ private let logger = Logger(subsystem: "PotatoGame", category: "DataGeneration")
     }
 
     public static func ensureBaselineData(modelContext: ModelContext, userID: String = Account.defaultUserID) {
-        SchmojiSelection.ensureDefaults(in: modelContext)
+        EmojiSelection.ensureDefaults(in: modelContext)
         Account.generateAccount(modelContext: modelContext, userID: userID)
     }
 
@@ -148,17 +146,11 @@ private let logger = Logger(subsystem: "PotatoGame", category: "DataGeneration")
         }
 
         // Perform deletions per model in batches to ensure CloudKit tombstones are uploaded
-
-        /*
-          do { try deleteAll(of: SchmojiLevel.self, modelContext: modelContext) } catch {
-             logger.error("Failed to delete SchmojiLevel: \(error.localizedDescription, privacy: .public)")
-         }
-          */
-        do { try deleteAll(of: SchmojiLevelProgress.self, modelContext: modelContext) } catch {
-            logger.error("Failed to delete SchmojiLevelProgress: \(error.localizedDescription, privacy: .public)")
+        do { try deleteAll(of: PotatoGameLevelProgress.self, modelContext: modelContext) } catch {
+            logger.error("Failed to delete Level Progress: \(error.localizedDescription, privacy: .public)")
         }
-        do { try deleteAll(of: SchmojiSelection.self, modelContext: modelContext) } catch {
-            logger.error("Failed to delete SchmojiSelection: \(error.localizedDescription, privacy: .public)")
+        do { try deleteAll(of: EmojiSelection.self, modelContext: modelContext) } catch {
+            logger.error("Failed to delete Selection: \(error.localizedDescription, privacy: .public)")
         }
         do { try deleteAll(of: Account.self, modelContext: modelContext) } catch {
             logger.error("Failed to delete Account: \(error.localizedDescription, privacy: .public)")
@@ -189,5 +181,5 @@ private let logger = Logger(subsystem: "PotatoGame", category: "DataGeneration")
 }
 
 public extension DataGeneration {
-    static let schema = SchmojiSchemas.full
+    static let schema = PotatoGameSchemas.full
 }

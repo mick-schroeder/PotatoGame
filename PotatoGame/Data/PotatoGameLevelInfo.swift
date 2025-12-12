@@ -43,7 +43,7 @@ public enum GameState: String, Codable, CaseIterable, Hashable, Sendable {
     }
 }
 
-struct SchmojiLevelInfo: Identifiable, Hashable {
+struct PotatoGameLevelInfo: Identifiable, Hashable {
     var id: Int { levelNumber }
 
     let levelNumber: Int
@@ -98,41 +98,41 @@ struct SchmojiLevelInfo: Identifiable, Hashable {
     }
 }
 
-extension SchmojiLevelInfo {
-    private static let logger = Logger(subsystem: "PotatoGame", category: "SchmojiLevelInfo")
+extension PotatoGameLevelInfo {
+    private static let logger = Logger(subsystem: "PotatoGame", category: "PotatoGameLevelInfo")
 
     /// Convenience access to the static template for this level number (if any).
     var template: LevelTemplate? {
         LevelTemplateByNumber[levelNumber]
     }
 
-    static func allLevels(progress: [PotatoGameLevelProgress], ownedLevelPackIDs: Set<String>) -> [SchmojiLevelInfo] {
+    static func allLevels(progress: [PotatoGameLevelProgress], ownedLevelPackIDs: Set<String>) -> [PotatoGameLevelInfo] {
         let lookup = normalizedProgressLookup(from: progress)
         return LevelTemplates.map { template in
-            SchmojiLevelInfo(template: template, progress: lookup[template.levelNumber], ownedLevelPackIDs: ownedLevelPackIDs)
+            PotatoGameLevelInfo(template: template, progress: lookup[template.levelNumber], ownedLevelPackIDs: ownedLevelPackIDs)
         }
     }
 
-    static func nextPlayableLevel(progress: [PotatoGameLevelProgress], ownedLevelPackIDs: Set<String>) -> SchmojiLevelInfo? {
+    static func nextPlayableLevel(progress: [PotatoGameLevelProgress], ownedLevelPackIDs: Set<String>) -> PotatoGameLevelInfo? {
         nextPlayableLevel(in: allLevels(progress: progress, ownedLevelPackIDs: ownedLevelPackIDs))
     }
 
-    static func nextPlayableLevel(in levels: [SchmojiLevelInfo]) -> SchmojiLevelInfo? {
+    static func nextPlayableLevel(in levels: [PotatoGameLevelInfo]) -> PotatoGameLevelInfo? {
         levels.first(where: { $0.isPlayable && $0.isCompleted == false })
             ?? levels.first(where: { $0.isPlayable })
             ?? levels.first(where: { $0.isLevelPackLocked })
             ?? levels.first
     }
 
-    static func level(number: Int, progress: [PotatoGameLevelProgress], ownedLevelPackIDs: Set<String>) -> SchmojiLevelInfo? {
+    static func level(number: Int, progress: [PotatoGameLevelProgress], ownedLevelPackIDs: Set<String>) -> PotatoGameLevelInfo? {
         guard let template = LevelTemplateByNumber[number] else {
             return nil
         }
         let progress = normalizedProgressLookup(from: progress)[number]
-        return SchmojiLevelInfo(template: template, progress: progress, ownedLevelPackIDs: ownedLevelPackIDs)
+        return PotatoGameLevelInfo(template: template, progress: progress, ownedLevelPackIDs: ownedLevelPackIDs)
     }
 
-    static func level(number: Int, context: ModelContext, ownedLevelPackIDs: Set<String>) -> SchmojiLevelInfo? {
+    static func level(number: Int, context: ModelContext, ownedLevelPackIDs: Set<String>) -> PotatoGameLevelInfo? {
         guard let template = LevelTemplateByNumber[number] else {
             return nil
         }
@@ -140,12 +140,12 @@ extension SchmojiLevelInfo {
         descriptor.predicate = #Predicate { $0.levelNumber == number }
         descriptor.fetchLimit = 1
         let progress = try? context.fetch(descriptor).first
-        return SchmojiLevelInfo(template: template, progress: progress, ownedLevelPackIDs: ownedLevelPackIDs)
+        return PotatoGameLevelInfo(template: template, progress: progress, ownedLevelPackIDs: ownedLevelPackIDs)
     }
 }
 
 @MainActor
-extension SchmojiLevelInfo {
+extension PotatoGameLevelInfo {
     @discardableResult
     mutating func ensureProgress(in context: ModelContext) -> PotatoGameLevelProgress {
         guard let ensured = ensureProgressIfNeeded(context) else {
@@ -158,7 +158,7 @@ extension SchmojiLevelInfo {
         !(progress?.storedTiles?.isEmpty ?? true)
     }
 
-    var schmojiInLevel: [SchmojiBoardObject] {
+    var schmojiInLevel: [PotatoGameBoardObject] {
         get {
             _ = progress?.loadFromTemplateIfNeeded()
             return progress?.boardObjects ?? []
@@ -168,7 +168,7 @@ extension SchmojiLevelInfo {
         }
     }
 
-    mutating func addLevelObject(_ object: SchmojiBoardObject, in context: ModelContext? = nil) {
+    mutating func addLevelObject(_ object: PotatoGameBoardObject, in context: ModelContext? = nil) {
         updateProgress(in: context) { progress in
             progress.replaceTile(with: object)
         }
@@ -307,7 +307,7 @@ extension SchmojiLevelInfo {
     }
 }
 
-private extension SchmojiLevelInfo {
+private extension PotatoGameLevelInfo {
     static func normalizedProgressLookup(from entries: [PotatoGameLevelProgress]) -> [Int: PotatoGameLevelProgress] {
         var lookup: [Int: PotatoGameLevelProgress] = [:]
         var duplicateLevels: Set<Int> = []

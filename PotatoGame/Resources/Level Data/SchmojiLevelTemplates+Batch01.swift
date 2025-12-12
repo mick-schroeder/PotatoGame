@@ -23,7 +23,7 @@ enum LevelTemplatesBatch01 {
                 [nil, 3, 3, 3, 3, 3, nil],
                 [nil, 3, 3, 3, 3, 3, nil, nil],
                 [nil, 4, 4, 4, 4, 4, nil],
-            ], backgroundColor: .red, potentialPotatoCount: 1
+            ], backgroundColor: .brown, potentialPotatoCount: 1
         ),
         LevelTemplate(
             levelNumber: 2,

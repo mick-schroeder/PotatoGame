@@ -14,7 +14,7 @@ struct LevelPackDefinition: Identifiable, Sendable {
 }
 
 enum LevelPackRegistry {
-    static let baseGameUnlockedLevels: ClosedRange<Int> = 1 ... SchmojiOptions.baseGameLevelLimit
+    static let baseGameUnlockedLevels: ClosedRange<Int> = 1 ... PotatoGameOptions.baseGameLevelLimit
 
     static let availablePacks: [LevelPackDefinition] = [
         LevelPackDefinition(

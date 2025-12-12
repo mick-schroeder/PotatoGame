@@ -50,7 +50,7 @@ enum PotatoGameArt {
         Image(assetName(for: hexcode))
     }
 
-    static func image(for appearance: SchmojiAppearance, targetDiameter: CGFloat = 160) -> Image {
+    static func image(for appearance: PotatoGameAppearance, targetDiameter: CGFloat = 160) -> Image {
         image(forHexcode: appearance.hexcode, targetDiameter: targetDiameter)
     }
 }

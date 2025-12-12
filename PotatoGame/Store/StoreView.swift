@@ -20,7 +20,7 @@ struct StoreView: View {
             }
             .padding(.horizontal, 24)
             .padding(.vertical, 28)
-            .frame(maxWidth: CGFloat(SchmojiOptions.width))
+            .frame(maxWidth: CGFloat(PotatoGameOptions.width))
             .frame(maxWidth: .infinity, alignment: .center)
         }
         .potatoBackground()
@@ -88,7 +88,7 @@ private struct StoreHeader: View {
 private struct LevelPackProductCard: View {
     let pack: LevelPackDefinition
     @Environment(LevelPackStore.self) private var levelPackStore
-    @AppStorage("haptics") private var hapticsEnabled: Bool = SchmojiOptions.haptics
+    @AppStorage("haptics") private var hapticsEnabled: Bool = PotatoGameOptions.haptics
 
     private var isUnlocked: Bool {
         levelPackStore.purchasedPackIDs.contains(pack.id)
@@ -165,7 +165,7 @@ private struct LevelPackProductCard: View {
 
 private struct RestorePurchasesButton: View {
     @Environment(LevelPackStore.self) private var levelPackStore
-    @AppStorage("haptics") private var hapticsEnabled: Bool = SchmojiOptions.haptics
+    @AppStorage("haptics") private var hapticsEnabled: Bool = PotatoGameOptions.haptics
 
     var body: some View {
         Button(action: restorePurchases) {

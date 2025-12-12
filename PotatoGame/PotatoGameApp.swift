@@ -6,7 +6,7 @@ import SwiftUI
 
 @main
 struct PotatoGameApp: App {
-    private let container = SchmojiModelContainerProvider.shared.container
+    private let container = PotatoGameModelContainerProvider.shared.container
     @State private var keyboardSettings = GameKeyboardSettings()
     @State private var router = AppRouter()
     #if os(iOS)

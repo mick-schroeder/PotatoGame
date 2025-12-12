@@ -14,8 +14,8 @@ final class PotatoGameLevelProgress {
     var startedDate: Date?
     var completedDate: Date?
     var updatedAt: Date = Date.now
-    @Relationship(deleteRule: .cascade, inverse: \SchmojiLevelTile.progress)
-    var storedTiles: [SchmojiLevelTile]?
+    @Relationship(deleteRule: .cascade, inverse: \PotatoGameLevelTile.progress)
+    var storedTiles: [PotatoGameLevelTile]?
 
     init(levelNumber: Int,
          gameState: GameState = GameState.newUnlocked)
@@ -29,7 +29,7 @@ final class PotatoGameLevelProgress {
     @discardableResult
     func loadFromTemplateIfNeeded() -> Bool {
         guard storedTiles?.isEmpty ?? true else { return false }
-        let generated = SchmojiLevelLayoutGenerator.layoutObjects(for: levelNumber)
+        let generated = PotatoGameLevelLayoutGenerator.layoutObjects(for: levelNumber)
         guard generated.isEmpty == false else { return false }
         setBoardObjects(generated)
         numOfPotatoesCreated = 0
@@ -68,19 +68,19 @@ extension PotatoGameLevelProgress {
         return progress
     }
 
-    var boardObjects: [SchmojiBoardObject] {
+    var boardObjects: [PotatoGameBoardObject] {
         if storedTiles?.isEmpty ?? true {
             _ = loadFromTemplateIfNeeded()
         }
         return storedTiles?.map(\.boardObject) ?? []
     }
 
-    func setBoardObjects(_ objects: [SchmojiBoardObject]) {
+    func setBoardObjects(_ objects: [PotatoGameBoardObject]) {
         storedTiles = objects.map { $0.makeTile(progress: self) }
         updatedAt = .now
     }
 
-    func replaceTile(with board: SchmojiBoardObject) {
+    func replaceTile(with board: PotatoGameBoardObject) {
         if storedTiles == nil {
             storedTiles = []
         }

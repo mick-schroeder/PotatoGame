@@ -21,7 +21,7 @@ struct CollectionColorCard: View {
 
             if let selection {
                 VStack(alignment: .center, spacing: 12) {
-                    SchmojiCircleView(color: color, hexcode: selection.displayHexcode())
+                    CollectionCircleView(color: color, hexcode: selection.displayHexcode())
                         .frame(minWidth: 48, idealWidth: 64, maxWidth: 72, minHeight: 48, idealHeight: 64, maxHeight: 72)
 
                     if let progress, progress.hasRemainingUnlocks {
@@ -42,7 +42,7 @@ struct CollectionColorCard: View {
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                 }
             } else {
-                SchmojiCircleView(color: color, hexcode: color.schmojis.first ?? PotatoGameOptions.potatoHex)
+                CollectionCircleView(color: color, hexcode: color.schmojis.first ?? PotatoGameOptions.potatoHex)
                     .frame(minWidth: 48, idealWidth: 64, maxWidth: 72, minHeight: 48, idealHeight: 64, maxHeight: 72)
             }
         }
@@ -77,7 +77,7 @@ private extension CollectionColorCard {
                     updateSelection(selection, hex)
                 } label: {
                     VStack(spacing: 6) {
-                        SchmojiCircleView(color: color, hexcode: hex)
+                        CollectionCircleView(color: color, hexcode: hex)
                             .frame(minWidth: 48, idealWidth: 64, maxWidth: 72, minHeight: 48, idealHeight: 64, maxHeight: 72)
 
                         let isSelected = selection.displayHexcode() == hex
@@ -107,7 +107,7 @@ private extension CollectionColorCard {
     }
 }
 
-private enum SchmojiCollectionPreviewFactory {
+private enum CollectionPreviewFactory {
     static func selection(color: PotatoColor, unlockedCount: Int) -> EmojiSelection {
         let selection = EmojiSelection(color: color)
         let unlockedHexes = Array(selection.availableHexes.prefix(unlockedCount))
@@ -119,7 +119,7 @@ private enum SchmojiCollectionPreviewFactory {
 }
 
 #Preview("Color Card – Progress") {
-    let selection = SchmojiCollectionPreviewFactory.selection(color: .orange, unlockedCount: 3)
+    let selection = CollectionPreviewFactory.selection(color: .orange, unlockedCount: 3)
     return CollectionColorCard(
         color: .green,
         selection: selection,

@@ -6,7 +6,7 @@ import Foundation
 import OSLog
 import SwiftData
 
-enum SchmojiSchemas {
+enum PotatoGameSchemas {
     /// Models that should sync via CloudKit.
     static let cloud = Schema([
         DataGeneration.self,
@@ -165,8 +165,8 @@ final class PotatoGameModelContainerProvider {
     private static func buildContainer(inMemory: Bool) throws -> ModelContainer {
         if inMemory {
             return try ModelContainer(
-                for: SchmojiSchemas.full,
-                configurations: [ModelConfiguration(schema: SchmojiSchemas.full, isStoredInMemoryOnly: true)]
+                for: PotatoGameSchemas.full,
+                configurations: [ModelConfiguration(schema: PotatoGameSchemas.full, isStoredInMemoryOnly: true)]
             )
         }
 
@@ -180,7 +180,7 @@ final class PotatoGameModelContainerProvider {
                         let configuration = cloudStoreConfiguration(identifier: desiredCloudIdentifier)
                         let localOnlyConfiguration = localOnlyStoreConfiguration()
                         let container = try ModelContainer(
-                            for: SchmojiSchemas.full,
+                            for: PotatoGameSchemas.full,
                             configurations: [configuration, localOnlyConfiguration]
                         )
                         if enablePromotion {
@@ -202,9 +202,9 @@ final class PotatoGameModelContainerProvider {
         #endif
 
         do {
-            let configuration = localStoreConfiguration(schema: SchmojiSchemas.full)
+            let configuration = localStoreConfiguration(schema: PotatoGameSchemas.full)
             let container = try ModelContainer(
-                for: SchmojiSchemas.full,
+                for: PotatoGameSchemas.full,
                 configurations: [configuration]
             )
             if attemptedError != nil {
@@ -234,7 +234,7 @@ final class PotatoGameModelContainerProvider {
         let url = cloudStoreURL()
         return ModelConfiguration(
             "CloudStore",
-            schema: SchmojiSchemas.cloud,
+            schema: PotatoGameSchemas.cloud,
             url: url,
             allowsSave: true,
             cloudKitDatabase: .private(identifier)
@@ -245,7 +245,7 @@ final class PotatoGameModelContainerProvider {
         let url = localOnlyStoreURL()
         return ModelConfiguration(
             "LocalOnlyStore",
-            schema: SchmojiSchemas.localOnly,
+            schema: PotatoGameSchemas.localOnly,
             url: url,
             allowsSave: true,
             cloudKitDatabase: .none
@@ -318,7 +318,7 @@ final class PotatoGameModelContainerProvider {
             do {
                 let migrator = CloudPromotionMigrator()
                 try await migrator.migrate(
-                    localConfiguration: localStoreConfiguration(schema: SchmojiSchemas.full),
+                    localConfiguration: localStoreConfiguration(schema: PotatoGameSchemas.full),
                     localOnlyConfiguration: localOnlyStoreConfiguration(),
                     cloudContainer: cloudContainer
                 )
@@ -341,7 +341,7 @@ private actor CloudPromotionMigrator {
         let localContainer = try ModelContainer(for: DataGeneration.schema, configurations: [localConfiguration])
         let localContext = ModelContext(localContainer)
         let cloudContext = ModelContext(cloudContainer)
-        let localOnlyContainer = try ModelContainer(for: SchmojiSchemas.localOnly, configurations: [localOnlyConfiguration])
+        let localOnlyContainer = try ModelContainer(for: PotatoGameSchemas.localOnly, configurations: [localOnlyConfiguration])
         let localOnlyContext = ModelContext(localOnlyContainer)
 
         var descriptor = FetchDescriptor<DataGeneration>()

@@ -12,7 +12,7 @@ import SwiftUI
     import AppKit
 #endif
 
-struct SchmojiCollectionView: View {
+struct CollectionView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var selections: [EmojiSelection]
     var body: some View {
@@ -24,7 +24,7 @@ struct SchmojiCollectionView: View {
 
                 LazyVStack(spacing: 16) {
                     ForEach(displayColors) { color in
-                        SchmojiCollectionColorCard(
+                        CollectionColorCard(
                             color: color,
                             selection: selectionLookup[color],
                             updateSelection: { selection, hex in
@@ -59,7 +59,7 @@ struct SchmojiCollectionView: View {
     }
 }
 
-private extension SchmojiCollectionView {
+private extension CollectionView {
     var totalAvailableSchmojis: Int {
         PotatoColor.allCases.reduce(into: 0) { count, color in
             count += color.schmojis.count
@@ -74,7 +74,7 @@ private extension SchmojiCollectionView {
     }
 
     var collectionSummary: some View {
-        SchmojiCollectionSummaryCard(
+        CollectionSummaryCard(
             unlocked: totalUnlockedSchmojis,
             total: totalAvailableSchmojis
         )
@@ -90,7 +90,7 @@ private extension SchmojiCollectionView {
 
 #Preview("Schmoji Collection") {
     NavigationStack {
-        SchmojiCollectionView()
+        CollectionView()
     }
     .modelContainer(PreviewSampleData.makeContainer())
 }

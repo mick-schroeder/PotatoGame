@@ -24,9 +24,9 @@ struct SettingsView: View {
         @Environment(\.openURL) private var openURL
     #endif
 
-    @AppStorage("sound") var sound: Bool = SchmojiOptions.sound
-    @AppStorage("haptics") var haptics: Bool = SchmojiOptions.haptics
-    @AppStorage("gamecenter") var gameCenter: Bool = SchmojiOptions.gameCenter
+    @AppStorage("sound") var sound: Bool = PotatoGameOptions.sound
+    @AppStorage("haptics") var haptics: Bool = PotatoGameOptions.haptics
+    @AppStorage("gamecenter") var gameCenter: Bool = PotatoGameOptions.gameCenter
 
     @Environment(GameKeyboardSettings.self) private var keyboardSettings
 

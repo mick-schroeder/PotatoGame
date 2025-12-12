@@ -10,25 +10,25 @@ import SwiftUI
 @MainActor
 @Observable
 final class PotatoGameSessionViewModel {
-    private(set) var level: SchmojiLevelInfo?
-    private(set) var scene: SchmojiGameScene?
-    private(set) var unlockProgress: SchmojiSelection.UnlockProgress?
+    private(set) var level: PotatoGameLevelInfo?
+    private(set) var scene: PotatoGameScene?
+    private(set) var unlockProgress: EmojiSelection.UnlockProgress?
     var presentedGameSheet: GameEndSheet?
 
     private var activeGameSheet: GameEndSheet?
-    private var sessionManager: SchmojiGameSessionManager?
+    private var sessionManager: PotatoGameSessionManager?
     private var hasExplicitLevel: Bool
     private var sheetDismissedProgrammatically = false
 
     private var accounts: [Account] = []
-    private var selections: [SchmojiSelection] = []
-    private var levelProgress: [SchmojiLevelProgress] = []
+    private var selections: [EmojiSelection] = []
+    private var levelProgress: [PotatoGameLevelProgress] = []
     private var purchasedPackIDs: Set<String> = []
     private var modelContext: ModelContext?
     private var keyboardSettings: GameKeyboardSettings?
-    private var globalHapticsEnabled: Bool = SchmojiOptions.haptics
+    private var globalHapticsEnabled: Bool = PotatoGameOptions.haptics
 
-    init(initialLevel: SchmojiLevelInfo? = nil) {
+    init(initialLevel: PotatoGameLevelInfo? = nil) {
         level = initialLevel
         hasExplicitLevel = initialLevel != nil
     }
@@ -56,8 +56,8 @@ final class PotatoGameSessionViewModel {
         soundEnabled: Bool,
         hapticsEnabled: Bool,
         accounts: [Account],
-        selections: [SchmojiSelection],
-        levelProgress: [SchmojiLevelProgress],
+        selections: [EmojiSelection],
+        levelProgress: [PotatoGameLevelProgress],
         purchasedPackIDs: Set<String>,
         keyboardSettings: GameKeyboardSettings
     ) {
@@ -142,7 +142,7 @@ final class PotatoGameSessionViewModel {
     }
 
     /// Helper to safely touch the manager + scene from menu commands.
-    func withSession(_ action: (SchmojiGameSessionManager, SchmojiGameScene) -> Void) {
+    func withSession(_ action: (PotatoGameSessionManager, PotatoGameScene) -> Void) {
         guard let manager = sessionManager, let scene else { return }
         action(manager, scene)
     }
@@ -181,7 +181,7 @@ final class PotatoGameSessionViewModel {
         sessionManager?.potatoesCreatedThisRun ?? sheet.level.numOfPotatoesCreated
     }
 
-    func outcome(for sheet: GameEndSheet) -> SchmojiGameEndView.Outcome {
+    func outcome(for sheet: GameEndSheet) -> PotatoGameEndView.Outcome {
         switch sheet.kind {
         case .win:
             let isPerfect = sheet.level.gameState == .winPerfect
@@ -195,8 +195,8 @@ final class PotatoGameSessionViewModel {
 // MARK: - Session lifecycle
 
 private extension PotatoGameSessionViewModel {
-    var palette: [SchmojiAppearance] {
-        SchmojiAppearance.palette(from: selections)
+    var palette: [PotatoGameAppearance] {
+        PotatoGameAppearance.palette(from: selections)
     }
 
     var ownedLevelPackIDs: Set<String> {
@@ -206,12 +206,12 @@ private extension PotatoGameSessionViewModel {
         return purchasedPackIDs
     }
 
-    var nextDefaultLevel: SchmojiLevelInfo? {
-        SchmojiLevelInfo.nextPlayableLevel(progress: levelProgress, ownedLevelPackIDs: ownedLevelPackIDs)
+    var nextDefaultLevel: PotatoGameLevelInfo? {
+        PotatoGameLevelInfo.nextPlayableLevel(progress: levelProgress, ownedLevelPackIDs: ownedLevelPackIDs)
     }
 
-    var nextUnlockedLevelAfterCurrent: SchmojiLevelInfo? {
-        let levels = SchmojiLevelInfo.allLevels(progress: levelProgress, ownedLevelPackIDs: ownedLevelPackIDs)
+    var nextUnlockedLevelAfterCurrent: PotatoGameLevelInfo? {
+        let levels = PotatoGameLevelInfo.allLevels(progress: levelProgress, ownedLevelPackIDs: ownedLevelPackIDs)
         guard let current = level else {
             return levels.first(where: { $0.isLevelPackLocked == false })
         }
@@ -255,7 +255,7 @@ private extension PotatoGameSessionViewModel {
     /// Reuses the existing session when possible, otherwise builds a new one.
     /// Keeps SpriteKit scene creation cheap by diffing the requested level against the current manager.
     func configureSession(
-        for level: SchmojiLevelInfo,
+        for level: PotatoGameLevelInfo,
         modelContext _: ModelContext,
         colorScheme: ColorScheme,
         soundEnabled: Bool,
@@ -278,7 +278,7 @@ private extension PotatoGameSessionViewModel {
     }
 
     /// Tears down any existing session and boots a brand new SpriteKit scene.
-    func startNewSession(for targetLevel: SchmojiLevelInfo) {
+    func startNewSession(for targetLevel: PotatoGameLevelInfo) {
         guard targetLevel.isLevelPackLocked == false else { return }
         guard let account = resolvedAccount(), let modelContext else { return }
 
@@ -287,7 +287,7 @@ private extension PotatoGameSessionViewModel {
         let target = targetLevel
         level = target
         unlockProgress = nil
-        let manager = SchmojiGameSessionManager(
+        let manager = PotatoGameSessionManager(
             account: account,
             context: modelContext,
             level: target,
@@ -311,7 +311,7 @@ private extension PotatoGameSessionViewModel {
     }
 
     /// Hooks manager callbacks back into our published SwiftUI state so sheets/HUD react immediately.
-    func bindLevelUpdates(to manager: SchmojiGameSessionManager) {
+    func bindLevelUpdates(to manager: PotatoGameSessionManager) {
         manager.onLevelUpdate = { [weak self] updatedLevel in
             guard let self else { return }
             level = updatedLevel
@@ -329,7 +329,7 @@ private extension PotatoGameSessionViewModel {
     }
 
     /// Builds the right sheet for the current level state and surfaces it to the view.
-    func updateGameEndSheet(for level: SchmojiLevelInfo, unlock: SchmojiSelection.UnlockProgress? = nil) {
+    func updateGameEndSheet(for level: PotatoGameLevelInfo, unlock: EmojiSelection.UnlockProgress? = nil) {
         let sheet = makeGameEndSheet(for: level, unlock: unlock ?? unlockProgress)
         activeGameSheet = sheet
         if sheet != nil {
@@ -340,7 +340,7 @@ private extension PotatoGameSessionViewModel {
     }
 
     /// Converts the level’s state into the win/lose sheet metadata.
-    func makeGameEndSheet(for level: SchmojiLevelInfo, unlock: SchmojiSelection.UnlockProgress?) -> GameEndSheet? {
+    func makeGameEndSheet(for level: PotatoGameLevelInfo, unlock: EmojiSelection.UnlockProgress?) -> GameEndSheet? {
         switch level.gameState {
         case .win, .winPerfect:
             let resumeOnDismiss = level.gameState == .win
@@ -352,7 +352,7 @@ private extension PotatoGameSessionViewModel {
         }
     }
 
-    private func triggerHaptics(for level: SchmojiLevelInfo) {
+    private func triggerHaptics(for level: PotatoGameLevelInfo) {
         #if os(iOS)
             guard globalHapticsEnabled else { return }
             switch level.gameState {

@@ -5,7 +5,7 @@ import SwiftData
 import SwiftUI
 
 struct LevelsSearchResults: View {
-    let levels: [SchmojiLevelInfo]
+    let levels: [PotatoGameLevelInfo]
     var body: some View {
         ForEach(levels) { level in
             LevelsGridItem(level: level)

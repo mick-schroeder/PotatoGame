@@ -92,7 +92,7 @@ public enum PotatoColor: String, Codable, CaseIterable, Hashable, ShapeStyle {
         let exponent = 0.4
 
         // Calculate size using the adjusted scaling
-        return SchmojiOptions.baseSize * pow(phi, Double(order - 1) * exponent)
+        return PotatoGameOptions.baseSize * pow(phi, Double(order - 1) * exponent)
     }
 
     public var schmojis: [String] {

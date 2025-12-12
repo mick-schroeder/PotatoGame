@@ -12,20 +12,20 @@ import SwiftUI
 
 /// SwiftUI wrapper that hosts the SpriteKit scene and in-game HUD.
 @MainActor
-struct SchmojiGameView: View {
+struct PotatoGameView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.dismiss) private var dismissView
     @Environment(LevelPackStore.self) private var levelPackStore
     @Environment(GameKeyboardSettings.self) private var keyboardSettings
 
-    @AppStorage("showLegend") private var legendVisible: Bool = SchmojiOptions.showLegend
-    @AppStorage("sound") private var soundEnabled: Bool = SchmojiOptions.sound
-    @AppStorage("haptics") private var hapticsEnabled: Bool = SchmojiOptions.haptics
+    @AppStorage("showLegend") private var legendVisible: Bool = PotatoGameOptions.showLegend
+    @AppStorage("sound") private var soundEnabled: Bool = PotatoGameOptions.sound
+    @AppStorage("haptics") private var hapticsEnabled: Bool = PotatoGameOptions.haptics
     @AppStorage("mergeTutorialSeen") private var mergeTutorialSeen: Bool = false
     @AppStorage("mergeTutorialAccountJoinDate") private var mergeTutorialAccountJoinDate: TimeInterval = 0
 
-    @State private var viewModel: GameSessionViewModel
+    @State private var viewModel: PotatoGameSessionViewModel
     @State private var isSeedingAccount = false
     @State private var howToPlayVisible = false
     @State private var mergeTutorialVisible = false
@@ -39,8 +39,8 @@ struct SchmojiGameView: View {
     #endif
 
     @Query private var accounts: [Account]
-    @Query private var selections: [SchmojiSelection]
-    @Query(sort: [SortDescriptor(\SchmojiLevelProgress.levelNumber, order: .forward)]) private var levelProgress: [SchmojiLevelProgress]
+    @Query private var selections: [EmojiSelection]
+    @Query(sort: [SortDescriptor(\PotatoGameLevelProgress.levelNumber, order: .forward)]) private var levelProgress: [PotatoGameLevelProgress]
 
     @ScaledMetric(relativeTo: .title) private var headerIconSize: CGFloat = 32
 
@@ -60,8 +60,8 @@ struct SchmojiGameView: View {
         )
     }
 
-    init(level: SchmojiLevelInfo? = nil) {
-        _viewModel = State(initialValue: GameSessionViewModel(initialLevel: level))
+    init(level: PotatoGameLevelInfo? = nil) {
+        _viewModel = State(initialValue: PotatoGameSessionViewModel(initialLevel: level))
     }
 
     var body: some View {
@@ -170,7 +170,7 @@ struct SchmojiGameView: View {
                 .padding(.vertical)
             #endif
 
-                .frame(maxWidth: CGFloat(SchmojiOptions.width), alignment: .center)
+                .frame(maxWidth: CGFloat(PotatoGameOptions.width), alignment: .center)
 
             if mergeTutorialVisible {
                 mergeTutorialOverlay
@@ -183,7 +183,7 @@ struct SchmojiGameView: View {
 
 // MARK: - Subviews
 
-@MainActor private extension SchmojiGameView {
+@MainActor private extension PotatoGameView {
     /// Overflow menu for pause/restart/settings/debug actions.
     @ViewBuilder
     private var gameMenu: some View {
@@ -311,12 +311,12 @@ struct SchmojiGameView: View {
     }
 }
 
-@MainActor private extension SchmojiGameView {
+@MainActor private extension PotatoGameView {
     func ensureAccountAvailable() {
         guard accounts.isEmpty, isSeedingAccount == false else { return }
         isSeedingAccount = true
         Task(priority: .utility) { @MainActor in
-            let accountID = await SchmojiModelContainerProvider.accountID()
+            let accountID = await PotatoGameModelContainerProvider.accountID()
             DataGeneration.ensureBaselineData(modelContext: modelContext, userID: accountID)
             isSeedingAccount = false
         }
@@ -395,7 +395,6 @@ struct SchmojiGameView: View {
                 legendOverlay
             }
         }
-        .foregroundStyle(PotatoTheme.text)
         .padding()
         .glassedSurface(in: RoundedRectangle(cornerRadius: 30, style: .continuous), interactive: true)
         .frame(maxWidth: .infinity)
@@ -406,7 +405,7 @@ struct SchmojiGameView: View {
     var gameBoard: some View {
         // Shared container and modifiers so both branches have the same concrete type
         let boardShape = RoundedRectangle(cornerRadius: 32, style: .continuous)
-        let boardAspect = CGSize(width: CGFloat(SchmojiOptions.width), height: CGFloat(SchmojiOptions.height))
+        let boardAspect = CGSize(width: CGFloat(PotatoGameOptions.width), height: CGFloat(PotatoGameOptions.height))
         return ZStack {
             boardShape
                 .fill(Color.clear)
@@ -446,7 +445,7 @@ struct SchmojiGameView: View {
 
     /// Color legend overlay shown when the user enables “show legend”.
     var legendOverlay: some View {
-        SchmojiColorsLegendGenericView()
+        PotatoGameLegendView()
             .allowsHitTesting(false)
     }
 
@@ -483,7 +482,7 @@ struct SchmojiGameView: View {
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
-                SchmojiColorsLegendGenericView()
+                PotatoGameLegendView()
                VStack(spacing: 12) {
                     Button {
                         dismissMergeTutorial()
@@ -552,7 +551,7 @@ struct SchmojiGameView: View {
 
     /// Wraps the win/lose view in a helper so we can attach lifecycle hooks.
     private func gameEndSheet(for sheet: GameEndSheet) -> some View {
-        SchmojiGameEndView(
+        PotatoGameEndView(
             level: sheet.level,
             outcome: viewModel.outcome(for: sheet),
             isNextLevelAvailable: sheet.hasNextLevel,
@@ -632,9 +631,9 @@ private struct SessionInputSignature: Equatable {
 
     @MainActor
     init(
-        progress: [SchmojiLevelProgress],
+        progress: [PotatoGameLevelProgress],
         accounts: [Account],
-        selections: [SchmojiSelection],
+        selections: [EmojiSelection],
         purchasedPackIDs: Set<String>,
         soundEnabled: Bool,
         hapticsEnabled: Bool,
@@ -650,7 +649,7 @@ private struct SessionInputSignature: Equatable {
     }
 
     @MainActor
-    private static func digestProgress(_ entries: [SchmojiLevelProgress]) -> Int {
+    private static func digestProgress(_ entries: [PotatoGameLevelProgress]) -> Int {
         var hasher = Hasher()
         hasher.combine(entries.count)
         for entry in entries {
@@ -675,7 +674,7 @@ private struct SessionInputSignature: Equatable {
     }
 
     @MainActor
-    private static func digestSelections(_ selections: [SchmojiSelection]) -> Int {
+    private static func digestSelections(_ selections: [EmojiSelection]) -> Int {
         var hasher = Hasher()
         let ordered = selections.sorted { $0.colorRawValue < $1.colorRawValue }
         hasher.combine(ordered.count)
@@ -709,8 +708,8 @@ struct GameEndSheet: Identifiable, Equatable {
     }
 
     let kind: Kind
-    let level: SchmojiLevelInfo
-    let unlockProgress: SchmojiSelection.UnlockProgress?
+    let level: PotatoGameLevelInfo
+    let unlockProgress: EmojiSelection.UnlockProgress?
     let hasNextLevel: Bool
     let resumeOnDismiss: Bool
 }
@@ -735,9 +734,9 @@ private extension View {
     }
 }
 
-#Preview("Schmoji Game View") {
+#Preview("Potato Game View") {
     NavigationStack {
-        SchmojiGameView()
+        PotatoGameView()
     }
     .environment(PreviewSampleData.makeLevelPackStore())
     .environment(GameKeyboardSettings())

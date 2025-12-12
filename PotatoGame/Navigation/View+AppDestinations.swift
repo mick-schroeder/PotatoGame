@@ -7,7 +7,7 @@ extension View {
     /// Applies all navigation destinations used across the PotatoGame app.
     func potatoNavigationDestinations() -> some View {
         navigationDestination(for: AppScreen.self) { destination(for: $0) }
-            .navigationDestination(for: SchmojiLevelInfo.self) { levelDestination(for: $0) }
+            .navigationDestination(for: PotatoGameLevelInfo.self) { levelDestination(for: $0) }
     }
 
     @ViewBuilder
@@ -16,7 +16,7 @@ extension View {
         case .levels:
             LevelGrid()
         case .collection:
-            SchmojiCollectionView()
+            CollectionView()
         case .settings:
             SettingsView()
         case .howto:
@@ -24,14 +24,14 @@ extension View {
         case .potatoes:
             PotatoTankView()
         case .game:
-            SchmojiGameView()
+            PotatoGameView()
         case .store:
             StoreView()
         }
     }
 
     @ViewBuilder
-    private func levelDestination(for level: SchmojiLevelInfo) -> some View {
-        SchmojiGameView(level: level)
+    private func levelDestination(for level: PotatoGameLevelInfo) -> some View {
+        PotatoGameView(level: level)
     }
 }

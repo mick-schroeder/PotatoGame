@@ -61,8 +61,8 @@ extension PotatoGameScene {
     }
 
     func collisionKind(for summary: SchmojiCollisionSummary) -> CollisionKind? {
-        let schmoji = SchmojiPhysicsCategory.schmoji
-        let edge = SchmojiPhysicsCategory.edge
+        let schmoji = PotatoGamePhysicsCategory.schmoji
+        let edge = PotatoGamePhysicsCategory.edge
 
         let firstIsSchmoji = summary.categoryA == schmoji
         let secondIsSchmoji = summary.categoryB == schmoji

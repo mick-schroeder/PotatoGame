@@ -10,7 +10,7 @@ struct LevelGrid: View {
     @State private var hidesCompletedLevels: Bool = true
     @Environment(\.modelContext) private var modelContext
     @Query private var accounts: [Account]
-    @Query(sort: [SortDescriptor(\SchmojiLevelProgress.levelNumber, order: .forward)]) private var progress: [SchmojiLevelProgress]
+    @Query(sort: [SortDescriptor(\PotatoGameLevelProgress.levelNumber, order: .forward)]) private var progress: [PotatoGameLevelProgress]
     private let maxTileWidth: CGFloat = 190
 
     private var ownedLevelPackIDs: Set<String> {
@@ -20,24 +20,24 @@ struct LevelGrid: View {
         return levelPackStore.purchasedPackIDs
     }
 
-    private var effectiveLevels: [SchmojiLevelInfo] {
-        SchmojiLevelInfo.allLevels(progress: progress, ownedLevelPackIDs: ownedLevelPackIDs)
+    private var effectiveLevels: [PotatoGameLevelInfo] {
+        PotatoGameLevelInfo.allLevels(progress: progress, ownedLevelPackIDs: ownedLevelPackIDs)
     }
 
-    private var allLevels: [SchmojiLevelInfo] {
+    private var allLevels: [PotatoGameLevelInfo] {
         effectiveLevels
     }
 
-    private var displayLevels: [SchmojiLevelInfo] {
+    private var displayLevels: [PotatoGameLevelInfo] {
         hidesCompletedLevels ? allLevels.filter { $0.isCompleted == false } : allLevels
     }
 
-    private var nextLevelCandidate: SchmojiLevelInfo? {
+    private var nextLevelCandidate: PotatoGameLevelInfo? {
         allLevels.first(where: { $0.isCompleted == false }) ?? allLevels.first
     }
 
-    private var nextPlayableLevel: SchmojiLevelInfo? {
-        SchmojiLevelInfo.nextPlayableLevel(in: allLevels)
+    private var nextPlayableLevel: PotatoGameLevelInfo? {
+        PotatoGameLevelInfo.nextPlayableLevel(in: allLevels)
     }
 
     var body: some View {
@@ -67,15 +67,15 @@ private extension LevelGrid {
 
 private struct LevelGridContentView: View {
     @Environment(LevelPackStore.self) private var levelPackStore
-    let allLevels: [SchmojiLevelInfo]
-    let displayLevels: [SchmojiLevelInfo]
-    let nextLevel: SchmojiLevelInfo
-    let playLevel: SchmojiLevelInfo?
+    let allLevels: [PotatoGameLevelInfo]
+    let displayLevels: [PotatoGameLevelInfo]
+    let nextLevel: PotatoGameLevelInfo
+    let playLevel: PotatoGameLevelInfo?
     let gridColumns: [GridItem]
     let gridSpacing: CGFloat
     @Binding var hidesCompletedLevels: Bool
 
-    private var targetPlayLevel: SchmojiLevelInfo { playLevel ?? nextLevel }
+    private var targetPlayLevel: PotatoGameLevelInfo { playLevel ?? nextLevel }
 
     private var completedLevelCount: Int {
         allLevels.filter(\.isCompleted).count
@@ -130,13 +130,13 @@ private struct LevelGridContentView: View {
                 playIsLocked: playIsLocked,
                 shouldShowUnlockButton: shouldShowUnlockButton
             )
-            .frame(maxWidth: CGFloat(SchmojiOptions.width))
+            .frame(maxWidth: CGFloat(PotatoGameOptions.width))
             .padding()
 
             LazyVGrid(columns: gridColumns, spacing: gridSpacing) {
                 LevelsSearchResults(levels: displayLevels)
             }
-            .frame(maxWidth: CGFloat(SchmojiOptions.width))
+            .frame(maxWidth: CGFloat(PotatoGameOptions.width))
             .frame(maxWidth: .infinity, alignment: .center)
             .padding()
         }

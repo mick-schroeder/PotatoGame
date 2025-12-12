@@ -18,7 +18,7 @@ class PotatoGameSessionManager {
     /// We keep the scene alive between debounce cycles so the layout can be re-read.
     weak var pendingSceneReference: PotatoGameScene?
     /// Snapshot generated during gameplay that will eventually be persisted.
-    var pendingLayoutSnapshot: [PotatoGameBoardObject]?
+    var pendingLayoutSnapshot: [SchmojiBoardObject]?
     /// Periodic autosave loop that runs while the level is active.
     var autosaveTask: Task<Void, Never>?
     let autosaveInterval: TimeInterval = 30
@@ -27,12 +27,12 @@ class PotatoGameSessionManager {
     var lastEvolutionSaveDate: Date?
 
     var modelContext: ModelContext
-    var currentLevel: PotatoGameLevelInfo
-    var currentPalette: [PotatoGameAppearance]
+    var currentLevel: SchmojiLevelInfo
+    var currentPalette: [SchmojiAppearance]
     var currentAccount: Account
-    var onLevelUpdate: ((PotatoGameLevelInfo) -> Void)?
-    var onUnlockProgress: ((EmojiSelection.UnlockProgress?) -> Void)?
-    var lastUnlockProgress: EmojiSelection.UnlockProgress?
+    var onLevelUpdate: ((SchmojiLevelInfo) -> Void)?
+    var onUnlockProgress: ((SchmojiSelection.UnlockProgress?) -> Void)?
+    var lastUnlockProgress: SchmojiSelection.UnlockProgress?
     /// Running count of potatoes earned since the scene was built (for sheets/HUD).
     var potatoesCreatedThisRun: Int = 0
     var lastLevelUpdateDigest: LevelUpdateDigest?
@@ -40,7 +40,7 @@ class PotatoGameSessionManager {
     let keyboardSettings: GameKeyboardSettings
 
     /// Build a session around the given account/level/palette combo.
-    init(account: Account, context: ModelContext, level: PotatoGameLevelInfo, palette: [PotatoGameAppearance], keyboardSettings: GameKeyboardSettings) {
+    init(account: Account, context: ModelContext, level: SchmojiLevelInfo, palette: [SchmojiAppearance], keyboardSettings: GameKeyboardSettings) {
         currentLevel = level
         modelContext = context
         currentPalette = palette
@@ -69,7 +69,7 @@ class PotatoGameSessionManager {
         // Make sure brand-new progress rows have a generated board before the scene boots.
         ensureLevelLayout()
         lastEvolutionSaveDate = nil
-        let presentation = PotatoLevelPresentation(levelInfo: currentLevel)
+        let presentation = SchmojiLevelPresentation(levelInfo: currentLevel)
         let scene = PotatoGameScene(levelPresentation: presentation)
         scene.keyboardSettings = keyboardSettings
         scene.sessionManager = self
@@ -87,7 +87,7 @@ class PotatoGameSessionManager {
     }
 
     /// Allows the view model to swap palettes mid-session.
-    func updatePalette(_ palette: [PotatoGameAppearance]) {
+    func updatePalette(_ palette: [SchmojiAppearance]) {
         currentPalette = palette
     }
 
@@ -95,9 +95,9 @@ class PotatoGameSessionManager {
     func updateOwnedLevelPackIDs(_ ownedPackIDs: Set<String>) {
         guard currentLevel.ownedLevelPackIDs != ownedPackIDs else { return }
         if let template = currentLevel.template {
-            currentLevel = PotatoGameLevelInfo(template: template, progress: currentLevel.progress, ownedLevelPackIDs: ownedPackIDs)
+            currentLevel = SchmojiLevelInfo(template: template, progress: currentLevel.progress, ownedLevelPackIDs: ownedPackIDs)
         } else {
-            currentLevel = PotatoGameLevelInfo(
+            currentLevel = SchmojiLevelInfo(
                 levelNumber: currentLevel.levelNumber,
                 levelBackgroundColor: currentLevel.levelBackgroundColor,
                 potentialPotatoCount: currentLevel.potentialPotatoCount,
@@ -111,7 +111,7 @@ class PotatoGameSessionManager {
     /// Rebuilds the current level and kicks the autosave loop again.
     func restartLevel(in scene: PotatoGameScene) {
         resetLevelState()
-        let presentation = PotatoLevelPresentation(levelInfo: currentLevel)
+        let presentation = SchmojiLevelPresentation(levelInfo: currentLevel)
         scene.reloadLevel(with: presentation)
         scene.isPaused = false
         saveGame(from: scene, immediate: true)
@@ -151,13 +151,13 @@ class PotatoGameSessionManager {
 
     /// Determines win/lose/perfect state based on the live board snapshot.
     func evaluateGameEnd(in scene: PotatoGameScene, forced: Bool = false) {
-        guard let lastColor = PotatoGameOptions.lastColor else { return }
-        let matchThreshold = max(2, PotatoGameOptions.matchCountMin)
+        guard let lastColor = SchmojiOptions.lastColor else { return }
+        let matchThreshold = max(2, SchmojiOptions.matchCountMin)
 
         guard let layoutObjects = scene.extractUpdatedObjects() else { return }
         currentLevel.schmojiInLevel = layoutObjects
 
-        var schmojiCountMap: [PotatoColor: Int] = [:]
+        var schmojiCountMap: [SchmojiColor: Int] = [:]
         var potatoCount = 0
 
         // Build a histogram of remaining colors so we can determine whether more evolutions are possible.
@@ -278,7 +278,7 @@ class PotatoGameSessionManager {
     }
 
     /// Builds a SpriteKit node for a stored board object snapshot.
-    func createNode(for object: PotatoGameBoardObject) -> SchmojiSpriteNode {
+    func createNode(for object: SchmojiBoardObject) -> SchmojiSpriteNode {
         let color = object.color
         let appearance = currentPalette.first { $0.color == color }
 
@@ -292,9 +292,9 @@ class PotatoGameSessionManager {
     }
 
     /// Updates potato counts when a match chain reaches the final color.
-    func trackPotatoCreation(from color: PotatoColor, createdCount: Int) {
+    func trackPotatoCreation(from color: SchmojiColor, createdCount: Int) {
         guard createdCount > 0 else { return }
-        guard let lastColor = PotatoGameOptions.lastColor else { return }
+        guard let lastColor = SchmojiOptions.lastColor else { return }
 
         if color.nextColor() == lastColor {
             currentLevel.numOfPotatoesCreated += createdCount
@@ -323,7 +323,7 @@ class PotatoGameSessionManager {
     }
 
     /// Persists dynamically spawned Schmojis so the board stays in sync.
-    func registerSpawnedObject(_ object: PotatoGameBoardObject, in scene: PotatoGameScene?) {
+    func registerSpawnedObject(_ object: SchmojiBoardObject, in scene: PotatoGameScene?) {
         currentLevel.addLevelObject(object, in: modelContext)
         scene?.appendStoredObject(object)
         notifyLevelUpdate()

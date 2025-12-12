@@ -6,21 +6,21 @@ import SwiftUI
 /// Unified end-of-level sheet for both win and lose outcomes.
 struct PotatoGameEndView: View {
     enum Outcome {
-        case win(perfect: Bool, unlockProgress: SchmojiSelection.UnlockProgress?, potatoesEarned: Int)
+        case win(perfect: Bool, unlockProgress: EmojiSelection.UnlockProgress?, potatoesEarned: Int)
         case lose
     }
 
     @Environment(\.dismiss) private var dismiss
     @Environment(\.colorScheme) private var colorScheme
 
-    var level: SchmojiLevelInfo
+    var level: PotatoGameLevelInfo
     var outcome: Outcome
     var isNextLevelAvailable: Bool = false
     var onReplay: (() -> Void)?
     var onNextLevel: (() -> Void)?
     var onQuit: (() -> Void)?
 
-    private var cardEmphasis: SchmojiGameEndCard.Emphasis {
+    private var cardEmphasis: PotatoGameEndCard.Emphasis {
         switch outcome {
         case let .win(perfect, _, _):
             perfect ? .celebration : .success
@@ -56,7 +56,7 @@ struct PotatoGameEndView: View {
     }
 
     var body: some View {
-        SchmojiGameEndCard(
+        PotatoGameEndCard(
             emphasis: cardEmphasis,
             iconSystemName: iconSystemName,
             title: sheetTitle,
@@ -72,7 +72,7 @@ struct PotatoGameEndView: View {
 
 private extension PotatoGameEndView {
     @ViewBuilder
-    func summarySection(badge: SchmojiGameEndCard.BadgeView, status: String) -> some View {
+    func summarySection(badge: PotatoGameEndCard.BadgeView, status: String) -> some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
                 Spacer()
@@ -93,7 +93,7 @@ private extension PotatoGameEndView {
 
     func winSummarySection(
         isPerfect: Bool,
-        unlockProgress: SchmojiSelection.UnlockProgress?,
+        unlockProgress: EmojiSelection.UnlockProgress?,
         potatoesEarned: Int
     ) -> some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -130,7 +130,7 @@ private extension PotatoGameEndView {
         }
     }
 
-    func loseSummarySection(badge _: SchmojiGameEndCard.BadgeView) -> some View {
+    func loseSummarySection(badge _: PotatoGameEndCard.BadgeView) -> some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack(spacing: 18) {
                 Spacer()
@@ -191,7 +191,7 @@ private extension PotatoGameEndView {
     }
 
     @ViewBuilder
-    func unlockProgressSection(for progress: SchmojiSelection.UnlockProgress) -> some View {
+    func unlockProgressSection(for progress: EmojiSelection.UnlockProgress) -> some View {
         if progress.totalSchmojis > 1 {
             let accent = progress.color.color
 
@@ -224,7 +224,7 @@ private extension PotatoGameEndView {
 
                 if progress.didUnlockThisRun, let unlockedHex = progress.unlockedHexThisRun {
                     HStack(spacing: 12) {
-                        SchmojiArt.image(forHexcode: unlockedHex)
+                        PotatoGameArt.image(forHexcode: unlockedHex)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 52, height: 52)
@@ -252,7 +252,7 @@ private extension PotatoGameEndView {
 
 // MARK: - Card Shell
 
-struct SchmojiGameEndCard: View {
+struct PotatoGameEndCard: View {
     enum Emphasis {
         case success
         case failure
@@ -335,7 +335,7 @@ struct SchmojiGameEndCard: View {
     }
 }
 
-extension SchmojiGameEndCard {
+extension PotatoGameEndCard {
     struct BadgeView: View {
         let emphasis: Emphasis
         let iconSystemName: String
@@ -404,7 +404,7 @@ private struct DismissButton: View {
 }
 
 #Preview("Game End Card Shell") {
-    SchmojiGameEndCard(
+    PotatoGameEndCard(
         emphasis: .success,
         iconSystemName: "trophy.fill",
         title: "Preview Level"

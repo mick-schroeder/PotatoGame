@@ -5,7 +5,7 @@ import Foundation
 struct LevelTemplate {
     let levelNumber: Int
     let rows: [[Int?]]
-    let backgroundColor: SchmojiColor
+    let backgroundColor: PotatoColor
     let potentialPotatoCount: Int
 }
 

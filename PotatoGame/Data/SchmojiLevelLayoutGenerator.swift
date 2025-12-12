@@ -5,7 +5,7 @@ import CoreGraphics
 import Foundation
 
 enum PotatoGameLevelLayoutGenerator {
-    static func layoutObjects(for levelNumber: Int) -> [PotatoGameBoardObject] {
+    static func layoutObjects(for levelNumber: Int) -> [SchmojiBoardObject] {
         guard let template = LevelTemplateByNumber[levelNumber] else { return [] }
         let rows = template.rows
         guard rows.isEmpty == false else { return [] }
@@ -18,7 +18,7 @@ enum PotatoGameLevelLayoutGenerator {
         let stepY = rowCount > 0 ? usableRect.height / CGFloat(rowCount) : 0
         let stepX = max(usableRect.width / CGFloat(maxColumns), 0)
 
-        var objects: [PotatoGameBoardObject] = []
+        var objects: [SchmojiBoardObject] = []
         objects.reserveCapacity(rows.reduce(0) { $0 + $1.compactMap(\.self).count })
 
         for (rowIndex, row) in rows.enumerated() {
@@ -36,7 +36,7 @@ enum PotatoGameLevelLayoutGenerator {
 
                 let centerX = offsetX + (CGFloat(columnIndex) + 0.5) * stepX
                 let rawPoint = CGPoint(x: centerX, y: centerY)
-                let object = PotatoGameBoardObject(
+                let object = SchmojiBoardObject(
                     color: color,
                     positionX: Double(rawPoint.x),
                     positionY: Double(rawPoint.y)

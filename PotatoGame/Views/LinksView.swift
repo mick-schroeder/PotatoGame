@@ -10,7 +10,7 @@ struct NavigationTile: View {
     let detail: String?
     let destination: AppScreen
     @Environment(\.router) private var router
-    @AppStorage("haptics") private var hapticsEnabled: Bool = SchmojiOptions.haptics
+    @AppStorage("haptics") private var hapticsEnabled: Bool = PotatoGameOptions.haptics
 
     var body: some View {
         Button {
@@ -44,8 +44,8 @@ struct NavigationTile: View {
 
 struct LinksView: View {
     @Environment(LevelPackStore.self) private var levelPackStore
-    @Query(sort: [SortDescriptor(\SchmojiLevelProgress.levelNumber, order: .forward)]) private var levelProgress: [SchmojiLevelProgress]
-    @Query private var selections: [SchmojiSelection]
+    @Query(sort: [SortDescriptor(\PotatoGameLevelProgress.levelNumber, order: .forward)]) private var levelProgress: [PotatoGameLevelProgress]
+    @Query private var selections: [EmojiSelection]
 
     var body: some View {
         let viewModel = LinksViewModel(
@@ -101,8 +101,8 @@ private struct LinksViewModel {
     let tiles: [Tile]
 
     init(
-        levelProgress: [SchmojiLevelProgress],
-        selections: [SchmojiSelection],
+        levelProgress: [PotatoGameLevelProgress],
+        selections: [EmojiSelection],
         purchasedPackIDs: Set<String>,
         availablePacks: Int = LevelPackRegistry.availablePacks.count,
         totalLevels: Int = LevelTemplates.count
@@ -147,7 +147,7 @@ private struct LinksViewModel {
 }
 
 private extension LinksViewModel {
-    static func makeLevelDetail(levelProgress: [SchmojiLevelProgress], totalLevels: Int) -> String? {
+    static func makeLevelDetail(levelProgress: [PotatoGameLevelProgress], totalLevels: Int) -> String? {
         guard totalLevels > 0 else { return nil }
         let completed = levelProgress.filter { $0.gameState == .win || $0.gameState == .winPerfect }.count
         return progressDetail(completed: completed, total: totalLevels)
@@ -158,13 +158,13 @@ private extension LinksViewModel {
         return progressDetail(completed: purchasedPackIDs.count, total: availablePackCount)
     }
 
-    static func makeCollectionDetail(selections: [SchmojiSelection]) -> String? {
-        let total = SchmojiColor.allCases.reduce(0) { partial, color in
+    static func makeCollectionDetail(selections: [EmojiSelection]) -> String? {
+        let total = PotatoColor.allCases.reduce(0) { partial, color in
             partial + color.schmojis.count
         }
         guard total > 0 else { return nil }
 
-        let unlocked = SchmojiColor.allCases.reduce(0) { partial, color in
+        let unlocked = PotatoColor.allCases.reduce(0) { partial, color in
             let selection = selections.first { $0.color == color }
             let unlockedHexes = selection?.unlockedHexes ?? color.schmojis
             return partial + unlockedHexes.count
